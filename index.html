@@ -7,47 +7,45 @@
   <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
 </head>
 <body>
-	<div class='center space-bottom4 pad2y fill-darken0 col12 clearfix'>
-		<h3 class='futura'>Mapbox GL</h3>
-		<h4 class='quiet'>STYLE REFERENCE</h4>
-	</div>
-	<div class='col12 clearfix limiter'>
-		<div class='col10 margin1'>
-			<div class='space-bottom2 quiet micro col9 margin3 pad2x'>
-				<span class='icon alert'></span> REQUIRED 
-				<span class='pad2x'><span class='icon levels'></span> ACCEPTS FUNCTIONS</span>
-				<span class='icon opacity'></span> TRANSITIONABLE
-			</div>
-			<div id='docs'></div>
-		</div>
-	</div>
-	<script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
-	<script src='http://wzrd.in/standalone/mapbox-gl-style-spec@v0.0.0'></script>
-	<script>
-		var spec = mapboxGlStyleSpec;
-		var docs = $('#docs');
+  <div class='center space-bottom4 pad2y fill-darken0 col12 clearfix'>
+    <h3 class='futura'>Mapbox GL</h3>
+    <h4 class='quiet'>STYLE REFERENCE</h4>
+  </div>
+  <div class='col12 clearfix limiter'>
+    <div class='col10 margin1'>
+      <div class='space-bottom2 quiet micro col9 margin3 pad2x'>
+        <span class='icon alert'></span> REQUIRED 
+        <span class='pad2x'><span class='icon levels'></span> ACCEPTS FUNCTIONS</span>
+        <span class='icon opacity'></span> TRANSITIONABLE
+      </div>
+      <div id='docs'></div>
+    </div>
+  </div>
+  <script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+  <script src='http://wzrd.in/standalone/mapbox-gl-style-spec@v0.0.0'></script>
+  <script>
+    var spec = mapboxGlStyleSpec;
+    var docs = $('#docs');
 
-		$.each(spec, function(name, section) {
-		  var container = $('<div class="space-bottom4 clearfix">').appendTo(docs);
-			$('<div class="col3 pad1y pad2x text-right"><p class="strong">'+name+'</p></div>').appendTo(container);
-			var propContainer = $('<div class="col9 keyline-left pad2x">').appendTo(container);
-		  
-		  for (var key in section) {
-		  	var property = section[key];
-		  	var prop = $('<div class="clearfix space-bottom2">').appendTo(propContainer);
-				$('<h2 class="code inline align-middle">'+key+'</h2><span class="pad1x inline strong" style="color: #8a8acb;">'+property.type+'</span>').appendTo(prop);
-						 
-				if (property['default-value']) $('<span class="pad1x inline align-middle"><em>'+JSON.stringify(property['default-value'])+'</em></span>').appendTo(prop);
+    $.each(spec, function(name, section) {
+      var container = $('<div class="space-bottom4 clearfix">').appendTo(docs);
+      $('<div class="col3 pad1y pad2x text-right"><p class="strong">'+name+'</p></div>').appendTo(container);
+      var propContainer = $('<div class="col9 keyline-left pad2x">').appendTo(container);
+      
+      for (var key in section) {
+        var property = section[key];
+        var prop = $('<div class="clearfix space-bottom2">').appendTo(propContainer);
+        $('<h2 class="code inline align-middle">'+key+'</h2><span class="pad1x inline strong" style="color: #8a8acb;">'+property.type+'</span>').appendTo(prop);
+        if (property['default-value']) $('<span class="pad1x inline align-middle"><em>'+JSON.stringify(property['default-value'])+'</em></span>').appendTo(prop);
 
-				var propOpts = $('<span class="inline align-middle quiet">').appendTo(prop);
+        var propOpts = $('<span class="inline align-middle quiet">').appendTo(prop);
 
-				if (property.required) $('<span class="icon alert inline"></span>').appendTo(propOpts);
-				if (property.function) $('<span class="icon levels inline"></span>').appendTo(propOpts);
-				if (property.transition) $('<span class="icon opacity inline"></span>').appendTo(propOpts);
-
-				if (property.doc)  $('<p class="prose quiet">'+property.doc+'</p>').appendTo(prop);
-		  };
-		});
-	</script>
+        if (property.required) $('<span class="icon alert inline"></span>').appendTo(propOpts);
+        if (property.function) $('<span class="icon levels inline"></span>').appendTo(propOpts);
+        if (property.transition) $('<span class="icon opacity inline"></span>').appendTo(propOpts);
+        if (property.doc)  $('<p class="prose quiet">'+property.doc+'</p>').appendTo(prop);
+      };
+    });
+  </script>
 </body>
 </html>
