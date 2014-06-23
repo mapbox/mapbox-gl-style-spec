@@ -7,45 +7,82 @@
   <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
 </head>
 <body>
-  <div class='center space-bottom4 pad2y fill-darken0 col12 clearfix'>
-    <h3 class='futura'>Mapbox GL</h3>
-    <h4 class='quiet'>STYLE REFERENCE</h4>
-  </div>
   <div class='col12 clearfix limiter'>
-    <div class='col10 margin1'>
-      <div class='space-bottom2 quiet micro col9 margin3 pad2x'>
+    <div class='col9 margin3 pad2x'>
+      <div class='space-bottom4 pad2y'>
+        <h3 class='futura'>Mapbox GL</h3>
+        <h4 class='quiet'>STYLE REFERENCE</h4>
+      </div>
+      <div class='space-bottom2 quiet micro'>
         <span class='icon alert'></span> REQUIRED 
         <span class='pad2x'><span class='icon levels'></span> ACCEPTS FUNCTIONS</span>
         <span class='icon opacity'></span> TRANSITIONABLE
       </div>
-      <div id='docs'></div>
     </div>
+    <div id='docs'></div>
   </div>
+  <style>
+  .space-right {margin-right: 10px;}
+  </style>
   <script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
-  <script src='http://wzrd.in/standalone/mapbox-gl-style-spec'></script>
   <script>
-    var spec = mapboxGlStyleSpec.v3;
     var docs = $('#docs');
+    docs.addClass('loading');
 
-    $.each(spec, function(name, section) {
-      var container = $('<div class="space-bottom4 clearfix">').appendTo(docs);
-      $('<div class="col3 pad1y pad2x text-right"><p class="strong">'+name+'</p></div>').appendTo(container);
-      var propContainer = $('<div class="col9 keyline-left pad2x">').appendTo(container);
+    function addProp(key, section, propContainer) {
+      if (key.fn) {
+        $('<p class="pad1y clearfix">'+JSON.stringify(key.fn.values)+':</p>').appendTo(propContainer);
+        for (var k in key) {
+          addProp(k, key, propContainer)
+        };
+        return false;
+      }
+      var property = section ? section[key] : key;
+      var prop = $('<div class="clearfix space-bottom2">').appendTo(propContainer);
       
-      for (var key in section) {
-        var property = section[key];
-        var prop = $('<div class="clearfix space-bottom2">').appendTo(propContainer);
-        $('<h2 class="code inline align-middle">'+key+'</h2><span class="pad1x inline strong" style="color: #8a8acb;">'+property.type+'</span>').appendTo(prop);
-        if (property['default-value']) $('<span class="pad1x inline align-middle"><em>'+JSON.stringify(property['default-value'])+'</em></span>').appendTo(prop);
+      if (typeof key !== 'object') $('<h2 class="space-right code inline align-middle">'+key+'</h2>').appendTo(prop);
 
-        var propOpts = $('<span class="inline align-middle quiet">').appendTo(prop);
+      if (property.type === 'enum' && property.values) {
+        $('<span class="space-right inline code align-middle" style="color: #8a8acb;">'+JSON.stringify(property.values)+'</span>').appendTo(prop);
+      } else if (property.type) {
+        $('<span class="space-right inline code align-middle" style="color: #8a8acb;">'+property.type+'</span>').appendTo(prop);
+      }
 
-        if (property.required) $('<span class="icon alert inline"></span>').appendTo(propOpts);
-        if (property.function) $('<span class="icon levels inline"></span>').appendTo(propOpts);
-        if (property.transition) $('<span class="icon opacity inline"></span>').appendTo(propOpts);
-        if (property.doc)  $('<p class="prose quiet">'+property.doc+'</p>').appendTo(prop);
-      };
-    });
+      if (property.default) $('<span class="space-right inline align-middle"><em>'+JSON.stringify(property.default)+'</em></span>').appendTo(prop);
+
+      var propOpts = $('<span class="inline align-middle quiet">').appendTo(prop);
+
+      if (property.required) $('<span class="icon alert inline"></span>').appendTo(propOpts);
+      if (property.function) $('<span class="icon levels inline"></span>').appendTo(propOpts);
+      if (property.transition) $('<span class="icon opacity inline"></span>').appendTo(propOpts);
+      if (property.doc)  $('<p class="prose quiet">'+property.doc+'</p>').appendTo(prop);
+    }
+
+    function buildSpec(spec) {
+      $.each(spec, function(name, section) {
+        var container = $('<div class="space-bottom4 clearfix">').appendTo(docs);
+        $('<div class="col3 pad1y pad2x text-right"><p class="strong">'+name+'</p></div>').appendTo(container);
+        var propContainer = $('<div class="col9 keyline-left pad2x">').appendTo(container);
+
+        if (spec[name].doc) {
+          addProp(name, spec, propContainer);
+        } else if (typeof section !== 'object') {
+          $('<div class="clearfix space-bottom2"><h2 class="code inline align-middle">'+section+'</h2></div>').appendTo(propContainer);
+        } else if (Array.isArray(section)) {
+          for (var i = 0; i < section.length; i++) {
+            addProp(section[i], false, propContainer);
+          };
+        } else {
+          for (var key in section) {
+            addProp(key, section, propContainer)
+          };
+        }
+      });
+
+      docs.removeClass('loading');
+    }
+    
+    $.getJSON('reference/v3.json', buildSpec);
   </script>
 </body>
 </html>
