@@ -213,6 +213,21 @@
         "symbol"
       ]
     },
+    "symbol-min-distance": {
+      "type": "number",
+      "default": 250,
+      "doc": "Minimum distance between two symbol anchors (px)"
+    },
+    "symbol-allow-overlap": {
+        "type": "boolean",
+        "default": false,
+        "doc": "If true, the icon or text will be visible even if it collides with other icons and text."
+    },
+    "symbol-ignore-placement": {
+        "type": "boolean",
+        "default": false,
+        "doc": "If true, the icon or text won't affect placement of other icons and text."
+    },
     "icon-size": {
       "type": "number",
       "default": 16
@@ -220,11 +235,6 @@
     "icon-image": {
       "type": "string",
       "doc": "A string with {{tokens}} replaced, referencing"
-    },
-    "icon-spacing": {
-      "type": "number",
-      "default": 0,
-      "doc": ""
     },
     "icon-padding": {
       "type": "number",
@@ -311,11 +321,6 @@
     "text-max-angle": {
       "type": "number",
       "doc": "@TODO"
-    },
-    "text-min-distance": {
-      "type": "number",
-      "default": 250,
-      "doc": "Minimum distance between two values (px)"
     },
     "text-rotate": {
       "type": "number",
