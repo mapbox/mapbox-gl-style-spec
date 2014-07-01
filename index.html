@@ -1,88 +1,59 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <meta charset=utf-8 />
-  <title>Mapbox GL Style Reference | Mapbox</title>
-  <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
-</head>
-<body>
-  <div class='col12 clearfix limiter'>
-    <div class='col9 margin3 pad2x'>
-      <div class='space-bottom4 pad2y'>
-        <h3 class='futura'>Mapbox GL</h3>
-        <h4 class='quiet'>STYLE REFERENCE</h4>
+---
+layout: default
+class: fill-light
+fullwidth: true
+---
+
+<link href='http://mapbox.com/css/docs.css' rel='stylesheet' />
+<link href='/css/style.css' rel='stylesheet' />
+
+<!--Fixed sidebar navigation-->
+<div class='docnav hide-mobile'>
+  <div class='limiter'><div class='col3 contain'>
+    <nav class='scroll-styled quiet-scroll small'>
+
+      <div class='space-bottom1'>
+        <span class='block truncate strong'>Mapbox GL Style Reference <span class='quiet'>v{{site.version}}</span></span>
       </div>
-      <div class='space-bottom2 quiet micro'>
-        <span class='icon alert'></span> REQUIRED 
-        <span class='pad2x'><span class='icon levels'></span> ACCEPTS FUNCTIONS</span>
-        <span class='icon opacity'></span> TRANSITIONABLE
+
+      {% for item in site.posts %}
+      {% if item.navigation %}
+      {% for navitem in item.navigation%}
+      <div class='space-bottom1'>
+        <a class='block truncate strong quiet' href='#{{navitem.id}}'>{{navitem.title}}</a>
+        {% for subitem in navitem.subnav %}
+        <a class='block truncate' href='#{{subitem.id}}'>{{subitem.title}}</a>
+        {% endfor %}
       </div>
-    </div>
-    <div id='docs'></div>
+      {% endfor %}
+      {% endif %}
+      {% endfor %}
+    </nav>
+  </div></div>
+</div>
+
+<div class='limiter clearfix'>
+  <div class='pad2y'>
+    <nav class='contain z10 margin3 col9 fill-gradient space-bottom round small'>
+      <div class='col3 dark round-left keyline-right pad1 center truncate'>
+        <div class='pad0y'>
+          <span class='icon gl fill-lighten0 dot inline pad0'></span> Mapbox GL
+        </div>
+      </div>
+      <div class='col9 dark tabs mobile-cols pad1'><!--
+        --><a href='https://mapbox.com/mapbox-gl' class='col3'>Overview</a><!--
+        --><a href='https://mapbox.com/mapbox-gl-js/api' class='col3'>API</a><!--
+        --><a href='#' class='col3 active'>Reference</a><!--
+        --><a href='https://mapbox.com/mapbox-gl-js/examples' class='col3'>Examples</a>
+      </div>
+    </nav>
   </div>
-  <style>
-  .space-right {margin-right: 10px;}
-  </style>
-  <script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
-  <script>
-    var docs = $('#docs');
-    docs.addClass('loading');
 
-    function addProp(key, section, propContainer) {
-      if (key.fn) {
-        $('<p class="pad1y clearfix">'+JSON.stringify(key.fn.values)+':</p>').appendTo(propContainer);
-        for (var k in key) {
-          addProp(k, key, propContainer)
-        };
-        return false;
-      }
-      var property = section ? section[key] : key;
-      var prop = $('<div class="clearfix space-bottom2">').appendTo(propContainer);
-      
-      if (typeof key !== 'object') $('<h2 class="space-right code inline align-middle">'+key+'</h2>').appendTo(prop);
-
-      if (property.type === 'enum' && property.values) {
-        $('<span class="space-right inline code align-middle" style="color: #8a8acb;">'+JSON.stringify(property.values)+'</span>').appendTo(prop);
-      } else if (property.type) {
-        $('<span class="space-right inline code align-middle" style="color: #8a8acb;">'+property.type+'</span>').appendTo(prop);
-      }
-
-      if (property.default) $('<span class="space-right inline align-middle"><em>'+JSON.stringify(property.default)+'</em></span>').appendTo(prop);
-
-      var propOpts = $('<span class="inline align-middle quiet">').appendTo(prop);
-
-      if (property.required) $('<span class="icon alert inline"></span>').appendTo(propOpts);
-      if (property.function) $('<span class="icon levels inline"></span>').appendTo(propOpts);
-      if (property.transition) $('<span class="icon opacity inline"></span>').appendTo(propOpts);
-      if (property.doc)  $('<p class="prose quiet">'+property.doc+'</p>').appendTo(prop);
-    }
-
-    function buildSpec(spec) {
-      $.each(spec, function(name, section) {
-        var container = $('<div class="space-bottom4 clearfix">').appendTo(docs);
-        $('<div class="col3 pad1y pad2x text-right"><p class="strong">'+name+'</p></div>').appendTo(container);
-        var propContainer = $('<div class="col9 keyline-left pad2x">').appendTo(container);
-
-        if (spec[name].doc) {
-          addProp(name, spec, propContainer);
-        } else if (typeof section !== 'object') {
-          $('<div class="clearfix space-bottom2"><h2 class="code inline align-middle">'+section+'</h2></div>').appendTo(propContainer);
-        } else if (Array.isArray(section)) {
-          for (var i = 0; i < section.length; i++) {
-            addProp(section[i], false, propContainer);
-          };
-        } else {
-          for (var key in section) {
-            addProp(key, section, propContainer)
-          };
-        }
-      });
-
-      docs.removeClass('loading');
-    }
-    
-    $.getJSON('reference/v3.json', buildSpec);
-  </script>
-</body>
-</html>
+  <div class='contain margin3 col9'>
+    <div class='{% if page.category != "examples" %}pad2{% endif %} round doc prose fill-white keyline-all'>
+    {% for post in site.posts %}
+      {{ post.content }}
+    {% endfor %}
+    </div>
+  </div>
+</div>

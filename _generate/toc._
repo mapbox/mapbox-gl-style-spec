@@ -1,0 +1,4 @@
+<% _(symbolizers).each(function(symbolizer, name) { %><% if (name !== '$version' && name !== '$root') { %>
+      - title: '<%= name.replace('_', ': ') %>'
+        id: <%= name %>
+<% } %><% }); %>
