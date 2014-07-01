@@ -30,10 +30,10 @@
       "doc": "Sprite definition."
     }
   },
-  "sprite": [{
+  "sprite": {
     "type": "string",
     "doc": "A base URL for retrieving the sprite image and metadata. The extensions `.png`, `.json` and scale factor `@2x.png` will be automatically appended."
-  }],
+  },
   "constants": {
     "*": {
       "type": "*",
@@ -152,17 +152,8 @@
     "render_icon",
     "render_text",
     "render_composite",
-    "render_raster",
-    "render_background"
+    "render_raster"
   ],
-  "render_background": {
-    "type": {
-      "type": "enum",
-      "values": [
-        "background"
-      ]
-    }
-  },
   "render_fill": {
     "type": {
       "type": "enum",
@@ -445,10 +436,12 @@
     "$type": {
       "type": "enum",
       "values": [
-        "Point",
-        "LineString",
-        "Polygon"
+        "any",
+        "point",
+        "line",
+        "polygon"
       ],
+      "default": "any",
       "doc": "Geometry type that features must match."
     },
     "*": [
@@ -870,7 +863,6 @@
     },
     "raster-fade": {
       "type": "number",
-      "default": 0,
       "function": true,
       "transition": true
     }

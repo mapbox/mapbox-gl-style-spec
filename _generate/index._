@@ -2,7 +2,7 @@
 date: 3400-04-01 12:00am
 category: reference
 title: Mapbox GL Style Reference
-permalink: /mapbox-gl/reference
+permalink: /
 navigation:
   - subnav: <%= toc({symbolizers:symbolizers, _:_}) %>
   - title: Values
