@@ -152,16 +152,7 @@
     "render_text",
     "render_composite",
     "render_raster",
-    "render_background"
   ],
-  "render_background": {
-    "type": {
-      "type": "enum",
-      "values": [
-        "background"
-      ]
-    }
-  },
   "render_fill": {
     "type": {
       "type": "enum",
