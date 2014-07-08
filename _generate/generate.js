@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // GL style reference generator
 
 var fs = require('fs'),
