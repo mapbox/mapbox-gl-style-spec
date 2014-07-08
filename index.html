@@ -152,10 +152,108 @@ navigation:
   </div>
 
   <div class='contain margin3 col9'>
-    <div class='pad2 round doc prose fill-white keyline-all'>
+    <div class='pad2 round doc prose fill-white keyline-all space-bottom'>
       <h1>{{ page.title }}</h1>
 
       <p>The Mapbox GL style is an object that defines what data to draw, the order to draw it in, and how to style the data when drawing it. The JSON structure follows the renderer implementation very closely. It provides the basic building blocks out of which more complex styles can be built.</p>
+    </div>
+
+<div class='block code pad1 dark fill-darken3 keyline-bottom round-top'>{</div>
+<div class='block pad2 dark fill-darken3 keyline-bottom'>
+  <div class='code space-bottom1 quiet'>"version": 4,</div>
+  <div class='small'>
+    Stylesheet version number. Must be 4.
+  </div>
+</div>
+<div class='block pad2 dark fill-darken3 keyline-bottom'>
+  <div class='code space-bottom1 quiet'>"sprite": "https://www.mapbox.com",</div>
+  <div class='small'>
+    A base URL for retrieving the sprite image and metadata. The extensions `.png`, `.json` and scale factor `@2x.png` will be automatically appended.
+  </div>
+</div>
+<div class='block pad2 dark fill-darken3 keyline-bottom'>
+  <div class='code space-bottom1 quiet'>"constants": {
+  "@water": "#88aacc",
+  "@land": "#ffffff"
+},</div>
+  <div class='small'>
+    A constant that will be replaced verbatim in the referencing place. This can be anything, including objects and arrays. All variable names must be prefixed with an `@` symbol.
+  </div>
+</div>
+<div class='block pad2 dark fill-darken3 keyline-bottom'>
+  <div class='code space-bottom1 quiet'>"sources": {
+  "streets": {
+    "type": "vector",
+    "url": "mapbox://mapbox.mapbox-streets-v5",
+    "tileSize": 512
+  }
+},</div>
+  <div class='small'>
+    <h3>sources</h3>
+    <p>Data source specifications for layers to pull from.</p>
+    <div>
+      <strong>type</strong> The data type of the source.
+    </div>
+    <div>
+      <strong>url</strong> A URL, or URL template to retrieve the source data.
+    </div>
+    <div>
+      <strong>tileSize</strong>
+    </div>
+    <div>
+      <strong>minZoom</strong>
+    </div>
+    <div>
+      <strong>maxZoom</strong>
+    </div>
+  </div>
+</div>
+<div class='block pad2 dark fill-darken3 keyline-bottom'>
+  <div class='code space-bottom1 quiet'>"layers": [
+  {
+    "id": "water",
+    "source": "streets",
+    "source-layer": "water",
+    "render": {
+      "type": "fill"
+    },
+    "style": {
+      "fill-color": "@water"
+    }
+  }
+],</div>
+  <div class='small'>
+    <h3>layers</h3>
+    <p>A an array of layers. The order of layers coincides with the order they will be drawn.</p>
+    <div class='space-bottom1'>[layer properties here]</div>
+
+    <h3>render</h3>
+    <div class='tabs clearfix'>
+      <a class='col2' href='#background'>background</a><!--
+      --><a class='col2' href='#fill'>fill</a><!--
+      --><a class='col2' href='#line'>line</a><!--
+      --><a class='col2' href='#symbol'>symbol</a><!--
+      --><a class='col2' href='#composite'>composite</a><!--
+      --><a class='col2' href='#raster'>raster</a>
+    </div>
+    <div class='space-bottom1'>[tabby render properties]</div>
+
+    <h3>class</h3>
+    <div class='tabs clearfix'>
+      <a class='col2' href='#background'>background</a><!--
+      --><a class='col2' href='#fill'>fill</a><!--
+      --><a class='col2' href='#line'>line</a><!--
+      --><a class='col2' href='#symbol'>symbol</a><!--
+      --><a class='col2' href='#composite'>composite</a><!--
+      --><a class='col2' href='#raster'>raster</a>
+    </div>
+    <div class='space-bottom1'>[tabby class properties]</div>
+
+  </div>
+</div>
+<div class='block code pad1 dark fill-darken3 keyline-bottom round-bottom'>}</div>
+
+    <div class='pad2 round doc prose fill-white keyline-all'>
 
       <p class='space-bottom4 quiet small'>Key: 
         <span class='icon alert quiet micro space-right inline' title='Required'>required</span>
