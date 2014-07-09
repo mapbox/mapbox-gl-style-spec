@@ -152,67 +152,149 @@ navigation:
   </div>
 
   <div class='contain margin3 col9'>
-    <div class='pad2 round doc prose fill-white keyline-all space-bottom'>
+    <div class='pad2 round doc prose fill-dark dark space-bottom'>
       <h1>{{ page.title }}</h1>
 
       <p>The Mapbox GL style is an object that defines what data to draw, the order to draw it in, and how to style the data when drawing it. The JSON structure follows the renderer implementation very closely. It provides the basic building blocks out of which more complex styles can be built.</p>
+
+      <p class='space-bottom4 quiet small'>Key: 
+        <span class='icon alert quiet micro space-right inline' title='Required'>required</span>
+        <span class='icon levels quiet micro space-right inline' title='Supports function values'>supports function values</span>
+        <span class='icon opacity quiet micro space-right inline' title='Transitionable'>transitionable</span>
+      </p>
+
     </div>
 
-<div class='block code pad1 dark fill-darken3 keyline-bottom round-top'>{</div>
-<div class='block pad2 dark fill-darken3 keyline-bottom'>
-  <div class='code space-bottom1 quiet'>"version": 4,</div>
-  <div class='small'>
-    Stylesheet version number. Must be 4.
+<div class='prose doc fill-white keyline-all round space-bottom2'>
+  <div class='code pad1 quiet keyline-bottom'>{</div>
+  <div class='pad2 keyline-bottom' id='version'>
+    <div class='code space-bottom1 quiet'>"version": 4,</div>
+    <div>
+      <strong class='space-right'>version</strong>
+      <a href='#enum' class='space-right small'>enum</a>
+      <span class='icon alert inline quiet'></span>
+    </div>
+    <p class='small'>Stylesheet version number. Must be 4.</p>
   </div>
-</div>
-<div class='block pad2 dark fill-darken3 keyline-bottom'>
-  <div class='code space-bottom1 quiet'>"sprite": "https://www.mapbox.com",</div>
-  <div class='small'>
-    A base URL for retrieving the sprite image and metadata. The extensions `.png`, `.json` and scale factor `@2x.png` will be automatically appended.
+  <div class='pad2 keyline-bottom' id='sprite'>
+    <div class='code space-bottom1 quiet'>"sprite": "https://www.mapbox.com",</div>
+    <div>
+      <strong class='space-right'>sprite</strong>
+      <a href='#string' class='space-right small'>string</a>
+    </div>
+    <p class='small'>A base URL for retrieving the sprite image and metadata. The extensions `.png`, `.json` and scale factor `@2x.png` will be automatically appended.</p>
   </div>
-</div>
-<div class='block pad2 dark fill-darken3 keyline-bottom'>
-  <div class='code space-bottom1 quiet'>"constants": {
+  <div class='pad2 keyline-bottom' id='constants'>
+<div class='code space-bottom1 quiet'>"constants": {
   "@water": "#88aacc",
   "@land": "#ffffff"
 },</div>
-  <div class='small'>
-    A constant that will be replaced verbatim in the referencing place. This can be anything, including objects and arrays. All variable names must be prefixed with an `@` symbol.
+    <div>
+      <strong class='space-right'>constants</strong>
+      <span class='quiet small'>*</span>
+    </div>
+    <p class='small'>A constant that will be replaced verbatim in the referencing place. This can be anything, including objects and arrays. All variable names must be prefixed with an `@` symbol.</p>
   </div>
-</div>
-<div class='block pad2 dark fill-darken3 keyline-bottom'>
-  <div class='code space-bottom1 quiet'>"sources": {
+  <div class='pad2 keyline-bottom' id='sources'>
+<div class='code space-bottom1 quiet'>"sources": {
   "streets": {
     "type": "vector",
     "url": "mapbox://mapbox.mapbox-streets-v5",
     "tileSize": 512
   }
 },</div>
-  <div class='small'>
-    <h3>sources</h3>
-    <p>Data source specifications for layers to pull from.</p>
-    <div>
-      <strong>type</strong> The data type of the source.
-    </div>
-    <div>
-      <strong>url</strong> A URL, or URL template to retrieve the source data.
-    </div>
-    <div>
-      <strong>tileSize</strong>
-    </div>
-    <div>
-      <strong>minZoom</strong>
-    </div>
-    <div>
-      <strong>maxZoom</strong>
-    </div>
+    <h2>sources</h2>
+    <p class='small'>Data source specifications for layers to pull from.</p>
+    
+    <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>type</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>vector raster geojson video </strong>
+    </span>
+    
+    <span class='icon alert inline quiet space-right'></span>
   </div>
+  <p class='small pad2x'>The data type of the source.</p>
 </div>
-<div class='block pad2 dark fill-darken3 keyline-bottom'>
-  <div class='code space-bottom1 quiet'>"layers": [
+    
+    <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>url</span>
+    <a href='#string' class='space-right small'>string</a>
+    
+    
+    <span class='icon alert inline quiet space-right'></span>
+  </div>
+  <p class='small pad2x'>A URL, or URL template to retrive the source data.</p>
+</div>
+    
+    <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>glyphs</span>
+    <a href='#string' class='space-right small'>string</a>
+    
+    
+    
+  </div>
+  
+</div>
+    
+    <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>tileSize</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 512
+    </span>
+    
+  </div>
+  
+</div>
+    
+    <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>minZoom</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    
+    
+  </div>
+  
+</div>
+    
+    <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>maxZoom</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 22
+    </span>
+    
+  </div>
+  
+</div>
+    
+    <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>*</span>
+    
+    
+    
+    
+  </div>
+  <p class='small pad2x'>Other keys to configure the data source.</p>
+</div>
+    
+  </div>
+  <div class='pad2 keyline-bottom'>
+<div class='code quiet'>"layers": [
   {
     "id": "water",
-    "source": "streets",
+    "source": "mapbox-streets",
     "source-layer": "water",
     "render": {
       "type": "fill"
@@ -222,2819 +304,1323 @@ navigation:
     }
   }
 ],</div>
-  <div class='small'>
-    <h3>layers</h3>
-    <p>A an array of layers. The order of layers coincides with the order they will be drawn.</p>
-    <div class='space-bottom1'>[layer properties here]</div>
-
-    <h3>render</h3>
-    <div class='tabs clearfix'>
-      <a class='col2' href='#background'>background</a><!--
-      --><a class='col2' href='#fill'>fill</a><!--
-      --><a class='col2' href='#line'>line</a><!--
-      --><a class='col2' href='#symbol'>symbol</a><!--
-      --><a class='col2' href='#composite'>composite</a><!--
-      --><a class='col2' href='#raster'>raster</a>
-    </div>
-    <div class='space-bottom1'>[tabby render properties]</div>
-
-    <h3>class</h3>
-    <div class='tabs clearfix'>
-      <a class='col2' href='#background'>background</a><!--
-      --><a class='col2' href='#fill'>fill</a><!--
-      --><a class='col2' href='#line'>line</a><!--
-      --><a class='col2' href='#symbol'>symbol</a><!--
-      --><a class='col2' href='#composite'>composite</a><!--
-      --><a class='col2' href='#raster'>raster</a>
-    </div>
-    <div class='space-bottom1'>[tabby class properties]</div>
-
+    <h2>layers</h2>
+    <p class='small'>A an array of layers. The order of layers coincides with the order they will be drawn.</p>
+    <div class='space-bottom4'>
+      
+      <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>id</span>
+    <a href='#string' class='space-right small'>string</a>
+    
+    
+    
   </div>
+  <p class='small pad2x'>Unique layer name.</p>
 </div>
-<div class='block code pad1 dark fill-darken3 keyline-bottom round-bottom'>}</div>
-
-    <div class='pad2 round doc prose fill-white keyline-all'>
-
-      <p class='space-bottom4 quiet small'>Key: 
-        <span class='icon alert quiet micro space-right inline' title='Required'>required</span>
-        <span class='icon levels quiet micro space-right inline' title='Supports function values'>supports function values</span>
-        <span class='icon opacity quiet micro space-right inline' title='Transitionable'>transitionable</span>
-      </p>
-
-      <h2 id='root'>Root level keys</h2>
       
-  
-  <div class='space-bottom4 clearfix'>
-  
-  
+      <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>ref</span>
+    <a href='#string' class='space-right small'>string</a>
+    
+    
+    
   </div>
-
-  
-  <div class='space-bottom4 clearfix'>
-  
-    
+  <p class='small pad2x'>References another layer to copy `source`, `source_layer`, `filter`, and `render` properties from. This allows the layers to share processing and be more efficient.</p>
+</div>
       
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>version</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>4</strong> </span>
-            
-            <span class='icon alert quiet inline' title='Required'>&nbsp;</span> 
-            
-            
-          </div>
-          <p>Stylesheet version number. Must be 4.</p>
-        </div>
-      
+      <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>source</span>
+    <a href='#string' class='space-right small'>string</a>
     
-  
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>constants</strong>
-            <span class='small space-right'><a href='#constants'>constants</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>An object of constants to be referenced in layers.</p>
-        </div>
-      
     
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>sources</strong>
-            <span class='small space-right'><a href='#sources'>sources</a></span>
-            
-            
-            <span class='icon alert quiet inline' title='Required'>&nbsp;</span> 
-            
-            
-          </div>
-          <p>Data source specifications for layers to pull from.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>layers</strong>
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            
-            <span class='icon alert quiet inline' title='Required'>&nbsp;</span> 
-            
-            
-          </div>
-          <p>A an array of layers. The order of layers coincides with the order they will be drawn.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>sprite</strong>
-            <span class='small space-right'><a href='#sprite'>sprite</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Sprite definition.</p>
-        </div>
-      
-    
-  
-  
   </div>
-
-  <h2 id='sprite'>sprite</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
+  <p class='small pad2x'>Name of a source description to be used for this layer. Required if this is not a composite layer.</p>
+</div>
       
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>A base URL for retrieving the sprite image and metadata. The extensions `.png`, `.json` and scale factor `@2x.png` will be automatically appended.</p>
-        </div>
-      
+      <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>source-layer</span>
+    <a href='#string' class='space-right small'>string</a>
     
-  
-  
+    
+    
   </div>
-
-  <h2 id='constants'>constants</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
+  <p class='small pad2x'>Layer to use from a vector tile source. Required if this is not a composite layer, and if the source supports multiple layers.</p>
+</div>
       
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>*</strong>
-            
-            
-            
-            
-            
-            
-          </div>
-          <p>A constant that will be replaced verbatim in the referencing place. This can be anything, including objects and arrays. All variable names must be prefixed with an `@` symbol.</p>
-        </div>
-      
+      <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>render</span>
+    <a href='#render' class='space-right small'>render</a>
     
-  
-  
+    
+    
   </div>
-
-  <h2 id='sources'>sources</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
+  <p class='small pad2x'>Symbolizer type that should be used to visualize this layer. If unspecified or null, this layer is not treated as a symbolizer and only exists to have properties inherited to other layers using ref.</p>
+</div>
       
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>*</strong>
-            <span class='small space-right'><a href='#source'>source</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
+      <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>filter</span>
+    <a href='#filter' class='space-right small'>filter</a>
     
-  
-  
+    
+    
   </div>
-
-  <h2 id='source'>source</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
+  <p class='small pad2x'>Array or object of filters or expressions.</p>
+</div>
       
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>type</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>vector</strong> <strong>raster</strong> <strong>geojson</strong> <strong>video</strong> </span>
-            
-            <span class='icon alert quiet inline' title='Required'>&nbsp;</span> 
-            
-            
-          </div>
-          <p>The data type of the source.</p>
-        </div>
-      
+      <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>layers</span>
+    <a href='#array' class='space-right small'>array</a>
     
-  
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>url</strong>
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            <span class='icon alert quiet inline' title='Required'>&nbsp;</span> 
-            
-            
-          </div>
-          <p>A URL, or URL template to retrive the source data.</p>
-        </div>
-      
     
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>glyphs</strong>
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>tileSize</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 512 </span>
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>minZoom</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>maxZoom</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 22 </span>
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>*</strong>
-            
-            
-            
-            
-            
-            
-          </div>
-          <p>Other keys to configure the data source.</p>
-        </div>
-      
-    
-  
-  
   </div>
-
-  <h2 id='layer'>layer</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
+  <p class='small pad2x'>If 'type' is 'composite', the child layers are composited together onto the previous level layer level.</p>
+</div>
       
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>id</strong>
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Unique layer name.</p>
-        </div>
-      
+      <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>rasterize</span>
+    <a href='#rasterize' class='space-right small'>rasterize</a>
     
-  
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>ref</strong>
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>References another layer to copy `source`, `source_layer`, `filter`, and `render` properties from. This allows the layers to share processing and be more efficient.</p>
-        </div>
-      
     
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>source</strong>
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Name of a source description to be used for this layer. Required if this is not a composite layer.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>source-layer</strong>
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Layer to use from a vector tile source. Required if this is not a composite layer, and if the source supports multiple layers.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>render</strong>
-            <span class='small space-right'><a href='#render'>render</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Symbolizer type that should be used to visualize this layer. If unspecified or null, this layer is not treated as a symbolizer and only exists to have properties inherited to other layers using ref.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>filter</strong>
-            <span class='small space-right'><a href='#filter'>filter</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Array or object of filters or expressions.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>layers</strong>
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>If 'type' is 'composite', the child layers are composited together onto the previous level layer level.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>rasterize</strong>
-            <span class='small space-right'><a href='#rasterize'>rasterize</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>style</strong>
-            <span class='small space-right'><a href='#class'>class</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Default style properties for this layer.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>style.*</strong>
-            <span class='small space-right'><a href='#class'>class</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Override style properties for this layer. The class name is the part after the first dot.</p>
-        </div>
-      
-    
-  
-  
   </div>
-
-  <h2 id='rasterize'>rasterize</h2>
-  <div class='space-bottom4 clearfix'>
   
-    
+</div>
       
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>enabled</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            
-          </div>
-          
-        </div>
-      
+      <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>style</span>
+    <a href='#class' class='space-right small'>class</a>
     
-  
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>buffer</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0.03125 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            
-          </div>
-          
-        </div>
-      
     
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>size</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 256 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>blur</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            
-          </div>
-          
-        </div>
-      
-    
-  
-  
   </div>
-
-  <h2 id='render'>render</h2>
-  <div class='space-bottom4 clearfix'>
-  
+  <p class='small pad2x'>Default style properties for this layer.</p>
+</div>
+      
+      <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>style.*</span>
+    <a href='#class' class='space-right small'>class</a>
     
-      <span class='small strong block'><a href='#render_fill'>render: fill</a></span>
     
-  
     
-      <span class='small strong block'><a href='#render_line'>render: line</a></span>
-    
-  
-    
-      <span class='small strong block'><a href='#render_symbol'>render: symbol</a></span>
-    
-  
-    
-      <span class='small strong block'><a href='#render_composite'>render: composite</a></span>
-    
-  
-    
-      <span class='small strong block'><a href='#render_raster'>render: raster</a></span>
-    
-  
-    
-      <span class='small strong block'><a href='#render_background'>render: background</a></span>
-    
-  
-  
   </div>
+  <p class='small pad2x'>Override style properties for this layer. The class name is the part after the first dot.</p>
+</div>
+      
+    </div>
 
-  <h2 id='render_background'>render: background</h2>
-  <div class='space-bottom4 clearfix'>
-  
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>type</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>background</strong> </span>
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-  
-  </div>
 
-  <h2 id='render_fill'>render: fill</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>type</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>fill</strong> </span>
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>fill-winding</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>non-zero</strong> <strong>even-odd</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> non-zero </span>
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-  
-  </div>
-
-  <h2 id='render_line'>render: line</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>type</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>line</strong> </span>
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-cap</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>butt</strong> <strong>round</strong> <strong>square</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> butt </span>
-            
-            
-            
-          </div>
-          <p>The display of line endings.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-join</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>bevel</strong> <strong>round</strong> <strong>miter</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> miter </span>
-            
-            
-            
-          </div>
-          <p>The display of lines when joining.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-miter-limit</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 2 </span>
-            
-            
-            
-          </div>
-          <p>Used to automatically convert miter joins to bevel joins for sharp angles.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-round-limit</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            
-            
-          </div>
-          <p>Used to automatically convert round joins to miter joins for shallow angles.</p>
-        </div>
-      
-    
-  
-  
-  </div>
-
-  <h2 id='render_symbol'>render: symbol</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>type</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>symbol</strong> </span>
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>symbol-placement</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>point</strong> <strong>line</strong> </span>
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>symbol-min-distance</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 250 </span>
-            
-            
-            
-          </div>
-          <p>Minimum distance between two symbol anchors (px)</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-allow-overlap</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>If true, the icon will be visible even if it collides with other icons and text.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-ignore-placement</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>If true, the icon won't affect placement of other icons and text.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-optional</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>If true, text can be shown without its corresponding icon.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-rotation-alignment</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>map</strong> <strong>viewport</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> viewport </span>
-            
-            
-            
-          </div>
-          <p>Orientation of icon when map is rotated</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-max-size</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            
-            
-          </div>
-          <p>The maximum amount to scale the icon by.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-image</strong>
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>A string with {{tokens}} replaced, referencing the data property to pull from.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-padding</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 2 </span>
-            
-            
-            
-          </div>
-          <p>Padding value around icon bounding box to avoid icon collisions (px).</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-keep-upright</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>If true, the icon may be flipped to prevent it from being rendered upside-down</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-translate</strong>
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0,0 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-translate-anchor</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>map</strong> <strong>viewport</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> map </span>
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-rotation-alignment</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>map</strong> <strong>viewport</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> viewport </span>
-            
-            
-            
-          </div>
-          <p>Orientation of icon or text when map is rotated</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-field</strong>
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Value to use for a text label. Feature properties are specified using tokens like {{field_name}}.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-font</strong>
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Font stack to use for displaying text.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-max-size</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 16 </span>
-            
-            
-            
-          </div>
-          <p>The maximum size text will be displayed.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-max-width</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 15 </span>
-            
-            
-            
-          </div>
-          <p>The maximum line width for text wrapping (em).</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-line-height</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1.2 </span>
-            
-            
-            
-          </div>
-          <p>Text leading value for multi-line text.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-letter-spacing</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Text kerning value (em).</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-justify</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>center</strong> <strong>left</strong> <strong>right</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> center </span>
-            
-            
-            
-          </div>
-          <p>Text justification options.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-horizontal-align</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>left</strong> <strong>center</strong> <strong>right</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> center </span>
-            
-            
-            
-          </div>
-          <p>Horizontal alignment of the text relative to the anchor.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-vertical-align</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>top</strong> <strong>center</strong> <strong>bottom</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> center </span>
-            
-            
-            
-          </div>
-          <p>Vertical alignment of the text relative to the anchor.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-max-angle</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 3.14 </span>
-            
-            
-            
-          </div>
-          <p>The maximum angle change, in radians, allowed between adjacent characters.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-rotate</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-slant</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>@TODO</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-padding</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 2 </span>
-            
-            
-            
-          </div>
-          <p>Padding value around text bounding box to avoid label collisions (px).</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-keep-upright</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> true </span>
-            
-            
-            
-          </div>
-          <p>If true, the direction of the text may be flipped to prevent it from being rendered upside-down</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-transform</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>none</strong> <strong>uppercase</strong> <strong>lowercase</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> none </span>
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-translate</strong>
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0,0 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-translate-anchor</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>map</strong> <strong>viewport</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> map </span>
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-allow-overlap</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>If true, the text will be visible even if it collides with other icons and labels.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-ignore-placement</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>If true, the text won't affect placement of other icons and labels.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-optional</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>If true, icons can be shown without their corresponding text.</p>
-        </div>
-      
-    
-  
-  
-  </div>
-
-  <h2 id='render_composite'>render: composite</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>type</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>composite</strong> </span>
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-  
-  </div>
-
-  <h2 id='render_raster'>render: raster</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>type</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>raster</strong> </span>
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-  
-  </div>
-
-  <h2 id='filter'>filter</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            
-            <span class='small space-right'><a href='#filter_expression'>filter: expression</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Various filter expressions. Unless overridden by parent, these are interpreted as `AND`.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Various filter expressions. Unless overridden by parent, these are interpreted as `OR`.</p>
-        </div>
-      
-    
-  
-  
-  </div>
-
-  <h2 id='filter_expression'>filter: expression</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>&</strong>
-            <span class='small space-right'><a href='#filter'>filter</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>AND operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>|</strong>
-            <span class='small space-right'><a href='#filter'>filter</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>OR operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>^</strong>
-            <span class='small space-right'><a href='#filter'>filter</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>XOR operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>!</strong>
-            <span class='small space-right'><a href='#filter'>filter</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>NOR operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>$type</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>Point</strong> <strong>LineString</strong> <strong>Polygon</strong> </span>
-            
-            
-            
-            
-          </div>
-          <p>Geometry type that features must match.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>*</strong>
-            
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-  
-  </div>
-
-  <h2 id='filter_comparison'>filter: comparison</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>==</strong>
-            <span class='small space-right'><a href='#filter_value'>filter: value</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Equality operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>===</strong>
-            <span class='small space-right'><a href='#filter_value'>filter: value</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Set equality operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>!=</strong>
-            <span class='small space-right'><a href='#filter_value'>filter: value</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Inequality operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>!==</strong>
-            <span class='small space-right'><a href='#filter_value'>filter: value</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Set inequality operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>></strong>
-            <span class='small space-right'><a href='#filter_value'>filter: value</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Greater than operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>>=</strong>
-            <span class='small space-right'><a href='#filter_value'>filter: value</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Greater or equal than operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'><</strong>
-            <span class='small space-right'><a href='#filter_value'>filter: value</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Less than operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'><=</strong>
-            <span class='small space-right'><a href='#filter_value'>filter: value</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Less than or equal operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>in</strong>
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Set member operator.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>!in</strong>
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Not in set operator.</p>
-        </div>
-      
-    
-  
-  
-  </div>
-
-  <h2 id='filter_value'>filter: value</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            
-            <span class='small space-right'><a href='#filter_primitive'>filter: primitive</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-  
-  </div>
-
-  <h2 id='filter_primitive'>filter: primitive</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-  
-  </div>
-
-  <h2 id='function'>function</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
-      
-        <div class='space-bottom2 clearfix'><p><em class='pad2y'>stops function:</em></p>
+    <div id='render' class='space-bottom4'>
+      <h3>render</h3>
+      
+      <div id='render_background' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Render: background</span>
         
-        <div class='space-bottom2 property clearfix'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>fn</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>stops</strong> </span>
-            
-            <span class='icon alert quiet inline' title='Required'>&nbsp;</span> 
-            
-            
-          </div>
-          
-        </div>
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>type</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>background </strong>
+    </span>
+    
+    
+  </div>
+  
+</div>
         
-        <div class='space-bottom2 property clearfix'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>stops</strong>
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            
-            <span class='icon alert quiet inline' title='Required'>&nbsp;</span> 
-            
-            
-          </div>
-          <p>An array of stops.</p>
-        </div>
+      </div>
+      
+      <div id='render_fill' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Render: fill</span>
         
-        </div>
-      
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>type</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>fill </strong>
+    </span>
     
+    
+  </div>
   
-    
-      
-        <div class='space-bottom2 clearfix'><p><em class='pad2y'>exponential,linear function:</em></p>
+</div>
         
-        <div class='space-bottom2 property clearfix'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>fn</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>exponential</strong> <strong>linear</strong> </span>
-            
-            <span class='icon alert quiet inline' title='Required'>&nbsp;</span> 
-            
-            
-          </div>
-          
-        </div>
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>fill-winding</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>non-zero even-odd </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> non-zero
+    </span>
+    
+  </div>
+  
+</div>
         
-        <div class='space-bottom2 property clearfix'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>z</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            <span class='icon alert quiet inline' title='Required'>&nbsp;</span> 
-            
-            
-          </div>
-          <p>Base zoom level for the specified value.</p>
-        </div>
+      </div>
+      
+      <div id='render_line' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Render: line</span>
         
-        <div class='space-bottom2 property clearfix'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>val</strong>
-            
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>type</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>line </strong>
+    </span>
+    
+    
+  </div>
+  
+</div>
         
-        <div class='space-bottom2 property clearfix'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>slope</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            
-            
-          </div>
-          
-        </div>
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-cap</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>butt round square </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> butt
+    </span>
+    
+  </div>
+  <p class='small pad2x'>The display of line endings.</p>
+</div>
         
-        <div class='space-bottom2 property clearfix'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>min</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-join</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>bevel round miter </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> miter
+    </span>
+    
+  </div>
+  <p class='small pad2x'>The display of lines when joining.</p>
+</div>
         
-        <div class='space-bottom2 property clearfix'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>max</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-miter-limit</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 2
+    </span>
+    
+  </div>
+  <p class='small pad2x'>Used to automatically convert miter joins to bevel joins for sharp angles.</p>
+</div>
         
-        </div>
-      
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-round-limit</span>
+    <a href='#number' class='space-right small'>number</a>
     
-  
-  
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
+    
   </div>
-
-  <h2 id='function_stop'>function: stop</h2>
-  <div class='space-bottom4 clearfix'>
-  
-    
+  <p class='small pad2x'>Used to automatically convert round joins to miter joins for shallow angles.</p>
+</div>
+        
+      </div>
       
+      <div id='render_symbol' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Render: symbol</span>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>type</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>symbol </strong>
+    </span>
     
-  
     
-      
-    
-  
-  <p>Zoom level and value pair.</p>
   </div>
-
-  <h2 id='class'>class</h2>
-  <div class='space-bottom4 clearfix'>
   
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>symbol-placement</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>point line </strong>
+    </span>
     
-      <span class='small strong block'><a href='#class_fill'>class: fill</a></span>
     
-  
-    
-      <span class='small strong block'><a href='#class_line'>class: line</a></span>
-    
-  
-    
-      <span class='small strong block'><a href='#class_symbol'>class: symbol</a></span>
-    
-  
-    
-      <span class='small strong block'><a href='#class_composite'>class: composite</a></span>
-    
-  
-    
-      <span class='small strong block'><a href='#class_raster'>class: raster</a></span>
-    
-  
-    
-      <span class='small strong block'><a href='#class_background'>class: background</a></span>
-    
-  
-  
   </div>
-
-  <h2 id='class_fill'>class: fill</h2>
-  <div class='space-bottom4 clearfix'>
   
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>symbol-min-distance</span>
+    <a href='#number' class='space-right small'>number</a>
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>fill-enabled</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> true </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
+    <span class='space-right quiet small'>
+      <em>Default:</em> 250
+    </span>
     
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>fill-antialias</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> true </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            
-          </div>
-          <p>Whether or not the fill should be antialiased.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>fill-opacity</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>fill-color</strong>
-            <span class='small space-right'><a href='#color'>color</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0,0,0,1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>fill-outline-color</strong>
-            <span class='small space-right'><a href='#color'>color</a></span>
-            
-            
-            
-            
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          <p>The outline color of the fill. Matches the value of 'fill-color' if unspecified.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>fill-translate</strong>
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0,0 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>fill-translate-anchor</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>map</strong> <strong>viewport</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> map </span>
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>fill-image</strong>
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-  
   </div>
-
-  <h2 id='class_line'>class: line</h2>
-  <div class='space-bottom4 clearfix'>
-  
+  <p class='small pad2x'>Minimum distance between two symbol anchors (px)</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-allow-overlap</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-enabled</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> true </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
     
-  
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-opacity</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-color</strong>
-            <span class='small space-right'><a href='#color'>color</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0,0,0,1 </span>
-            
-            
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-translate</strong>
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0,0 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-translate-anchor</strong>
-            <span class='small space-right'><a href='#enum'>enum</a></span>
-            <span class='small quiet space-right'><em>Options:</em> <strong>map</strong> <strong>viewport</strong> </span>
-            <span class='small quiet space-right'><em>Default:</em> map </span>
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-width</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-offset</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          <p>Offset from the center line.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-blur</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-dasharray</strong>
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1,-1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>line-image</strong>
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          <p>Name of image in sprite to use for drawing image lines.</p>
-        </div>
-      
-    
-  
-  
   </div>
-
-  <h2 id='class_symbol'>class: symbol</h2>
-  <div class='space-bottom4 clearfix'>
-  
+  <p class='small pad2x'>If true, the icon will be visible even if it collides with other icons and text.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-ignore-placement</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-enabled</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> true </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
     
-  
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-opacity</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-rotate</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-size</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          <p>The amount to scale the icon by. 1 is original size, 3 triples the size.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-color</strong>
-            <span class='small space-right'><a href='#color'>color</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0,0,0,1 </span>
-            
-            
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          <p>The color of the icon. This can only be used with sdf icons.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-halo-color</strong>
-            <span class='small space-right'><a href='#color'>color</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0,0,0,0 </span>
-            
-            
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-halo-width</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0.25 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          <p>How far away the halo is from the icon outline. A value of 0.75 means that it is as wide as the font outline. Lower values make the halo bigger, higher values make it smaller. TODO: Refactor this to be more sane.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>icon-halo-blur</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          <p>Fade out the halo towards the outside. 1 means no fade out. Higher values mean a higher fade out.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-enabled</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> true </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-opacity</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-size</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 16 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          <p>Font size in pixels. If unspecified, the text will be as big as allowed by the layer definition.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-color</strong>
-            <span class='small space-right'><a href='#color'>color</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0,0,0,1 </span>
-            
-            
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-halo-color</strong>
-            <span class='small space-right'><a href='#color'>color</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0,0,0,0 </span>
-            
-            
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-halo-width</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0.25 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          <p>How far away the halo is from the font outline. A value of 0.75 means that it is as wide as the font outline. Lower values make the halo bigger, higher values make it smaller. TODO: Refactor this to be more sane.</p>
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>text-halo-blur</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          <p>Fade out the halo towards the outside. 1 means no fade out. Higher values mean a higher fade out.</p>
-        </div>
-      
-    
-  
-  
   </div>
-
-  <h2 id='class_composite'>class: composite</h2>
-  <div class='space-bottom4 clearfix'>
-  
+  <p class='small pad2x'>If true, the icon won't affect placement of other icons and text.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-optional</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>composite-enabled</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> true </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
     
-  
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>composite-opacity</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-  
   </div>
-
-  <h2 id='class_raster'>class: raster</h2>
-  <div class='space-bottom4 clearfix'>
-  
+  <p class='small pad2x'>If true, text can be shown without its corresponding icon.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-rotation-alignment</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>map viewport </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> viewport
+    </span>
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>raster-enabled</strong>
-            <span class='small space-right'><a href='#boolean'>boolean</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> true </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>raster-opacity</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 1 </span>
-            
-            
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>raster-spin</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>raster-brightness</strong>
-            <span class='small space-right'><a href='#array'>array</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0,1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>raster-saturation</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>raster-contrast</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>raster-fade</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
-    
-  
-  
   </div>
-
-  <h2 id='class_background'>class: background</h2>
-  <div class='space-bottom4 clearfix'>
-  
+  <p class='small pad2x'>Orientation of icon when map is rotated</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-max-size</span>
+    <a href='#number' class='space-right small'>number</a>
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>background-color</strong>
-            <span class='small space-right'><a href='#color'>color</a></span>
-            
-            <span class='small quiet space-right'><em>Default:</em> 0,0,0,1 </span>
-            
-            <span class='icon levels quiet inline' title='Supports function values'>&nbsp;</span>
-            <span class='icon opacity quiet inline' title='Transitionable'>&nbsp;</span>
-          </div>
-          
-        </div>
-      
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
     
-  
-    
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>background-image</strong>
-            <span class='small space-right'><a href='#string'>string</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-  
   </div>
-
-  <h2 id='transition'>transition</h2>
-  <div class='space-bottom4 clearfix'>
-  
+  <p class='small pad2x'>The maximum amount to scale the icon by.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-image</span>
+    <a href='#string' class='space-right small'>string</a>
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>duration</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
     
-  
     
-      
-        <div class='space-bottom2 property'>
-          <div class='space-bottom1'>
-            <strong class='space-right'>delay</strong>
-            <span class='small space-right'><a href='#number'>number</a></span>
-            
-            
-            
-            
-            
-          </div>
-          
-        </div>
-      
-    
-  
-  
   </div>
+  <p class='small pad2x'>A string with {{tokens}} replaced, referencing the data property to pull from.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-padding</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 2
+    </span>
+    
+  </div>
+  <p class='small pad2x'>Padding value around icon bounding box to avoid icon collisions (px).</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-keep-upright</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
+    
+    
+    
+  </div>
+  <p class='small pad2x'>If true, the icon may be flipped to prevent it from being rendered upside-down</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-translate</span>
+    <a href='#array' class='space-right small'>array</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,0
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-translate-anchor</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>map viewport </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> map
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-rotation-alignment</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>map viewport </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> viewport
+    </span>
+    
+  </div>
+  <p class='small pad2x'>Orientation of icon or text when map is rotated</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-field</span>
+    <a href='#string' class='space-right small'>string</a>
+    
+    
+    
+  </div>
+  <p class='small pad2x'>Value to use for a text label. Feature properties are specified using tokens like {{field_name}}.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-font</span>
+    <a href='#string' class='space-right small'>string</a>
+    
+    
+    
+  </div>
+  <p class='small pad2x'>Font stack to use for displaying text.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-max-size</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 16
+    </span>
+    
+  </div>
+  <p class='small pad2x'>The maximum size text will be displayed.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-max-width</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 15
+    </span>
+    
+  </div>
+  <p class='small pad2x'>The maximum line width for text wrapping (em).</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-line-height</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1.2
+    </span>
+    
+  </div>
+  <p class='small pad2x'>Text leading value for multi-line text.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-letter-spacing</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    
+    
+  </div>
+  <p class='small pad2x'>Text kerning value (em).</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-justify</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>center left right </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> center
+    </span>
+    
+  </div>
+  <p class='small pad2x'>Text justification options.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-horizontal-align</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>left center right </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> center
+    </span>
+    
+  </div>
+  <p class='small pad2x'>Horizontal alignment of the text relative to the anchor.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-vertical-align</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>top center bottom </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> center
+    </span>
+    
+  </div>
+  <p class='small pad2x'>Vertical alignment of the text relative to the anchor.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-max-angle</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 3.14
+    </span>
+    
+  </div>
+  <p class='small pad2x'>The maximum angle change, in radians, allowed between adjacent characters.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-rotate</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-slant</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    
+    
+  </div>
+  <p class='small pad2x'>@TODO</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-padding</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 2
+    </span>
+    
+  </div>
+  <p class='small pad2x'>Padding value around text bounding box to avoid label collisions (px).</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-keep-upright</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> true
+    </span>
+    
+  </div>
+  <p class='small pad2x'>If true, the direction of the text may be flipped to prevent it from being rendered upside-down</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-transform</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>none uppercase lowercase </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> none
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-translate</span>
+    <a href='#array' class='space-right small'>array</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,0
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-translate-anchor</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>map viewport </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> map
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-allow-overlap</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
+    
+    
+    
+  </div>
+  <p class='small pad2x'>If true, the text will be visible even if it collides with other icons and labels.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-ignore-placement</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
+    
+    
+    
+  </div>
+  <p class='small pad2x'>If true, the text won't affect placement of other icons and labels.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-optional</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
+    
+    
+    
+  </div>
+  <p class='small pad2x'>If true, icons can be shown without their corresponding text.</p>
+</div>
+        
+      </div>
+      
+      <div id='render_composite' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Render: composite</span>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>type</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>composite </strong>
+    </span>
+    
+    
+  </div>
+  
+</div>
+        
+      </div>
+      
+      <div id='render_raster' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Render: raster</span>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>type</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>raster </strong>
+    </span>
+    
+    
+  </div>
+  
+</div>
+        
+      </div>
+      
+    </div>
 
+    <div id='class' class='space-bottom4'>
+      <h3>class</h3>
+      
+      <div id='class_background' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Class: background</span>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>background-color</span>
+    <a href='#color' class='space-right small'>color</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,0,0,1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>background-image</span>
+    <a href='#string' class='space-right small'>string</a>
+    
+    
+    
+  </div>
+  
+</div>
+        
+      </div>
+      
+      <div id='class_fill' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Class: fill</span>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>fill-enabled</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> true
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>fill-antialias</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> true
+    </span>
+    
+  </div>
+  <p class='small pad2x'>Whether or not the fill should be antialiased.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>fill-opacity</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>fill-color</span>
+    <a href='#color' class='space-right small'>color</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,0,0,1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>fill-outline-color</span>
+    <a href='#color' class='space-right small'>color</a>
+    
+    
+    
+  </div>
+  <p class='small pad2x'>The outline color of the fill. Matches the value of 'fill-color' if unspecified.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>fill-translate</span>
+    <a href='#array' class='space-right small'>array</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,0
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>fill-translate-anchor</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>map viewport </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> map
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>fill-image</span>
+    <a href='#string' class='space-right small'>string</a>
+    
+    
+    
+  </div>
+  
+</div>
+        
+      </div>
+      
+      <div id='class_line' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Class: line</span>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-enabled</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> true
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-opacity</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-color</span>
+    <a href='#color' class='space-right small'>color</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,0,0,1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-translate</span>
+    <a href='#array' class='space-right small'>array</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,0
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-translate-anchor</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>map viewport </strong>
+    </span>
+    <span class='space-right quiet small'>
+      <em>Default:</em> map
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-width</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-offset</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    
+    
+  </div>
+  <p class='small pad2x'>Offset from the center line.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-blur</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-dasharray</span>
+    <a href='#array' class='space-right small'>array</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1,-1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>line-image</span>
+    <a href='#string' class='space-right small'>string</a>
+    
+    
+    
+  </div>
+  <p class='small pad2x'>Name of image in sprite to use for drawing image lines.</p>
+</div>
+        
+      </div>
+      
+      <div id='class_symbol' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Class: symbol</span>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-enabled</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> true
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-opacity</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-rotate</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-size</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
+    
+  </div>
+  <p class='small pad2x'>The amount to scale the icon by. 1 is original size, 3 triples the size.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-color</span>
+    <a href='#color' class='space-right small'>color</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,0,0,1
+    </span>
+    
+  </div>
+  <p class='small pad2x'>The color of the icon. This can only be used with sdf icons.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-halo-color</span>
+    <a href='#color' class='space-right small'>color</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,0,0,0
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-halo-width</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0.25
+    </span>
+    
+  </div>
+  <p class='small pad2x'>How far away the halo is from the icon outline. A value of 0.75 means that it is as wide as the font outline. Lower values make the halo bigger, higher values make it smaller. TODO: Refactor this to be more sane.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>icon-halo-blur</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
+    
+  </div>
+  <p class='small pad2x'>Fade out the halo towards the outside. 1 means no fade out. Higher values mean a higher fade out.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-enabled</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> true
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-opacity</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-size</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 16
+    </span>
+    
+  </div>
+  <p class='small pad2x'>Font size in pixels. If unspecified, the text will be as big as allowed by the layer definition.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-color</span>
+    <a href='#color' class='space-right small'>color</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,0,0,1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-halo-color</span>
+    <a href='#color' class='space-right small'>color</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,0,0,0
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-halo-width</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0.25
+    </span>
+    
+  </div>
+  <p class='small pad2x'>How far away the halo is from the font outline. A value of 0.75 means that it is as wide as the font outline. Lower values make the halo bigger, higher values make it smaller. TODO: Refactor this to be more sane.</p>
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>text-halo-blur</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
+    
+  </div>
+  <p class='small pad2x'>Fade out the halo towards the outside. 1 means no fade out. Higher values mean a higher fade out.</p>
+</div>
+        
+      </div>
+      
+      <div id='class_composite' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Class: composite</span>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>composite-enabled</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> true
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>composite-opacity</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
+    
+  </div>
+  
+</div>
+        
+      </div>
+      
+      <div id='class_raster' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Class: raster</span>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>raster-enabled</span>
+    <a href='#boolean' class='space-right small'>boolean</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> true
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>raster-opacity</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>raster-spin</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>raster-brightness</span>
+    <a href='#array' class='space-right small'>array</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,1
+    </span>
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>raster-saturation</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>raster-contrast</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    
+    
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>raster-fade</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    
+    
+  </div>
+  
+</div>
+        
+      </div>
+      
+    </div>
 
+  </div>
+  <div class='code pad1 quiet'>}</div>
+</div>
 
+    <div class='round keyline-all fill-white'>
       <h2 id='values'>Values</h2>
       <p>Below is a list of values and an explanation of any expression that can be applied to properties in Mapbox GL.</p>
 
@@ -3090,3 +1676,10 @@ navigation:
     </div>
   </div>
 </div>
+
+<script>
+$('.js-tabs a').on('click', function() {
+  $(this).parent().find('a').removeClass('active');
+  $(this).addClass('active');
+});
+</script>

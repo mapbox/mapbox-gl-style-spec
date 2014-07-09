@@ -6,7 +6,7 @@ permalink: /
 class: fill-light
 fullwidth: true
 navigation:
-  - subnav: <%= toc({symbolizers:symbolizers, _:_}) %>
+  - subnav: <%= toc({symbolizers:ref, _:_}) %>
   - title: Values
     id: values
   - title: Color
@@ -67,7 +67,7 @@ navigation:
   </div>
 
   <div class='contain margin3 col9'>
-    <div class='pad2 round doc prose fill-white keyline-all'>
+    <div class='pad2 round doc prose fill-dark dark space-bottom'>
       <h1>{{ page.title }}</h1>
 
       <p>The Mapbox GL style is an object that defines what data to draw, the order to draw it in, and how to style the data when drawing it. The JSON structure follows the renderer implementation very closely. It provides the basic building blocks out of which more complex styles can be built.</p>
@@ -78,9 +78,105 @@ navigation:
         <span class='icon opacity quiet micro space-right inline' title='Transitionable'>transitionable</span>
       </p>
 
-      <h2 id='root'>Root level keys</h2>
-      <%= table({symbolizers:symbolizers, _:_}) %>
+    </div>
 
+<div class='prose doc fill-white keyline-all round space-bottom2'>
+  <div class='code pad1 quiet keyline-bottom'>{</div>
+  <div class='pad2 keyline-bottom' id='version'>
+    <div class='code space-bottom1 quiet'>"version": <%= ref.$version %>,</div>
+    <div>
+      <strong class='space-right'>version</strong>
+      <a href='#enum' class='space-right small'>enum</a>
+      <span class='icon alert inline quiet'></span>
+    </div>
+    <p class='small'><%= ref.$root.version.doc %></p>
+  </div>
+  <div class='pad2 keyline-bottom' id='sprite'>
+    <div class='code space-bottom1 quiet'>"sprite": "https://www.mapbox.com",</div>
+    <div>
+      <strong class='space-right'>sprite</strong>
+      <a href='#string' class='space-right small'>string</a>
+    </div>
+    <p class='small'><%= ref.sprite[0].doc %></p>
+  </div>
+  <div class='pad2 keyline-bottom' id='constants'>
+<div class='code space-bottom1 quiet'>"constants": {
+  "@water": "#88aacc",
+  "@land": "#ffffff"
+},</div>
+    <div>
+      <strong class='space-right'>constants</strong>
+      <span class='quiet small'>*</span>
+    </div>
+    <p class='small'><%= ref.constants['*'].doc %></p>
+  </div>
+  <div class='pad2 keyline-bottom' id='sources'>
+<div class='code space-bottom1 quiet'>"sources": {
+  "streets": {
+    "type": "vector",
+    "url": "mapbox://mapbox.mapbox-streets-v5",
+    "tileSize": 512
+  }
+},</div>
+    <h2>sources</h2>
+    <p class='small'><%= ref.$root.sources.doc %></p>
+    <% _(ref.source).each(function(prop, name) { %>
+    <%= item({prop: prop, name: name}) %>
+    <% }); %>
+  </div>
+  <div class='pad2 keyline-bottom'>
+<div class='code quiet'>"layers": [
+  {
+    "id": "water",
+    "source": "mapbox-streets",
+    "source-layer": "water",
+    "render": {
+      "type": "fill"
+    },
+    "style": {
+      "fill-color": "@water"
+    }
+  }
+],</div>
+    <h2>layers</h2>
+    <p class='small'><%= ref.$root.layers.doc %></p>
+    <div class='space-bottom4'>
+      <% _(ref.layer).each(function(prop, name) { %>
+      <%= item({prop: prop, name: name}) %>
+      <% }); %>
+    </div>
+
+    <% var types = ['background', 'fill', 'line', 'symbol', 'composite', 'raster'] %>
+
+    <div id='render' class='space-bottom4'>
+      <h3>render</h3>
+      <% _(types).each(function(t) { %>
+      <div id='render_<%= t %>' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Render: <%= t %></span>
+        <% _(ref['render_'+t]).each(function(prop, name) { %>
+        <%= item({prop: prop, name: name}) %>
+        <% }); %>
+      </div>
+      <% }); %>
+    </div>
+
+    <div id='class' class='space-bottom4'>
+      <h3>class</h3>
+      <% _(types).each(function(t) { %>
+      <div id='class_<%= t %>' class='col12 clearfix space-bottom1'>
+        <span class='micro quiet uppercase'>Class: <%= t %></span>
+        <% _(ref['class_'+t]).each(function(prop, name) { %>
+        <%= item({prop: prop, name: name}) %>
+        <% }); %>
+      </div>
+      <% }); %>
+    </div>
+
+  </div>
+  <div class='code pad1 quiet'>}</div>
+</div>
+
+    <div class='round keyline-all fill-white'>
       <h2 id='values'>Values</h2>
       <p>Below is a list of values and an explanation of any expression that can be applied to properties in Mapbox GL.</p>
 
@@ -136,3 +232,10 @@ navigation:
     </div>
   </div>
 </div>
+
+<script>
+$('.js-tabs a').on('click', function() {
+  $(this).parent().find('a').removeClass('active');
+  $(this).addClass('active');
+});
+</script>
