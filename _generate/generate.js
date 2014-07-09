@@ -11,10 +11,10 @@ function tmpl(x) {
   return _.template(fs.readFileSync(path.join(__dirname, x), 'utf-8'));
 }
 
-var index = tmpl('index._');
-var toc = tmpl('toc._');
-var table = tmpl('symbolizers._');
-var item = tmpl('item._');
+var index = tmpl('index.html');
+var toc = tmpl('toc.html');
+var table = tmpl('symbolizers.html');
+var item = tmpl('item.html');
 
 fs.writeFileSync(path.join(__dirname, '../index.html'), index({
   ref: ref,
