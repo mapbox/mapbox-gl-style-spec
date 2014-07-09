@@ -185,7 +185,7 @@ navigation:
     <p class='small'>A base URL for retrieving the sprite image and metadata. The extensions `.png`, `.json` and scale factor `@2x.png` will be automatically appended.</p>
   </div>
   <div class='pad2 keyline-bottom' id='constants'>
-<div class='code space-bottom1 quiet'>"constants": {
+<div class='code quiet'>"constants": {
   "@water": "#88aacc",
   "@land": "#ffffff"
 },</div>
@@ -196,7 +196,7 @@ navigation:
     <p class='small'>A constant that will be replaced verbatim in the referencing place. This can be anything, including objects and arrays. All variable names must be prefixed with an `@` symbol.</p>
   </div>
   <div class='pad2 keyline-bottom' id='sources'>
-<div class='code space-bottom1 quiet'>"sources": {
+<div class='code quiet'>"sources": {
   "streets": {
     "type": "vector",
     "url": "mapbox://mapbox.mapbox-streets-v5",
@@ -214,7 +214,9 @@ navigation:
       <em>Options:</em> <strong>vector raster geojson video </strong>
     </span>
     
-    <span class='icon alert inline quiet space-right'></span>
+    <span class='icon alert inline quiet'></span>
+    
+    
   </div>
   <p class='small pad2x'>The data type of the source.</p>
 </div>
@@ -225,7 +227,9 @@ navigation:
     <a href='#string' class='space-right small'>string</a>
     
     
-    <span class='icon alert inline quiet space-right'></span>
+    <span class='icon alert inline quiet'></span>
+    
+    
   </div>
   <p class='small pad2x'>A URL, or URL template to retrive the source data.</p>
 </div>
@@ -234,6 +238,8 @@ navigation:
   <div>
     <span class='code space-right'>glyphs</span>
     <a href='#string' class='space-right small'>string</a>
+    
+    
     
     
     
@@ -250,6 +256,8 @@ navigation:
       <em>Default:</em> 512
     </span>
     
+    
+    
   </div>
   
 </div>
@@ -258,6 +266,8 @@ navigation:
   <div>
     <span class='code space-right'>minZoom</span>
     <a href='#number' class='space-right small'>number</a>
+    
+    
     
     
     
@@ -274,6 +284,8 @@ navigation:
       <em>Default:</em> 22
     </span>
     
+    
+    
   </div>
   
 </div>
@@ -281,6 +293,8 @@ navigation:
     <div class='col12 clearfix pad0y'>
   <div>
     <span class='code space-right'>*</span>
+    
+    
     
     
     
@@ -315,6 +329,8 @@ navigation:
     
     
     
+    
+    
   </div>
   <p class='small pad2x'>Unique layer name.</p>
 </div>
@@ -323,6 +339,8 @@ navigation:
   <div>
     <span class='code space-right'>ref</span>
     <a href='#string' class='space-right small'>string</a>
+    
+    
     
     
     
@@ -337,6 +355,8 @@ navigation:
     
     
     
+    
+    
   </div>
   <p class='small pad2x'>Name of a source description to be used for this layer. Required if this is not a composite layer.</p>
 </div>
@@ -345,6 +365,8 @@ navigation:
   <div>
     <span class='code space-right'>source-layer</span>
     <a href='#string' class='space-right small'>string</a>
+    
+    
     
     
     
@@ -359,6 +381,8 @@ navigation:
     
     
     
+    
+    
   </div>
   <p class='small pad2x'>Symbolizer type that should be used to visualize this layer. If unspecified or null, this layer is not treated as a symbolizer and only exists to have properties inherited to other layers using ref.</p>
 </div>
@@ -367,6 +391,8 @@ navigation:
   <div>
     <span class='code space-right'>filter</span>
     <a href='#filter' class='space-right small'>filter</a>
+    
+    
     
     
     
@@ -381,6 +407,8 @@ navigation:
     
     
     
+    
+    
   </div>
   <p class='small pad2x'>If 'type' is 'composite', the child layers are composited together onto the previous level layer level.</p>
 </div>
@@ -389,6 +417,8 @@ navigation:
   <div>
     <span class='code space-right'>rasterize</span>
     <a href='#rasterize' class='space-right small'>rasterize</a>
+    
+    
     
     
     
@@ -403,6 +433,8 @@ navigation:
     
     
     
+    
+    
   </div>
   <p class='small pad2x'>Default style properties for this layer.</p>
 </div>
@@ -411,6 +443,8 @@ navigation:
   <div>
     <span class='code space-right'>style.*</span>
     <a href='#class' class='space-right small'>class</a>
+    
+    
     
     
     
@@ -437,6 +471,8 @@ navigation:
     </span>
     
     
+    
+    
   </div>
   
 </div>
@@ -455,6 +491,8 @@ navigation:
     </span>
     
     
+    
+    
   </div>
   
 </div>
@@ -469,6 +507,8 @@ navigation:
     <span class='space-right quiet small'>
       <em>Default:</em> non-zero
     </span>
+    
+    
     
   </div>
   
@@ -488,6 +528,8 @@ navigation:
     </span>
     
     
+    
+    
   </div>
   
 </div>
@@ -502,6 +544,8 @@ navigation:
     <span class='space-right quiet small'>
       <em>Default:</em> butt
     </span>
+    
+    
     
   </div>
   <p class='small pad2x'>The display of line endings.</p>
@@ -518,6 +562,8 @@ navigation:
       <em>Default:</em> miter
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>The display of lines when joining.</p>
 </div>
@@ -531,6 +577,8 @@ navigation:
       <em>Default:</em> 2
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>Used to automatically convert miter joins to bevel joins for sharp angles.</p>
 </div>
@@ -543,6 +591,8 @@ navigation:
     <span class='space-right quiet small'>
       <em>Default:</em> 1
     </span>
+    
+    
     
   </div>
   <p class='small pad2x'>Used to automatically convert round joins to miter joins for shallow angles.</p>
@@ -562,6 +612,8 @@ navigation:
     </span>
     
     
+    
+    
   </div>
   
 </div>
@@ -573,6 +625,8 @@ navigation:
     <span class='space-right quiet small'>
       <em>Options:</em> <strong>point line </strong>
     </span>
+    
+    
     
     
   </div>
@@ -588,6 +642,8 @@ navigation:
       <em>Default:</em> 250
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>Minimum distance between two symbol anchors (px)</p>
 </div>
@@ -596,6 +652,8 @@ navigation:
   <div>
     <span class='code space-right'>icon-allow-overlap</span>
     <a href='#boolean' class='space-right small'>boolean</a>
+    
+    
     
     
     
@@ -610,6 +668,8 @@ navigation:
     
     
     
+    
+    
   </div>
   <p class='small pad2x'>If true, the icon won't affect placement of other icons and text.</p>
 </div>
@@ -618,6 +678,8 @@ navigation:
   <div>
     <span class='code space-right'>icon-optional</span>
     <a href='#boolean' class='space-right small'>boolean</a>
+    
+    
     
     
     
@@ -636,6 +698,8 @@ navigation:
       <em>Default:</em> viewport
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>Orientation of icon when map is rotated</p>
 </div>
@@ -649,6 +713,8 @@ navigation:
       <em>Default:</em> 1
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>The maximum amount to scale the icon by.</p>
 </div>
@@ -657,6 +723,8 @@ navigation:
   <div>
     <span class='code space-right'>icon-image</span>
     <a href='#string' class='space-right small'>string</a>
+    
+    
     
     
     
@@ -673,6 +741,8 @@ navigation:
       <em>Default:</em> 2
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>Padding value around icon bounding box to avoid icon collisions (px).</p>
 </div>
@@ -681,6 +751,8 @@ navigation:
   <div>
     <span class='code space-right'>icon-keep-upright</span>
     <a href='#boolean' class='space-right small'>boolean</a>
+    
+    
     
     
     
@@ -697,6 +769,8 @@ navigation:
       <em>Default:</em> 0,0
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -711,6 +785,8 @@ navigation:
     <span class='space-right quiet small'>
       <em>Default:</em> map
     </span>
+    
+    
     
   </div>
   
@@ -727,6 +803,8 @@ navigation:
       <em>Default:</em> viewport
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>Orientation of icon or text when map is rotated</p>
 </div>
@@ -738,6 +816,8 @@ navigation:
     
     
     
+    
+    
   </div>
   <p class='small pad2x'>Value to use for a text label. Feature properties are specified using tokens like {{field_name}}.</p>
 </div>
@@ -746,6 +826,8 @@ navigation:
   <div>
     <span class='code space-right'>text-font</span>
     <a href='#string' class='space-right small'>string</a>
+    
+    
     
     
     
@@ -762,6 +844,8 @@ navigation:
       <em>Default:</em> 16
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>The maximum size text will be displayed.</p>
 </div>
@@ -774,6 +858,8 @@ navigation:
     <span class='space-right quiet small'>
       <em>Default:</em> 15
     </span>
+    
+    
     
   </div>
   <p class='small pad2x'>The maximum line width for text wrapping (em).</p>
@@ -788,6 +874,8 @@ navigation:
       <em>Default:</em> 1.2
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>Text leading value for multi-line text.</p>
 </div>
@@ -796,6 +884,8 @@ navigation:
   <div>
     <span class='code space-right'>text-letter-spacing</span>
     <a href='#number' class='space-right small'>number</a>
+    
+    
     
     
     
@@ -814,6 +904,8 @@ navigation:
       <em>Default:</em> center
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>Text justification options.</p>
 </div>
@@ -828,6 +920,8 @@ navigation:
     <span class='space-right quiet small'>
       <em>Default:</em> center
     </span>
+    
+    
     
   </div>
   <p class='small pad2x'>Horizontal alignment of the text relative to the anchor.</p>
@@ -844,6 +938,8 @@ navigation:
       <em>Default:</em> center
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>Vertical alignment of the text relative to the anchor.</p>
 </div>
@@ -857,6 +953,8 @@ navigation:
       <em>Default:</em> 3.14
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>The maximum angle change, in radians, allowed between adjacent characters.</p>
 </div>
@@ -868,6 +966,8 @@ navigation:
     
     
     
+    
+    
   </div>
   
 </div>
@@ -876,6 +976,8 @@ navigation:
   <div>
     <span class='code space-right'>text-slant</span>
     <a href='#number' class='space-right small'>number</a>
+    
+    
     
     
     
@@ -892,6 +994,8 @@ navigation:
       <em>Default:</em> 2
     </span>
     
+    
+    
   </div>
   <p class='small pad2x'>Padding value around text bounding box to avoid label collisions (px).</p>
 </div>
@@ -904,6 +1008,8 @@ navigation:
     <span class='space-right quiet small'>
       <em>Default:</em> true
     </span>
+    
+    
     
   </div>
   <p class='small pad2x'>If true, the direction of the text may be flipped to prevent it from being rendered upside-down</p>
@@ -920,6 +1026,8 @@ navigation:
       <em>Default:</em> none
     </span>
     
+    
+    
   </div>
   
 </div>
@@ -933,6 +1041,8 @@ navigation:
       <em>Default:</em> 0,0
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -948,6 +1058,8 @@ navigation:
       <em>Default:</em> map
     </span>
     
+    
+    
   </div>
   
 </div>
@@ -956,6 +1068,8 @@ navigation:
   <div>
     <span class='code space-right'>text-allow-overlap</span>
     <a href='#boolean' class='space-right small'>boolean</a>
+    
+    
     
     
     
@@ -970,6 +1084,8 @@ navigation:
     
     
     
+    
+    
   </div>
   <p class='small pad2x'>If true, the text won't affect placement of other icons and labels.</p>
 </div>
@@ -978,6 +1094,8 @@ navigation:
   <div>
     <span class='code space-right'>text-optional</span>
     <a href='#boolean' class='space-right small'>boolean</a>
+    
+    
     
     
     
@@ -999,6 +1117,8 @@ navigation:
     </span>
     
     
+    
+    
   </div>
   
 </div>
@@ -1015,6 +1135,8 @@ navigation:
     <span class='space-right quiet small'>
       <em>Options:</em> <strong>raster </strong>
     </span>
+    
+    
     
     
   </div>
@@ -1040,6 +1162,8 @@ navigation:
       <em>Default:</em> 0,0,0,1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1048,6 +1172,8 @@ navigation:
   <div>
     <span class='code space-right'>background-image</span>
     <a href='#string' class='space-right small'>string</a>
+    
+    
     
     
     
@@ -1069,6 +1195,8 @@ navigation:
       <em>Default:</em> true
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1081,6 +1209,8 @@ navigation:
     <span class='space-right quiet small'>
       <em>Default:</em> true
     </span>
+    
+    <span class='icon levels inline quiet'></span>
     
   </div>
   <p class='small pad2x'>Whether or not the fill should be antialiased.</p>
@@ -1095,6 +1225,8 @@ navigation:
       <em>Default:</em> 1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1108,6 +1240,8 @@ navigation:
       <em>Default:</em> 0,0,0,1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1119,6 +1253,8 @@ navigation:
     
     
     
+    
+    <span class='icon opacity inline quiet'></span>
   </div>
   <p class='small pad2x'>The outline color of the fill. Matches the value of 'fill-color' if unspecified.</p>
 </div>
@@ -1132,6 +1268,8 @@ navigation:
       <em>Default:</em> 0,0
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1147,6 +1285,8 @@ navigation:
       <em>Default:</em> map
     </span>
     
+    
+    
   </div>
   
 </div>
@@ -1155,6 +1295,8 @@ navigation:
   <div>
     <span class='code space-right'>fill-image</span>
     <a href='#string' class='space-right small'>string</a>
+    
+    
     
     
     
@@ -1176,6 +1318,8 @@ navigation:
       <em>Default:</em> true
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1189,6 +1333,8 @@ navigation:
       <em>Default:</em> 1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1202,6 +1348,8 @@ navigation:
       <em>Default:</em> 0,0,0,1
     </span>
     
+    
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1215,6 +1363,8 @@ navigation:
       <em>Default:</em> 0,0
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1230,6 +1380,8 @@ navigation:
       <em>Default:</em> map
     </span>
     
+    
+    
   </div>
   
 </div>
@@ -1243,6 +1395,8 @@ navigation:
       <em>Default:</em> 1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1254,6 +1408,8 @@ navigation:
     
     
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   <p class='small pad2x'>Offset from the center line.</p>
 </div>
@@ -1267,6 +1423,8 @@ navigation:
       <em>Default:</em> 1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1280,6 +1438,8 @@ navigation:
       <em>Default:</em> 1,-1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1288,6 +1448,8 @@ navigation:
   <div>
     <span class='code space-right'>line-image</span>
     <a href='#string' class='space-right small'>string</a>
+    
+    
     
     
     
@@ -1309,6 +1471,8 @@ navigation:
       <em>Default:</em> true
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1322,6 +1486,8 @@ navigation:
       <em>Default:</em> 1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1332,6 +1498,8 @@ navigation:
     <a href='#number' class='space-right small'>number</a>
     
     
+    
+    <span class='icon levels inline quiet'></span>
     
   </div>
   
@@ -1346,6 +1514,8 @@ navigation:
       <em>Default:</em> 1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   <p class='small pad2x'>The amount to scale the icon by. 1 is original size, 3 triples the size.</p>
 </div>
@@ -1359,6 +1529,8 @@ navigation:
       <em>Default:</em> 0,0,0,1
     </span>
     
+    
+    <span class='icon opacity inline quiet'></span>
   </div>
   <p class='small pad2x'>The color of the icon. This can only be used with sdf icons.</p>
 </div>
@@ -1372,6 +1544,8 @@ navigation:
       <em>Default:</em> 0,0,0,0
     </span>
     
+    
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1385,6 +1559,8 @@ navigation:
       <em>Default:</em> 0.25
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   <p class='small pad2x'>How far away the halo is from the icon outline. A value of 0.75 means that it is as wide as the font outline. Lower values make the halo bigger, higher values make it smaller. TODO: Refactor this to be more sane.</p>
 </div>
@@ -1398,6 +1574,8 @@ navigation:
       <em>Default:</em> 1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   <p class='small pad2x'>Fade out the halo towards the outside. 1 means no fade out. Higher values mean a higher fade out.</p>
 </div>
@@ -1411,6 +1589,8 @@ navigation:
       <em>Default:</em> true
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1424,6 +1604,8 @@ navigation:
       <em>Default:</em> 1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1437,6 +1619,8 @@ navigation:
       <em>Default:</em> 16
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   <p class='small pad2x'>Font size in pixels. If unspecified, the text will be as big as allowed by the layer definition.</p>
 </div>
@@ -1450,6 +1634,8 @@ navigation:
       <em>Default:</em> 0,0,0,1
     </span>
     
+    
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1463,6 +1649,8 @@ navigation:
       <em>Default:</em> 0,0,0,0
     </span>
     
+    
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1476,6 +1664,8 @@ navigation:
       <em>Default:</em> 0.25
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   <p class='small pad2x'>How far away the halo is from the font outline. A value of 0.75 means that it is as wide as the font outline. Lower values make the halo bigger, higher values make it smaller. TODO: Refactor this to be more sane.</p>
 </div>
@@ -1489,6 +1679,8 @@ navigation:
       <em>Default:</em> 1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   <p class='small pad2x'>Fade out the halo towards the outside. 1 means no fade out. Higher values mean a higher fade out.</p>
 </div>
@@ -1507,6 +1699,8 @@ navigation:
       <em>Default:</em> true
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1520,6 +1714,8 @@ navigation:
       <em>Default:</em> 1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1538,6 +1734,8 @@ navigation:
       <em>Default:</em> true
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1551,6 +1749,8 @@ navigation:
       <em>Default:</em> 1
     </span>
     
+    
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1562,6 +1762,8 @@ navigation:
     
     
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1575,6 +1777,8 @@ navigation:
       <em>Default:</em> 0,1
     </span>
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1586,6 +1790,8 @@ navigation:
     
     
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1597,6 +1803,8 @@ navigation:
     
     
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>
@@ -1608,6 +1816,8 @@ navigation:
     
     
     
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
   </div>
   
 </div>

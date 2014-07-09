@@ -100,7 +100,7 @@ navigation:
     <p class='small'><%= ref.sprite[0].doc %></p>
   </div>
   <div class='pad2 keyline-bottom' id='constants'>
-<div class='code space-bottom1 quiet'>"constants": {
+<div class='code quiet'>"constants": {
   "@water": "#88aacc",
   "@land": "#ffffff"
 },</div>
@@ -111,7 +111,7 @@ navigation:
     <p class='small'><%= ref.constants['*'].doc %></p>
   </div>
   <div class='pad2 keyline-bottom' id='sources'>
-<div class='code space-bottom1 quiet'>"sources": {
+<div class='code quiet'>"sources": {
   "streets": {
     "type": "vector",
     "url": "mapbox://mapbox.mapbox-streets-v5",

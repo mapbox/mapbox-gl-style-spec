@@ -8,7 +8,9 @@
     <% if (prop.default) { %><span class='space-right quiet small'>
       <em>Default:</em> <%= prop.default %>
     </span><% } %>
-    <% if (prop.required) { %><span class='icon alert inline quiet space-right'></span><% } %>
+    <% if (prop.required) { %><span class='icon alert inline quiet'></span><% } %>
+    <% if (prop.function) { %><span class='icon levels inline quiet'></span><% } %>
+    <% if (prop.transition) { %><span class='icon opacity inline quiet'></span><% } %>
   </div>
   <% if (prop.doc) { %><p class='small pad2x'><%= prop.doc %></p><% } %>
 </div>
