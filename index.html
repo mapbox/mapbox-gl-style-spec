@@ -442,31 +442,13 @@ navigation:
 
     
 
-    <div id='render' class='round keyline-all fill-white pad2 space-bottom2'>
-      <h2><a href='#render' title='link to render'>Render</a></h2>
-      <p>Each layer can include a <code>render</code> object defining how data for that layer should be passed to the GPU. The render type determines how the layer data can be styled and should be one of <em>background, fill, line, symbol, composite, raster</em>.</p>
-      
-      <div id='render_background' class='col12 clearfix space-bottom1'>
-        <a class='micro quiet uppercase' href='#render_background' title='link to render: background'>Render: background</a>
-        
-        <div class='col12 clearfix pad0y'>
-  <div>
-    <span class='code space-right'>type</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
-      <em>Options:</em> <strong>background </strong>
-    </span>
-    
-    
-    
-    
-  </div>
-  
-</div>
-        
+    <div id='render' class='round space-bottom2'>
+      <div class='pad2 fill-white keyline-bottom round-top'>
+        <h2><a href='#render' title='link to render'>Render</a></h2>
+        <p>Each layer can include a <code>render</code> object defining how data for that layer should be passed to the GPU. The render type determines how the layer data can be styled and should be one of <em>fill, line, symbol, background, composite, raster</em>.</p>
       </div>
       
-      <div id='render_fill' class='col12 clearfix space-bottom1'>
+      <div id='render_fill' class='fill-gray pad2 keyline-bottom'>
         <a class='micro quiet uppercase' href='#render_fill' title='link to render: fill'>Render: fill</a>
         
         <div class='col12 clearfix pad0y'>
@@ -503,7 +485,7 @@ navigation:
         
       </div>
       
-      <div id='render_line' class='col12 clearfix space-bottom1'>
+      <div id='render_line' class='fill-gray pad2 keyline-bottom'>
         <a class='micro quiet uppercase' href='#render_line' title='link to render: line'>Render: line</a>
         
         <div class='col12 clearfix pad0y'>
@@ -587,7 +569,7 @@ navigation:
         
       </div>
       
-      <div id='render_symbol' class='col12 clearfix space-bottom1'>
+      <div id='render_symbol' class='fill-gray pad2 keyline-bottom'>
         <a class='micro quiet uppercase' href='#render_symbol' title='link to render: symbol'>Render: symbol</a>
         
         <div class='col12 clearfix pad0y'>
@@ -1092,7 +1074,27 @@ navigation:
         
       </div>
       
-      <div id='render_composite' class='col12 clearfix space-bottom1'>
+      <div id='render_background' class='fill-gray pad2 keyline-bottom'>
+        <a class='micro quiet uppercase' href='#render_background' title='link to render: background'>Render: background</a>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>type</span>
+    <a href='#enum' class='space-right small'>enum</a>
+    <span class='space-right quiet small'>
+      <em>Options:</em> <strong>background </strong>
+    </span>
+    
+    
+    
+    
+  </div>
+  
+</div>
+        
+      </div>
+      
+      <div id='render_composite' class='fill-gray pad2 keyline-bottom'>
         <a class='micro quiet uppercase' href='#render_composite' title='link to render: composite'>Render: composite</a>
         
         <div class='col12 clearfix pad0y'>
@@ -1112,7 +1114,7 @@ navigation:
         
       </div>
       
-      <div id='render_raster' class='col12 clearfix space-bottom1'>
+      <div id='render_raster' class='fill-gray pad2 round-bottom'>
         <a class='micro quiet uppercase' href='#render_raster' title='link to render: raster'>Render: raster</a>
         
         <div class='col12 clearfix pad0y'>
@@ -1134,44 +1136,13 @@ navigation:
       
     </div>
 
-    <div id='class' class='round keyline-all fill-white pad2 space-bottom2'>
-      <h2><a href='#class' title='link to class'>Style</a></h2>
-      <p>Each layer can include one or more <code>style</code> objects defining how to style data for that layer. The style type should be one of <em>background, fill, line, symbol, composite, raster</em>.</p>
-      
-      <div id='class_background' class='col12 clearfix space-bottom1'>
-        <a class='micro quiet uppercase' href='#class_background' title='link to class: background'>Class: background</a>
-        
-        <div class='col12 clearfix pad0y'>
-  <div>
-    <span class='code space-right'>background-color</span>
-    <a href='#color' class='space-right small'>color</a>
-    
-    <span class='space-right quiet small'>
-      <em>Default:</em> 0,0,0,1
-    </span>
-    
-    <span class='icon levels inline quiet'></span>
-    <span class='icon opacity inline quiet'></span>
-  </div>
-  
-</div>
-        
-        <div class='col12 clearfix pad0y'>
-  <div>
-    <span class='code space-right'>background-image</span>
-    <a href='#string' class='space-right small'>string</a>
-    
-    
-    
-    
-    
-  </div>
-  
-</div>
-        
+    <div id='class' class='round space-bottom2'>
+      <div class='pad2 fill-white keyline-bottom round-top'>
+        <h2><a href='#class' title='link to class'>Style</a></h2>
+        <p>Each layer can include one or more <code>style</code> objects defining how to style data for that layer. The style type should be one of <em>fill, line, symbol, background, composite, raster</em>.</p>
       </div>
       
-      <div id='class_fill' class='col12 clearfix space-bottom1'>
+      <div id='class_fill' class='fill-gray pad2 keyline-bottom'>
         <a class='micro quiet uppercase' href='#class_fill' title='link to class: fill'>Class: fill</a>
         
         <div class='col12 clearfix pad0y'>
@@ -1294,7 +1265,7 @@ navigation:
         
       </div>
       
-      <div id='class_line' class='col12 clearfix space-bottom1'>
+      <div id='class_line' class='fill-gray pad2 keyline-bottom'>
         <a class='micro quiet uppercase' href='#class_line' title='link to class: line'>Class: line</a>
         
         <div class='col12 clearfix pad0y'>
@@ -1447,7 +1418,7 @@ navigation:
         
       </div>
       
-      <div id='class_symbol' class='col12 clearfix space-bottom1'>
+      <div id='class_symbol' class='fill-gray pad2 keyline-bottom'>
         <a class='micro quiet uppercase' href='#class_symbol' title='link to class: symbol'>Class: symbol</a>
         
         <div class='col12 clearfix pad0y'>
@@ -1675,7 +1646,40 @@ navigation:
         
       </div>
       
-      <div id='class_composite' class='col12 clearfix space-bottom1'>
+      <div id='class_background' class='fill-gray pad2 keyline-bottom'>
+        <a class='micro quiet uppercase' href='#class_background' title='link to class: background'>Class: background</a>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>background-color</span>
+    <a href='#color' class='space-right small'>color</a>
+    
+    <span class='space-right quiet small'>
+      <em>Default:</em> 0,0,0,1
+    </span>
+    
+    <span class='icon levels inline quiet'></span>
+    <span class='icon opacity inline quiet'></span>
+  </div>
+  
+</div>
+        
+        <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>background-image</span>
+    <a href='#string' class='space-right small'>string</a>
+    
+    
+    
+    
+    
+  </div>
+  
+</div>
+        
+      </div>
+      
+      <div id='class_composite' class='fill-gray pad2 keyline-bottom'>
         <a class='micro quiet uppercase' href='#class_composite' title='link to class: composite'>Class: composite</a>
         
         <div class='col12 clearfix pad0y'>
@@ -1710,7 +1714,7 @@ navigation:
         
       </div>
       
-      <div id='class_raster' class='col12 clearfix space-bottom1'>
+      <div id='class_raster' class='fill-gray pad2 round-bottom'>
         <a class='micro quiet uppercase' href='#class_raster' title='link to class: raster'>Class: raster</a>
         
         <div class='col12 clearfix pad0y'>

@@ -193,13 +193,15 @@ navigation:
   <div class='code pad1 quiet'>}</div>
 </div>
 
-    <% var types = ['background', 'fill', 'line', 'symbol', 'composite', 'raster'] %>
+    <% var types = ['fill', 'line', 'symbol', 'background', 'composite', 'raster'] %>
 
-    <div id='render' class='round keyline-all fill-white pad2 space-bottom2'>
-      <h2><a href='#render' title='link to render'>Render</a></h2>
-      <p>Each layer can include a <code>render</code> object defining how data for that layer should be passed to the GPU. The render type determines how the layer data can be styled and should be one of <em><%= types.join(', ') %></em>.</p>
+    <div id='render' class='round space-bottom2'>
+      <div class='pad2 fill-white keyline-bottom round-top'>
+        <h2><a href='#render' title='link to render'>Render</a></h2>
+        <p>Each layer can include a <code>render</code> object defining how data for that layer should be passed to the GPU. The render type determines how the layer data can be styled and should be one of <em><%= types.join(', ') %></em>.</p>
+      </div>
       <% _(types).each(function(t) { %>
-      <div id='render_<%= t %>' class='col12 clearfix space-bottom1'>
+      <div id='render_<%= t %>' class='fill-gray pad2 <%= t === 'raster' ? 'round-bottom' : 'keyline-bottom' %>'>
         <a class='micro quiet uppercase' href='#render_<%= t %>' title='link to render: <%= t %>'>Render: <%= t %></a>
         <% _(ref['render_'+t]).each(function(prop, name) { %>
         <%= item({prop: prop, name: name}) %>
@@ -208,11 +210,13 @@ navigation:
       <% }); %>
     </div>
 
-    <div id='class' class='round keyline-all fill-white pad2 space-bottom2'>
-      <h2><a href='#class' title='link to class'>Style</a></h2>
-      <p>Each layer can include one or more <code>style</code> objects defining how to style data for that layer. The style type should be one of <em><%= types.join(', ') %></em>.</p>
+    <div id='class' class='round space-bottom2'>
+      <div class='pad2 fill-white keyline-bottom round-top'>
+        <h2><a href='#class' title='link to class'>Style</a></h2>
+        <p>Each layer can include one or more <code>style</code> objects defining how to style data for that layer. The style type should be one of <em><%= types.join(', ') %></em>.</p>
+      </div>
       <% _(types).each(function(t) { %>
-      <div id='class_<%= t %>' class='col12 clearfix space-bottom1'>
+      <div id='class_<%= t %>' class='fill-gray pad2 <%= t === 'raster' ? 'round-bottom' : 'keyline-bottom' %>'>
         <a class='micro quiet uppercase' href='#class_<%= t %>' title='link to class: <%= t %>'>Class: <%= t %></a>
         <% _(ref['class_'+t]).each(function(prop, name) { %>
         <%= item({prop: prop, name: name}) %>
