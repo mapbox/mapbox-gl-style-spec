@@ -172,6 +172,27 @@ navigation:
       <% }); %>
     </div>
 
+    <div id='rasterize' class='space-bottom4'>
+      <h3>rasterize</h3>
+      <div class='space-bottom1'>
+        <% _(ref.rasterize).each(function(prop, name) { %>
+        <%= item({prop: prop, name: name}) %>
+        <% }); %>
+      </div>
+    </div>
+
+  </div>
+  <div class='pad2 keyline-bottom' id='transition'>
+<div class='code space-bottom1 quiet'>"transition": {
+  "duration": 300,
+  "delay": 0
+},</div>
+    <h2>transition</h2>
+    <div class='space-bottom4'>
+      <% _(ref.transition).each(function(prop, name) { %>
+      <%= item({prop: prop, name: name}) %>
+      <% }); %>
+    </div>
   </div>
   <div class='code pad1 quiet'>}</div>
 </div>
