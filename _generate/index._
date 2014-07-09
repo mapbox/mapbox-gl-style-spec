@@ -67,7 +67,7 @@ navigation:
   </div>
 
   <div class='contain margin3 col9'>
-    <div class='pad2 round doc prose fill-dark dark space-bottom'>
+    <div class='pad2 round doc prose space-bottom'>
       <h1>{{ page.title }}</h1>
 
       <p>The Mapbox GL style is an object that defines what data to draw, the order to draw it in, and how to style the data when drawing it. The JSON structure follows the renderer implementation very closely. It provides the basic building blocks out of which more complex styles can be built.</p>
@@ -80,52 +80,51 @@ navigation:
 
     </div>
 
-<div class='prose doc fill-white keyline-all round space-bottom2'>
+<div class='prose doc fill-dark dark round space-bottom2'>
   <div class='code pad1 quiet keyline-bottom'>{</div>
   <div class='pad2 keyline-bottom' id='version'>
-    <div class='code space-bottom1 quiet'>"version": <%= ref.$version %>,</div>
+    <h2><a href='#version' title='link to version'>version</a></h2>
     <div>
-      <strong class='space-right'>version</strong>
       <a href='#enum' class='space-right small'>enum</a>
       <span class='icon alert inline quiet'></span>
     </div>
     <p class='small'><%= ref.$root.version.doc %></p>
+    <div class='code quiet'>"version": <%= ref.$version %>,</div>
   </div>
   <div class='pad2 keyline-bottom' id='sprite'>
-    <div class='code space-bottom1 quiet'>"sprite": "https://www.mapbox.com",</div>
+    <h2><a href='#sprite' title='link to sprite'>sprite</a></h2>
     <div>
-      <strong class='space-right'>sprite</strong>
       <a href='#string' class='space-right small'>string</a>
     </div>
     <p class='small'><%= ref.sprite[0].doc %></p>
+    <div class='code quiet'>"sprite": "https://www.mapbox.com",</div>
   </div>
   <div class='pad2 keyline-bottom' id='constants'>
+    <h2><a href='#constants' title='link to constants'>constants</a></h2>
+    <p class='small'><%= ref.constants['*'].doc %></p>
 <div class='code quiet'>"constants": {
   "@water": "#88aacc",
   "@land": "#ffffff"
 },</div>
-    <div>
-      <strong class='space-right'>constants</strong>
-      <span class='quiet small'>*</span>
-    </div>
-    <p class='small'><%= ref.constants['*'].doc %></p>
   </div>
   <div class='pad2 keyline-bottom' id='sources'>
-<div class='code quiet'>"sources": {
+    <h2><a href='#sources' title='link to sources'>sources</a></h2>
+    <p class='small'><%= ref.$root.sources.doc %></p>
+<div class='code quiet space-bottom1'>"sources": {
   "streets": {
     "type": "vector",
     "url": "mapbox://mapbox.mapbox-streets-v5",
     "tileSize": 512
   }
 },</div>
-    <h2>sources</h2>
-    <p class='small'><%= ref.$root.sources.doc %></p>
     <% _(ref.source).each(function(prop, name) { %>
     <%= item({prop: prop, name: name}) %>
     <% }); %>
   </div>
-  <div class='pad2 keyline-bottom'>
-<div class='code quiet'>"layers": [
+  <div id='layers' class='pad2 keyline-bottom'>
+    <h2><a href='#layers' title='link to layers'>layers</a></h2>
+    <p class='small'><%= ref.$root.layers.doc %></p>
+<div class='code quiet space-bottom1'>"layers": [
   {
     "id": "water",
     "source": "mapbox-streets",
@@ -138,8 +137,6 @@ navigation:
     }
   }
 ],</div>
-    <h2>layers</h2>
-    <p class='small'><%= ref.$root.layers.doc %></p>
     <div class='space-bottom4'>
       <% _(ref.layer).each(function(prop, name) { %>
       <%= item({prop: prop, name: name}) %>
@@ -148,11 +145,11 @@ navigation:
 
     <% var types = ['background', 'fill', 'line', 'symbol', 'composite', 'raster'] %>
 
-    <div id='render' class='space-bottom4'>
-      <h3>render</h3>
+    <div id='render' class='space-bottom4 indented pad2x'>
+      <h2><a href='#render' title='link to render'>render</a></h2>
       <% _(types).each(function(t) { %>
       <div id='render_<%= t %>' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Render: <%= t %></span>
+        <a class='micro quiet uppercase' href='#render_<%= t %>' title='link to render: <%= t %>'>Render: <%= t %></a>
         <% _(ref['render_'+t]).each(function(prop, name) { %>
         <%= item({prop: prop, name: name}) %>
         <% }); %>
@@ -160,11 +157,11 @@ navigation:
       <% }); %>
     </div>
 
-    <div id='class' class='space-bottom4'>
-      <h3>class</h3>
+    <div id='class' class='space-bottom4 indented pad2x'>
+      <h2><a href='#class' title='link to class'>class</a></h2>
       <% _(types).each(function(t) { %>
       <div id='class_<%= t %>' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Class: <%= t %></span>
+        <a class='micro quiet uppercase' href='#class_<%= t %>' title='link to class: <%= t %>'>Class: <%= t %></a>
         <% _(ref['class_'+t]).each(function(prop, name) { %>
         <%= item({prop: prop, name: name}) %>
         <% }); %>
@@ -172,8 +169,8 @@ navigation:
       <% }); %>
     </div>
 
-    <div id='rasterize' class='space-bottom4'>
-      <h3>rasterize</h3>
+    <div id='rasterize' class='indented pad2x'>
+      <h2><a href='#rasterize' title='link to rasterize'>rasterize</a></h2>
       <div class='space-bottom1'>
         <% _(ref.rasterize).each(function(prop, name) { %>
         <%= item({prop: prop, name: name}) %>
@@ -183,21 +180,19 @@ navigation:
 
   </div>
   <div class='pad2 keyline-bottom' id='transition'>
+    <h2><a href='#transition' title='link to transition'>transition</a></h2>
 <div class='code space-bottom1 quiet'>"transition": {
   "duration": 300,
   "delay": 0
 },</div>
-    <h2>transition</h2>
-    <div class='space-bottom4'>
-      <% _(ref.transition).each(function(prop, name) { %>
-      <%= item({prop: prop, name: name}) %>
-      <% }); %>
-    </div>
+    <% _(ref.transition).each(function(prop, name) { %>
+    <%= item({prop: prop, name: name}) %>
+    <% }); %>
   </div>
   <div class='code pad1 quiet'>}</div>
 </div>
 
-    <div class='round keyline-all fill-white'>
+    <div class='round keyline-all fill-white pad2'>
       <h2 id='values'>Values</h2>
       <p>Below is a list of values and an explanation of any expression that can be applied to properties in Mapbox GL.</p>
 

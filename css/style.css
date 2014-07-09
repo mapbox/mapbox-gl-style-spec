@@ -2,9 +2,9 @@
 .doc .property p { margin-bottom:0; }
 .doc .space-right { padding-right:10px; }
 .doc .icon.inline:before { vertical-align:middle; }
-.prose.prose-big code {
-  font-size: 14px;
-  line-height: 24px;
-}
+.doc .uppercase { text-transform: uppercase; }
+.doc .indented { border-left: 4px solid rgba(255,255,255,0.2); }
 
-.uppercase { text-transform: uppercase; }
+*:target {
+	padding-top: 100px;
+}

@@ -152,7 +152,7 @@ navigation:
   </div>
 
   <div class='contain margin3 col9'>
-    <div class='pad2 round doc prose fill-dark dark space-bottom'>
+    <div class='pad2 round doc prose space-bottom'>
       <h1>{{ page.title }}</h1>
 
       <p>The Mapbox GL style is an object that defines what data to draw, the order to draw it in, and how to style the data when drawing it. The JSON structure follows the renderer implementation very closely. It provides the basic building blocks out of which more complex styles can be built.</p>
@@ -165,46 +165,43 @@ navigation:
 
     </div>
 
-<div class='prose doc fill-white keyline-all round space-bottom2'>
+<div class='prose doc fill-dark dark round space-bottom2'>
   <div class='code pad1 quiet keyline-bottom'>{</div>
   <div class='pad2 keyline-bottom' id='version'>
-    <div class='code space-bottom1 quiet'>"version": 4,</div>
+    <h2><a href='#version' title='link to version'>version</a></h2>
     <div>
-      <strong class='space-right'>version</strong>
       <a href='#enum' class='space-right small'>enum</a>
       <span class='icon alert inline quiet'></span>
     </div>
     <p class='small'>Stylesheet version number. Must be 4.</p>
+    <div class='code quiet'>"version": 4,</div>
   </div>
   <div class='pad2 keyline-bottom' id='sprite'>
-    <div class='code space-bottom1 quiet'>"sprite": "https://www.mapbox.com",</div>
+    <h2><a href='#sprite' title='link to sprite'>sprite</a></h2>
     <div>
-      <strong class='space-right'>sprite</strong>
       <a href='#string' class='space-right small'>string</a>
     </div>
     <p class='small'>A base URL for retrieving the sprite image and metadata. The extensions `.png`, `.json` and scale factor `@2x.png` will be automatically appended.</p>
+    <div class='code quiet'>"sprite": "https://www.mapbox.com",</div>
   </div>
   <div class='pad2 keyline-bottom' id='constants'>
+    <h2><a href='#constants' title='link to constants'>constants</a></h2>
+    <p class='small'>A constant that will be replaced verbatim in the referencing place. This can be anything, including objects and arrays. All variable names must be prefixed with an `@` symbol.</p>
 <div class='code quiet'>"constants": {
   "@water": "#88aacc",
   "@land": "#ffffff"
 },</div>
-    <div>
-      <strong class='space-right'>constants</strong>
-      <span class='quiet small'>*</span>
-    </div>
-    <p class='small'>A constant that will be replaced verbatim in the referencing place. This can be anything, including objects and arrays. All variable names must be prefixed with an `@` symbol.</p>
   </div>
   <div class='pad2 keyline-bottom' id='sources'>
-<div class='code quiet'>"sources": {
+    <h2><a href='#sources' title='link to sources'>sources</a></h2>
+    <p class='small'>Data source specifications for layers to pull from.</p>
+<div class='code quiet space-bottom1'>"sources": {
   "streets": {
     "type": "vector",
     "url": "mapbox://mapbox.mapbox-streets-v5",
     "tileSize": 512
   }
 },</div>
-    <h2>sources</h2>
-    <p class='small'>Data source specifications for layers to pull from.</p>
     
     <div class='col12 clearfix pad0y'>
   <div>
@@ -304,8 +301,10 @@ navigation:
 </div>
     
   </div>
-  <div class='pad2 keyline-bottom'>
-<div class='code quiet'>"layers": [
+  <div id='layers' class='pad2 keyline-bottom'>
+    <h2><a href='#layers' title='link to layers'>layers</a></h2>
+    <p class='small'>A an array of layers. The order of layers coincides with the order they will be drawn.</p>
+<div class='code quiet space-bottom1'>"layers": [
   {
     "id": "water",
     "source": "mapbox-streets",
@@ -318,8 +317,6 @@ navigation:
     }
   }
 ],</div>
-    <h2>layers</h2>
-    <p class='small'>A an array of layers. The order of layers coincides with the order they will be drawn.</p>
     <div class='space-bottom4'>
       
       <div class='col12 clearfix pad0y'>
@@ -456,11 +453,11 @@ navigation:
 
     
 
-    <div id='render' class='space-bottom4'>
-      <h3>render</h3>
+    <div id='render' class='space-bottom4 indented pad2x'>
+      <h2><a href='#render' title='link to render'>render</a></h2>
       
       <div id='render_background' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Render: background</span>
+        <a class='micro quiet uppercase' href='#render_background' title='link to render: background'>Render: background</a>
         
         <div class='col12 clearfix pad0y'>
   <div>
@@ -480,7 +477,7 @@ navigation:
       </div>
       
       <div id='render_fill' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Render: fill</span>
+        <a class='micro quiet uppercase' href='#render_fill' title='link to render: fill'>Render: fill</a>
         
         <div class='col12 clearfix pad0y'>
   <div>
@@ -517,7 +514,7 @@ navigation:
       </div>
       
       <div id='render_line' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Render: line</span>
+        <a class='micro quiet uppercase' href='#render_line' title='link to render: line'>Render: line</a>
         
         <div class='col12 clearfix pad0y'>
   <div>
@@ -601,7 +598,7 @@ navigation:
       </div>
       
       <div id='render_symbol' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Render: symbol</span>
+        <a class='micro quiet uppercase' href='#render_symbol' title='link to render: symbol'>Render: symbol</a>
         
         <div class='col12 clearfix pad0y'>
   <div>
@@ -1106,7 +1103,7 @@ navigation:
       </div>
       
       <div id='render_composite' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Render: composite</span>
+        <a class='micro quiet uppercase' href='#render_composite' title='link to render: composite'>Render: composite</a>
         
         <div class='col12 clearfix pad0y'>
   <div>
@@ -1126,7 +1123,7 @@ navigation:
       </div>
       
       <div id='render_raster' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Render: raster</span>
+        <a class='micro quiet uppercase' href='#render_raster' title='link to render: raster'>Render: raster</a>
         
         <div class='col12 clearfix pad0y'>
   <div>
@@ -1147,11 +1144,11 @@ navigation:
       
     </div>
 
-    <div id='class' class='space-bottom4'>
-      <h3>class</h3>
+    <div id='class' class='space-bottom4 indented pad2x'>
+      <h2><a href='#class' title='link to class'>class</a></h2>
       
       <div id='class_background' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Class: background</span>
+        <a class='micro quiet uppercase' href='#class_background' title='link to class: background'>Class: background</a>
         
         <div class='col12 clearfix pad0y'>
   <div>
@@ -1184,7 +1181,7 @@ navigation:
       </div>
       
       <div id='class_fill' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Class: fill</span>
+        <a class='micro quiet uppercase' href='#class_fill' title='link to class: fill'>Class: fill</a>
         
         <div class='col12 clearfix pad0y'>
   <div>
@@ -1307,7 +1304,7 @@ navigation:
       </div>
       
       <div id='class_line' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Class: line</span>
+        <a class='micro quiet uppercase' href='#class_line' title='link to class: line'>Class: line</a>
         
         <div class='col12 clearfix pad0y'>
   <div>
@@ -1460,7 +1457,7 @@ navigation:
       </div>
       
       <div id='class_symbol' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Class: symbol</span>
+        <a class='micro quiet uppercase' href='#class_symbol' title='link to class: symbol'>Class: symbol</a>
         
         <div class='col12 clearfix pad0y'>
   <div>
@@ -1688,7 +1685,7 @@ navigation:
       </div>
       
       <div id='class_composite' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Class: composite</span>
+        <a class='micro quiet uppercase' href='#class_composite' title='link to class: composite'>Class: composite</a>
         
         <div class='col12 clearfix pad0y'>
   <div>
@@ -1723,7 +1720,7 @@ navigation:
       </div>
       
       <div id='class_raster' class='col12 clearfix space-bottom1'>
-        <span class='micro quiet uppercase'>Class: raster</span>
+        <a class='micro quiet uppercase' href='#class_raster' title='link to class: raster'>Class: raster</a>
         
         <div class='col12 clearfix pad0y'>
   <div>
@@ -1826,8 +1823,8 @@ navigation:
       
     </div>
 
-    <div id='rasterize' class='space-bottom4'>
-      <h3>rasterize</h3>
+    <div id='rasterize' class='indented pad2x'>
+      <h2><a href='#rasterize' title='link to rasterize'>rasterize</a></h2>
       <div class='space-bottom1'>
         
         <div class='col12 clearfix pad0y'>
@@ -1891,14 +1888,13 @@ navigation:
 
   </div>
   <div class='pad2 keyline-bottom' id='transition'>
+    <h2><a href='#transition' title='link to transition'>transition</a></h2>
 <div class='code space-bottom1 quiet'>"transition": {
   "duration": 300,
   "delay": 0
 },</div>
-    <h2>transition</h2>
-    <div class='space-bottom4'>
-      
-      <div class='col12 clearfix pad0y'>
+    
+    <div class='col12 clearfix pad0y'>
   <div>
     <span class='code space-right'>duration</span>
     <a href='#number' class='space-right small'>number</a>
@@ -1910,8 +1906,8 @@ navigation:
   </div>
   
 </div>
-      
-      <div class='col12 clearfix pad0y'>
+    
+    <div class='col12 clearfix pad0y'>
   <div>
     <span class='code space-right'>delay</span>
     <a href='#number' class='space-right small'>number</a>
@@ -1923,13 +1919,12 @@ navigation:
   </div>
   
 </div>
-      
-    </div>
+    
   </div>
   <div class='code pad1 quiet'>}</div>
 </div>
 
-    <div class='round keyline-all fill-white'>
+    <div class='round keyline-all fill-white pad2'>
       <h2 id='values'>Values</h2>
       <p>Below is a list of values and an explanation of any expression that can be applied to properties in Mapbox GL.</p>
 
