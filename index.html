@@ -128,22 +128,22 @@ navigation:
 <div class='prose doc fill-dark dark round space-bottom2'>
   <div class='code pad1 quiet keyline-bottom'>{</div>
   <div class='pad2 keyline-bottom' id='version'>
-    <div class='code'>"<var>version</var>": 4,</div>
+    <div class='code space-bottom1'>"<var>version</var>": 4,</div>
     <p class='small quiet'>Stylesheet version number. Must be 4.</p>
   </div>
   <div class='pad2 keyline-bottom' id='sprite'>
-    <div class='code'>"<var>sprite</var>": "https://www.mapbox.com",</div>
+    <div class='code space-bottom1'>"<var>sprite</var>": "https://www.mapbox.com",</div>
     <p class='small quiet'>A base URL for retrieving the sprite image and metadata. The extensions `.png`, `.json` and scale factor `@2x.png` will be automatically appended.</p>
   </div>
   <div class='pad2 keyline-bottom' id='constants'>
-<div class='code'>"<var>constants</var>": {
+<div class='code space-bottom1'>"<var>constants</var>": {
   "@water": "#88aacc",
   "@land": "#ffffff"
 },</div>
     <p class='small quiet'>A constant that will be replaced verbatim in the referencing place. This can be anything, including objects and arrays. All variable names must be prefixed with an `@` symbol.</p>
   </div>
   <div class='pad2 keyline-bottom' id='sources'>
-<div class='code'>"<var>sources</var>": {
+<div class='code space-bottom1'>"<var>sources</var>": {
   "streets": {
     "type": "vector",
     "url": "mapbox://mapbox.mapbox-streets-v5",
@@ -151,13 +151,13 @@ navigation:
   }
 },</div>
     <p class='small quiet'>Data source specifications for layers to pull from.</p>
-    <div class='pad1 fill-darken1 round'>
+    <div class='pad1 fill-darken0 round'>
     
     <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>type</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>vector raster geojson video </strong>
     </span>
     
@@ -169,9 +169,9 @@ navigation:
 </div>
     
     <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>url</span>
-    <a href='#string' class='space-right small'>string</a>
+    <a href='#string' class='space-right'>string</a>
     
     
     <span class='icon alert inline quiet'></span>
@@ -182,9 +182,9 @@ navigation:
 </div>
     
     <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>glyphs</span>
-    <a href='#string' class='space-right small'>string</a>
+    <a href='#string' class='space-right'>string</a>
     
     
     
@@ -195,11 +195,11 @@ navigation:
 </div>
     
     <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>tileSize</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 512
     </span>
     
@@ -210,9 +210,9 @@ navigation:
 </div>
     
     <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>minZoom</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
@@ -223,11 +223,11 @@ navigation:
 </div>
     
     <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>maxZoom</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 22
     </span>
     
@@ -238,7 +238,7 @@ navigation:
 </div>
     
     <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>*</span>
     
     
@@ -253,7 +253,7 @@ navigation:
     </div>
   </div>
   <div id='layers' class='pad2 keyline-bottom'>
-<div class='code'>"<var>layers</var>": [
+<div class='code space-bottom1'>"<var>layers</var>": [
   {
     "id": "water",
     "source": "mapbox-streets",
@@ -267,12 +267,12 @@ navigation:
   }
 ],</div>
     <p class='small quiet'>A an array of layers. The order of layers coincides with the order they will be drawn.</p>
-    <div class='pad1 fill-darken1 round'>
+    <div class='pad1 fill-darken0 round'>
       
       <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>id</span>
-    <a href='#string' class='space-right small'>string</a>
+    <a href='#string' class='space-right'>string</a>
     
     
     
@@ -283,9 +283,9 @@ navigation:
 </div>
       
       <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>ref</span>
-    <a href='#string' class='space-right small'>string</a>
+    <a href='#string' class='space-right'>string</a>
     
     
     
@@ -296,9 +296,9 @@ navigation:
 </div>
       
       <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>source</span>
-    <a href='#string' class='space-right small'>string</a>
+    <a href='#string' class='space-right'>string</a>
     
     
     
@@ -309,9 +309,9 @@ navigation:
 </div>
       
       <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>source-layer</span>
-    <a href='#string' class='space-right small'>string</a>
+    <a href='#string' class='space-right'>string</a>
     
     
     
@@ -322,9 +322,9 @@ navigation:
 </div>
       
       <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>render</span>
-    <a href='#render' class='space-right small'>render</a>
+    <a href='#render' class='space-right'>render</a>
     
     
     
@@ -335,9 +335,9 @@ navigation:
 </div>
       
       <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>filter</span>
-    <a href='#filter' class='space-right small'>filter</a>
+    <a href='#filter' class='space-right'>filter</a>
     
     
     
@@ -348,9 +348,9 @@ navigation:
 </div>
       
       <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>layers</span>
-    <a href='#array' class='space-right small'>array</a>
+    <a href='#array' class='space-right'>array</a>
     
     
     
@@ -361,9 +361,9 @@ navigation:
 </div>
       
       <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>rasterize</span>
-    <a href='#rasterize' class='space-right small'>rasterize</a>
+    <a href='#rasterize' class='space-right'>rasterize</a>
     
     
     
@@ -374,9 +374,9 @@ navigation:
 </div>
       
       <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>style</span>
-    <a href='#class' class='space-right small'>class</a>
+    <a href='#class' class='space-right'>class</a>
     
     
     
@@ -387,9 +387,9 @@ navigation:
 </div>
       
       <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>style.*</span>
-    <a href='#class' class='space-right small'>class</a>
+    <a href='#class' class='space-right'>class</a>
     
     
     
@@ -402,17 +402,17 @@ navigation:
     </div>
   </div>
   <div class='pad2 keyline-bottom' id='transition'>
-<div class='code'>"<var>transition</var>": {
+<div class='code space-bottom1'>"<var>transition</var>": {
   "duration": 300,
   "delay": 0
 },</div>
     <p class='small quiet'>@TODO</p>
-    <div class='pad1 fill-darken1 round'>
+    <div class='pad1 fill-darken0 round'>
     
     <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>duration</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
@@ -423,9 +423,9 @@ navigation:
 </div>
     
     <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>delay</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
@@ -449,13 +449,13 @@ navigation:
       </div>
       
       <div id='render_fill' class='fill-gray pad2 keyline-bottom'>
-        <a class='micro quiet uppercase' href='#render_fill' title='link to render: fill'>Render: fill</a>
+        <h3 class='space-bottom1'><a href='#render_fill' title='link to render: fill'>Render: fill</a></h3>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>type</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>fill </strong>
     </span>
     
@@ -467,13 +467,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>fill-winding</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>non-zero even-odd </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> non-zero
     </span>
     
@@ -486,13 +486,13 @@ navigation:
       </div>
       
       <div id='render_line' class='fill-gray pad2 keyline-bottom'>
-        <a class='micro quiet uppercase' href='#render_line' title='link to render: line'>Render: line</a>
+        <h3 class='space-bottom1'><a href='#render_line' title='link to render: line'>Render: line</a></h3>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>type</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>line </strong>
     </span>
     
@@ -504,13 +504,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-cap</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>butt round square </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> butt
     </span>
     
@@ -521,13 +521,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-join</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>bevel round miter </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> miter
     </span>
     
@@ -538,11 +538,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-miter-limit</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 2
     </span>
     
@@ -553,11 +553,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-round-limit</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -570,13 +570,13 @@ navigation:
       </div>
       
       <div id='render_symbol' class='fill-gray pad2 keyline-bottom'>
-        <a class='micro quiet uppercase' href='#render_symbol' title='link to render: symbol'>Render: symbol</a>
+        <h3 class='space-bottom1'><a href='#render_symbol' title='link to render: symbol'>Render: symbol</a></h3>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>type</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>symbol </strong>
     </span>
     
@@ -588,10 +588,10 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>symbol-placement</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>point line </strong>
     </span>
     
@@ -603,11 +603,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>symbol-min-distance</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 250
     </span>
     
@@ -618,9 +618,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-allow-overlap</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
     
     
@@ -631,9 +631,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-ignore-placement</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
     
     
@@ -644,9 +644,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-optional</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
     
     
@@ -657,13 +657,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-rotation-alignment</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>map viewport </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> viewport
     </span>
     
@@ -674,11 +674,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-max-size</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -689,9 +689,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-image</span>
-    <a href='#string' class='space-right small'>string</a>
+    <a href='#string' class='space-right'>string</a>
     
     
     
@@ -702,11 +702,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-padding</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 2
     </span>
     
@@ -717,9 +717,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-keep-upright</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
     
     
@@ -730,11 +730,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-translate</span>
-    <a href='#array' class='space-right small'>array</a>
+    <a href='#array' class='space-right'>array</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0,0
     </span>
     
@@ -745,13 +745,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-translate-anchor</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>map viewport </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> map
     </span>
     
@@ -762,13 +762,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-rotation-alignment</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>map viewport </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> viewport
     </span>
     
@@ -779,9 +779,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-field</span>
-    <a href='#string' class='space-right small'>string</a>
+    <a href='#string' class='space-right'>string</a>
     
     
     
@@ -792,9 +792,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-font</span>
-    <a href='#string' class='space-right small'>string</a>
+    <a href='#string' class='space-right'>string</a>
     
     
     
@@ -805,11 +805,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-max-size</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 16
     </span>
     
@@ -820,11 +820,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-max-width</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 15
     </span>
     
@@ -835,11 +835,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-line-height</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1.2
     </span>
     
@@ -850,9 +850,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-letter-spacing</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
@@ -863,13 +863,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-justify</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>center left right </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> center
     </span>
     
@@ -880,13 +880,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-horizontal-align</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>left center right </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> center
     </span>
     
@@ -897,13 +897,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-vertical-align</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>top center bottom </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> center
     </span>
     
@@ -914,11 +914,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-max-angle</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 3.14
     </span>
     
@@ -929,9 +929,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-rotate</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
@@ -942,9 +942,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-slant</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
@@ -955,11 +955,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-padding</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 2
     </span>
     
@@ -970,11 +970,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-keep-upright</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> true
     </span>
     
@@ -985,13 +985,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-transform</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>none uppercase lowercase </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> none
     </span>
     
@@ -1002,11 +1002,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-translate</span>
-    <a href='#array' class='space-right small'>array</a>
+    <a href='#array' class='space-right'>array</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0,0
     </span>
     
@@ -1017,13 +1017,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-translate-anchor</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>map viewport </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> map
     </span>
     
@@ -1034,9 +1034,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-allow-overlap</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
     
     
@@ -1047,9 +1047,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-ignore-placement</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
     
     
@@ -1060,9 +1060,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-optional</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
     
     
@@ -1075,13 +1075,13 @@ navigation:
       </div>
       
       <div id='render_background' class='fill-gray pad2 keyline-bottom'>
-        <a class='micro quiet uppercase' href='#render_background' title='link to render: background'>Render: background</a>
+        <h3 class='space-bottom1'><a href='#render_background' title='link to render: background'>Render: background</a></h3>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>type</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>background </strong>
     </span>
     
@@ -1095,13 +1095,13 @@ navigation:
       </div>
       
       <div id='render_composite' class='fill-gray pad2 keyline-bottom'>
-        <a class='micro quiet uppercase' href='#render_composite' title='link to render: composite'>Render: composite</a>
+        <h3 class='space-bottom1'><a href='#render_composite' title='link to render: composite'>Render: composite</a></h3>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>type</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>composite </strong>
     </span>
     
@@ -1115,13 +1115,13 @@ navigation:
       </div>
       
       <div id='render_raster' class='fill-gray pad2 round-bottom'>
-        <a class='micro quiet uppercase' href='#render_raster' title='link to render: raster'>Render: raster</a>
+        <h3 class='space-bottom1'><a href='#render_raster' title='link to render: raster'>Render: raster</a></h3>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>type</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>raster </strong>
     </span>
     
@@ -1143,14 +1143,14 @@ navigation:
       </div>
       
       <div id='class_fill' class='fill-gray pad2 keyline-bottom'>
-        <a class='micro quiet uppercase' href='#class_fill' title='link to class: fill'>Class: fill</a>
+        <h3 class='space-bottom1'><a href='#class_fill' title='link to class: fill'>Class: fill</a></h3>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>fill-enabled</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> true
     </span>
     
@@ -1161,11 +1161,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>fill-antialias</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> true
     </span>
     
@@ -1176,11 +1176,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>fill-opacity</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -1191,11 +1191,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>fill-color</span>
-    <a href='#color' class='space-right small'>color</a>
+    <a href='#color' class='space-right'>color</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0,0,0,1
     </span>
     
@@ -1206,9 +1206,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>fill-outline-color</span>
-    <a href='#color' class='space-right small'>color</a>
+    <a href='#color' class='space-right'>color</a>
     
     
     
@@ -1219,11 +1219,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>fill-translate</span>
-    <a href='#array' class='space-right small'>array</a>
+    <a href='#array' class='space-right'>array</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0,0
     </span>
     
@@ -1234,13 +1234,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>fill-translate-anchor</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>map viewport </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> map
     </span>
     
@@ -1251,9 +1251,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>fill-image</span>
-    <a href='#string' class='space-right small'>string</a>
+    <a href='#string' class='space-right'>string</a>
     
     
     
@@ -1266,14 +1266,14 @@ navigation:
       </div>
       
       <div id='class_line' class='fill-gray pad2 keyline-bottom'>
-        <a class='micro quiet uppercase' href='#class_line' title='link to class: line'>Class: line</a>
+        <h3 class='space-bottom1'><a href='#class_line' title='link to class: line'>Class: line</a></h3>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-enabled</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> true
     </span>
     
@@ -1284,11 +1284,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-opacity</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -1299,11 +1299,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-color</span>
-    <a href='#color' class='space-right small'>color</a>
+    <a href='#color' class='space-right'>color</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0,0,0,1
     </span>
     
@@ -1314,11 +1314,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-translate</span>
-    <a href='#array' class='space-right small'>array</a>
+    <a href='#array' class='space-right'>array</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0,0
     </span>
     
@@ -1329,13 +1329,13 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-translate-anchor</span>
-    <a href='#enum' class='space-right small'>enum</a>
-    <span class='space-right quiet small'>
+    <a href='#enum' class='space-right'>enum</a>
+    <span class='space-right quiet'>
       <em>Options:</em> <strong>map viewport </strong>
     </span>
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> map
     </span>
     
@@ -1346,11 +1346,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-width</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -1361,9 +1361,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-offset</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
@@ -1374,11 +1374,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-blur</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -1389,11 +1389,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-dasharray</span>
-    <a href='#array' class='space-right small'>array</a>
+    <a href='#array' class='space-right'>array</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1,-1
     </span>
     
@@ -1404,9 +1404,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>line-image</span>
-    <a href='#string' class='space-right small'>string</a>
+    <a href='#string' class='space-right'>string</a>
     
     
     
@@ -1419,14 +1419,14 @@ navigation:
       </div>
       
       <div id='class_symbol' class='fill-gray pad2 keyline-bottom'>
-        <a class='micro quiet uppercase' href='#class_symbol' title='link to class: symbol'>Class: symbol</a>
+        <h3 class='space-bottom1'><a href='#class_symbol' title='link to class: symbol'>Class: symbol</a></h3>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-enabled</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> true
     </span>
     
@@ -1437,11 +1437,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-opacity</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -1452,9 +1452,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-rotate</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
@@ -1465,11 +1465,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-size</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -1480,11 +1480,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-color</span>
-    <a href='#color' class='space-right small'>color</a>
+    <a href='#color' class='space-right'>color</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0,0,0,1
     </span>
     
@@ -1495,11 +1495,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-halo-color</span>
-    <a href='#color' class='space-right small'>color</a>
+    <a href='#color' class='space-right'>color</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0,0,0,0
     </span>
     
@@ -1510,11 +1510,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-halo-width</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0.25
     </span>
     
@@ -1525,11 +1525,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>icon-halo-blur</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -1540,11 +1540,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-enabled</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> true
     </span>
     
@@ -1555,11 +1555,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-opacity</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -1570,11 +1570,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-size</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 16
     </span>
     
@@ -1585,11 +1585,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-color</span>
-    <a href='#color' class='space-right small'>color</a>
+    <a href='#color' class='space-right'>color</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0,0,0,1
     </span>
     
@@ -1600,11 +1600,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-halo-color</span>
-    <a href='#color' class='space-right small'>color</a>
+    <a href='#color' class='space-right'>color</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0,0,0,0
     </span>
     
@@ -1615,11 +1615,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-halo-width</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0.25
     </span>
     
@@ -1630,11 +1630,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>text-halo-blur</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -1647,14 +1647,14 @@ navigation:
       </div>
       
       <div id='class_background' class='fill-gray pad2 keyline-bottom'>
-        <a class='micro quiet uppercase' href='#class_background' title='link to class: background'>Class: background</a>
+        <h3 class='space-bottom1'><a href='#class_background' title='link to class: background'>Class: background</a></h3>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>background-color</span>
-    <a href='#color' class='space-right small'>color</a>
+    <a href='#color' class='space-right'>color</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0,0,0,1
     </span>
     
@@ -1665,9 +1665,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>background-image</span>
-    <a href='#string' class='space-right small'>string</a>
+    <a href='#string' class='space-right'>string</a>
     
     
     
@@ -1680,14 +1680,14 @@ navigation:
       </div>
       
       <div id='class_composite' class='fill-gray pad2 keyline-bottom'>
-        <a class='micro quiet uppercase' href='#class_composite' title='link to class: composite'>Class: composite</a>
+        <h3 class='space-bottom1'><a href='#class_composite' title='link to class: composite'>Class: composite</a></h3>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>composite-enabled</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> true
     </span>
     
@@ -1698,11 +1698,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>composite-opacity</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -1715,14 +1715,14 @@ navigation:
       </div>
       
       <div id='class_raster' class='fill-gray pad2 round-bottom'>
-        <a class='micro quiet uppercase' href='#class_raster' title='link to class: raster'>Class: raster</a>
+        <h3 class='space-bottom1'><a href='#class_raster' title='link to class: raster'>Class: raster</a></h3>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>raster-enabled</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> true
     </span>
     
@@ -1733,11 +1733,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>raster-opacity</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 1
     </span>
     
@@ -1748,9 +1748,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>raster-spin</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
@@ -1761,11 +1761,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>raster-brightness</span>
-    <a href='#array' class='space-right small'>array</a>
+    <a href='#array' class='space-right'>array</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0,1
     </span>
     
@@ -1776,9 +1776,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>raster-saturation</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
@@ -1789,9 +1789,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>raster-contrast</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
@@ -1802,9 +1802,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>raster-fade</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
@@ -1823,9 +1823,9 @@ navigation:
       <div class='space-bottom1'>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>enabled</span>
-    <a href='#boolean' class='space-right small'>boolean</a>
+    <a href='#boolean' class='space-right'>boolean</a>
     
     
     
@@ -1836,11 +1836,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>buffer</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 0.03125
     </span>
     
@@ -1851,11 +1851,11 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>size</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
-    <span class='space-right quiet small'>
+    <span class='space-right quiet'>
       <em>Default:</em> 256
     </span>
     
@@ -1866,9 +1866,9 @@ navigation:
 </div>
         
         <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'>blur</span>
-    <a href='#number' class='space-right small'>number</a>
+    <a href='#number' class='space-right'>number</a>
     
     
     
