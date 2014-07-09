@@ -12,14 +12,10 @@ function tmpl(x) {
 }
 
 var index = tmpl('index._');
-var toc = tmpl('toc._');
-var table = tmpl('symbolizers._');
 var item = tmpl('item._');
 
 fs.writeFileSync(path.join(__dirname, '../index.html'), index({
   ref: ref,
-  table: table,
   item: item,
-  toc: toc,
   _: _
 }));
