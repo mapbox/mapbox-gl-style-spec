@@ -31,7 +31,7 @@ navigation:
       id: render_composite
     - title: 'render: raster'
       id: render_raster
-    - title: class
+    - title: style
       id: class
     - title: 'class: background'
       id: class_background
@@ -118,14 +118,13 @@ navigation:
       <p>The Mapbox GL style is an object that defines what data to draw, the order to draw it in, and how to style the data when drawing it. The <a href='http://json.org'>JSON</a> structure follows the renderer implementation very closely. It provides the basic building blocks out of which more complex styles can be built.</p>
 
       <p class='space-bottom4 quiet small'>Key: 
-        <span class='icon alert quiet micro space-right inline' title='Required'>required</span>
         <span class='icon levels quiet micro space-right inline' title='Supports function values'>supports function values</span>
         <span class='icon opacity quiet micro space-right inline' title='Transitionable'>transitionable</span>
       </p>
 
     </div>
 
-<div class='prose doc fill-dark dark round space-bottom2'>
+<div class='prose doc fill-dark dark round space-bottom4'>
   <div class='code pad1 quiet keyline-bottom'>{</div>
   <div class='pad2 keyline-bottom' id='version'>
     <div class='code space-bottom1'>"<var>version</var>": 4,</div>
@@ -162,7 +161,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Required
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>vector</var>, <var>raster</var>, <var>geojson</var>, <var>video</var>.
@@ -184,7 +183,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Required
-      <a href='#string'>string.</a>
+      <a href='#string'>string</a>.
     </em>
     
     
@@ -204,7 +203,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#string'>string.</a>
+      <a href='#string'>string</a>.
     </em>
     
     
@@ -222,7 +221,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -242,7 +241,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -260,7 +259,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -319,7 +318,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#string'>string.</a>
+      <a href='#string'>string</a>.
     </em>
     
     
@@ -339,7 +338,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#string'>string.</a>
+      <a href='#string'>string</a>.
     </em>
     
     
@@ -359,7 +358,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#string'>string.</a>
+      <a href='#string'>string</a>.
     </em>
     
     
@@ -379,7 +378,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#string'>string.</a>
+      <a href='#string'>string</a>.
     </em>
     
     
@@ -399,7 +398,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#render'>render.</a>
+      <a href='#render'>render</a>.
     </em>
     
     
@@ -419,7 +418,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#filter'>filter.</a>
+      <a href='#filter'>filter</a>.
     </em>
     
     
@@ -439,7 +438,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#array'>array.</a>
+      <a href='#array'>array</a>.
     </em>
     
     
@@ -459,7 +458,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#rasterize'>rasterize.</a>
+      <a href='#rasterize'>rasterize</a>.
     </em>
     
     
@@ -477,7 +476,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#class'>class.</a>
+      <a href='#class'>class</a>.
     </em>
     
     
@@ -497,7 +496,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#class'>class.</a>
+      <a href='#class'>class</a>.
     </em>
     
     
@@ -527,7 +526,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -545,7 +544,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -561,11 +560,12 @@ navigation:
 
     
 
-    <div id='render' class='round space-bottom2 fill-white keyline-all'>
-      <div class='pad2 fill-gray keyline-bottom'>
-        <h2><a href='#render' title='link to render'>Render</a></h2>
-        <p>Each layer can include a <code>render</code> object defining how data for that layer should be passed to the GPU. The render type determines how the layer data can be styled and should be one of <em>fill, line, symbol, background, composite, raster</em>.</p>
-      </div>
+    <div id='render' class='pad2'>
+      <h2><a href='#render' title='link to render'>Render</a></h2>
+      <p>Each layer can include a <code>render</code> object defining how data for that layer should be passed to the GPU. The render type determines how the layer data can be styled and should be one of <em>fill, line, symbol, background, composite, raster</em>.</p>
+    </div>
+
+    <div class='round space-bottom4 fill-white keyline-all'>
       
       <div id='render_fill' class='pad2 keyline-bottom'>
         <h3 class='space-bottom1'><a href='#render_fill' title='link to render: fill'>Render: fill</a></h3>
@@ -579,7 +579,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>fill</var>.
@@ -599,7 +599,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>non-zero</var>, <var>even-odd</var>.
@@ -626,7 +626,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>line</var>.
@@ -646,7 +646,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>butt</var>, <var>round</var>, <var>square</var>.
@@ -670,7 +670,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>bevel</var>, <var>round</var>, <var>miter</var>.
@@ -694,7 +694,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -716,7 +716,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -743,7 +743,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>symbol</var>.
@@ -763,7 +763,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>point</var>, <var>line</var>.
@@ -783,7 +783,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -805,7 +805,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     
@@ -825,7 +825,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     
@@ -845,7 +845,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     
@@ -865,7 +865,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>map</var>, <var>viewport</var>.
@@ -889,7 +889,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -911,7 +911,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#string'>string.</a>
+      <a href='#string'>string</a>.
     </em>
     
     
@@ -931,7 +931,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -953,7 +953,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     
@@ -973,7 +973,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#array'>array.</a>
+      <a href='#array'>array</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -993,7 +993,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>map</var>, <var>viewport</var>.
@@ -1015,7 +1015,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>map</var>, <var>viewport</var>.
@@ -1039,7 +1039,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#string'>string.</a>
+      <a href='#string'>string</a>.
     </em>
     
     
@@ -1059,7 +1059,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#string'>string.</a>
+      <a href='#string'>string</a>.
     </em>
     
     
@@ -1079,7 +1079,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1101,7 +1101,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1123,7 +1123,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1145,7 +1145,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -1165,7 +1165,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>center</var>, <var>left</var>, <var>right</var>.
@@ -1189,7 +1189,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>left</var>, <var>center</var>, <var>right</var>.
@@ -1213,7 +1213,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>top</var>, <var>center</var>, <var>bottom</var>.
@@ -1237,7 +1237,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1259,7 +1259,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -1277,7 +1277,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -1297,7 +1297,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1319,7 +1319,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1341,7 +1341,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>none</var>, <var>uppercase</var>, <var>lowercase</var>.
@@ -1363,7 +1363,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#array'>array.</a>
+      <a href='#array'>array</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1383,7 +1383,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>map</var>, <var>viewport</var>.
@@ -1405,7 +1405,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     
@@ -1425,7 +1425,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     
@@ -1445,7 +1445,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     
@@ -1470,7 +1470,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>background</var>.
@@ -1495,7 +1495,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>composite</var>.
@@ -1520,7 +1520,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>raster</var>.
@@ -1535,11 +1535,11 @@ navigation:
       
     </div>
 
-    <div id='class' class='round space-bottom2 fill-white keyline-all'>
-      <div class='pad2 fill-gray keyline-bottom'>
-        <h2><a href='#class' title='link to class'>Style</a></h2>
-        <p>Each layer can include one or more <code>style</code> objects defining how to style data for that layer. The style type should be one of <em>fill, line, symbol, background, composite, raster</em>.</p>
-      </div>
+    <div id='class' class='pad2'>
+      <h2><a href='#class' title='link to class'>Style</a></h2>
+      <p>Each layer can include one or more <code>style</code> objects defining how to style data for that layer. The style type should be one of <em>fill, line, symbol, background, composite, raster</em>.</p>
+    </div>
+    <div class='round space-bottom4 fill-white keyline-all'>
       
       <div id='class_fill' class='pad2 keyline-bottom'>
         <h3 class='space-bottom1'><a href='#class_fill' title='link to class: fill'>Class: fill</a></h3>
@@ -1553,7 +1553,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1573,7 +1573,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1595,7 +1595,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1615,7 +1615,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#color'>color.</a>
+      <a href='#color'>color</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1635,7 +1635,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#color'>color.</a>
+      <a href='#color'>color</a>.
     </em>
     
     
@@ -1655,7 +1655,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#array'>array.</a>
+      <a href='#array'>array</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1675,7 +1675,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>map</var>, <var>viewport</var>.
@@ -1697,7 +1697,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#string'>string.</a>
+      <a href='#string'>string</a>.
     </em>
     
     
@@ -1720,7 +1720,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1740,7 +1740,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1760,7 +1760,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#color'>color.</a>
+      <a href='#color'>color</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1780,7 +1780,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#array'>array.</a>
+      <a href='#array'>array</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1800,7 +1800,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#enum'>enum.</a>
+      <a href='#enum'>enum</a>.
     </em>
     <span class='space-right quiet'>
       <em>One of</em> <var>map</var>, <var>viewport</var>.
@@ -1822,7 +1822,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1842,7 +1842,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -1862,7 +1862,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1882,7 +1882,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#array'>array.</a>
+      <a href='#array'>array</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1902,7 +1902,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#string'>string.</a>
+      <a href='#string'>string</a>.
     </em>
     
     
@@ -1927,7 +1927,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1947,7 +1947,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -1967,7 +1967,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -1985,7 +1985,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2007,7 +2007,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#color'>color.</a>
+      <a href='#color'>color</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2029,7 +2029,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#color'>color.</a>
+      <a href='#color'>color</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2049,7 +2049,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2071,7 +2071,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2093,7 +2093,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2113,7 +2113,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2133,7 +2133,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2155,7 +2155,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#color'>color.</a>
+      <a href='#color'>color</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2175,7 +2175,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#color'>color.</a>
+      <a href='#color'>color</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2195,7 +2195,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2217,7 +2217,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2244,7 +2244,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#color'>color.</a>
+      <a href='#color'>color</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2264,7 +2264,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#string'>string.</a>
+      <a href='#string'>string</a>.
     </em>
     
     
@@ -2287,7 +2287,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2307,7 +2307,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2332,7 +2332,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2352,7 +2352,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2372,7 +2372,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -2390,7 +2390,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#array'>array.</a>
+      <a href='#array'>array</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2410,7 +2410,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -2428,7 +2428,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -2446,7 +2446,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -2459,7 +2459,7 @@ navigation:
       
     </div>
 
-    <div id='rasterize' class='round keyline-all fill-white pad2 space-bottom2'>
+    <div id='rasterize' class='round keyline-all fill-white pad2 space-bottom4'>
       <h2><a href='#rasterize' title='link to rasterize'>rasterize</a></h2>
       <div class='space-bottom1'>
         
@@ -2472,7 +2472,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#boolean'>boolean.</a>
+      <a href='#boolean'>boolean</a>.
     </em>
     
     
@@ -2490,7 +2490,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2510,7 +2510,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     <span class='space-right quiet'>
@@ -2530,7 +2530,7 @@ navigation:
   <div class='small pad2x'>
     <em class='inline quiet'>
       Optional
-      <a href='#number'>number.</a>
+      <a href='#number'>number</a>.
     </em>
     
     
@@ -2544,12 +2544,12 @@ navigation:
 
 
 
-    <div class='round keyline-all fill-white'>
-      <div class='pad2 keyline-bottom fill-gray'>
-        <h2 id='values'>Values</h2>
-        <p>Below is a list of values and an explanation of any expression that can be applied to properties in Mapbox GL.</p>
-      </div>
+    <div class='pad2'>
+      <h2 id='values'><a href='#values' title='link to values'>Values</a></h2>
+      <p>Below is a list of values and an explanation of any expression that can be applied to properties in Mapbox GL.</p>
+    </div>
 
+    <div class='round keyline-all fill-white'>
       <div class='pad2 keyline-bottom'>
         <h3 id='color' class='space-bottom1'><a href='#color' title='link to color'>Color</a></h3>
         <p class='small'>Mapbox GL accepts a variety of syntaxes for colors - HTML-style hex values, rgb, rgba, hsl, and hsla. It also supports the predefined HTML colors names, like <code>yellow</code> and <code>blue</code>.</p>
@@ -2611,12 +2611,12 @@ navigation:
       </div>
 
       <div class='pad2 keyline-bottom'>
-        <h3 id='filter'><a href='#filter' title='link to filter'>Filter</a></h3>
+        <h3 id='filter' class='space-bottom1'><a href='#filter' title='link to filter'>Filter</a></h3>
         <p class='small'>TODO</p>
       </div>
 
-      <div class='pad2 keyline-bottom'>
-        <h3 id='function'><a href='#function' title='link to function'>Function</a></h3>
+      <div class='pad2'>
+        <h3 id='function' class='space-bottom1'><a href='#function' title='link to function'>Function</a></h3>
         <p class='small'>TODO</p>
       </div>
     </div>
