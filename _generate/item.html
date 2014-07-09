@@ -1,11 +1,11 @@
 <div class='col12 clearfix pad0y'>
-  <div>
+  <div class='small'>
     <span class='code space-right'><%= name %></span>
-    <% if (prop.type && prop.type !== '*') { %><a href='#<%= prop.type %>' class='space-right small'><%= prop.type %></a><% } %>
-    <% if (prop.values) { %><span class='space-right quiet small'>
+    <% if (prop.type && prop.type !== '*') { %><a href='#<%= prop.type %>' class='space-right'><%= prop.type %></a><% } %>
+    <% if (prop.values) { %><span class='space-right quiet'>
       <em>Options:</em> <strong><% _(prop.values).each(function(opt) { %><%= opt %> <% }) %></strong>
     </span><% } %>
-    <% if (prop.default) { %><span class='space-right quiet small'>
+    <% if (prop.default) { %><span class='space-right quiet'>
       <em>Default:</em> <%= prop.default %>
     </span><% } %>
     <% if (prop.required) { %><span class='icon alert inline quiet'></span><% } %>

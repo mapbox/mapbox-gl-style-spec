@@ -128,22 +128,22 @@ navigation:
 <div class='prose doc fill-dark dark round space-bottom2'>
   <div class='code pad1 quiet keyline-bottom'>{</div>
   <div class='pad2 keyline-bottom' id='version'>
-    <div class='code'>"<var>version</var>": <%= ref.$version %>,</div>
+    <div class='code space-bottom1'>"<var>version</var>": <%= ref.$version %>,</div>
     <p class='small quiet'><%= ref.$root.version.doc %></p>
   </div>
   <div class='pad2 keyline-bottom' id='sprite'>
-    <div class='code'>"<var>sprite</var>": "https://www.mapbox.com",</div>
+    <div class='code space-bottom1'>"<var>sprite</var>": "https://www.mapbox.com",</div>
     <p class='small quiet'><%= ref.sprite[0].doc %></p>
   </div>
   <div class='pad2 keyline-bottom' id='constants'>
-<div class='code'>"<var>constants</var>": {
+<div class='code space-bottom1'>"<var>constants</var>": {
   "@water": "#88aacc",
   "@land": "#ffffff"
 },</div>
     <p class='small quiet'><%= ref.constants['*'].doc %></p>
   </div>
   <div class='pad2 keyline-bottom' id='sources'>
-<div class='code'>"<var>sources</var>": {
+<div class='code space-bottom1'>"<var>sources</var>": {
   "streets": {
     "type": "vector",
     "url": "mapbox://mapbox.mapbox-streets-v5",
@@ -151,14 +151,14 @@ navigation:
   }
 },</div>
     <p class='small quiet'><%= ref.$root.sources.doc %></p>
-    <div class='pad1 fill-darken1 round'>
+    <div class='pad1 fill-darken0 round'>
     <% _(ref.source).each(function(prop, name) { %>
     <%= item({prop: prop, name: name}) %>
     <% }); %>
     </div>
   </div>
   <div id='layers' class='pad2 keyline-bottom'>
-<div class='code'>"<var>layers</var>": [
+<div class='code space-bottom1'>"<var>layers</var>": [
   {
     "id": "water",
     "source": "mapbox-streets",
@@ -172,19 +172,19 @@ navigation:
   }
 ],</div>
     <p class='small quiet'><%= ref.$root.layers.doc %></p>
-    <div class='pad1 fill-darken1 round'>
+    <div class='pad1 fill-darken0 round'>
       <% _(ref.layer).each(function(prop, name) { %>
       <%= item({prop: prop, name: name}) %>
       <% }); %>
     </div>
   </div>
   <div class='pad2 keyline-bottom' id='transition'>
-<div class='code'>"<var>transition</var>": {
+<div class='code space-bottom1'>"<var>transition</var>": {
   "duration": 300,
   "delay": 0
 },</div>
     <p class='small quiet'><%= ref.transition.doc || '@TODO' %></p>
-    <div class='pad1 fill-darken1 round'>
+    <div class='pad1 fill-darken0 round'>
     <% _(ref.transition).each(function(prop, name) { %>
     <%= item({prop: prop, name: name}) %>
     <% }); %>
@@ -199,8 +199,8 @@ navigation:
       <h2><a href='#render' title='link to render'>Render</a></h2>
       <p>Each layer can include a <code>render</code> object defining how data for that layer should be passed to the GPU. The render type determines how the layer data can be styled and should be one of <em><%= types.join(', ') %></em>.</p>
       <% _(types).each(function(t) { %>
-      <div id='render_<%= t %>' class='col12 clearfix space-bottom1'>
-        <a class='micro quiet uppercase' href='#render_<%= t %>' title='link to render: <%= t %>'>Render: <%= t %></a>
+      <div id='render_<%= t %>' class='col12 clearfix space-bottom2'>
+        <h3 class='space-bottom1'><a href='#render_<%= t %>' title='link to render: <%= t %>'>Render: <%= t %></a></h3>
         <% _(ref['render_'+t]).each(function(prop, name) { %>
         <%= item({prop: prop, name: name}) %>
         <% }); %>
@@ -212,8 +212,8 @@ navigation:
       <h2><a href='#class' title='link to class'>Style</a></h2>
       <p>Each layer can include one or more <code>style</code> objects defining how to style data for that layer. The style type should be one of <em><%= types.join(', ') %></em>.</p>
       <% _(types).each(function(t) { %>
-      <div id='class_<%= t %>' class='col12 clearfix space-bottom1'>
-        <a class='micro quiet uppercase' href='#class_<%= t %>' title='link to class: <%= t %>'>Class: <%= t %></a>
+      <div id='class_<%= t %>' class='col12 clearfix space-bottom2'>
+        <h3 class='space-bottom1'><a href='#class_<%= t %>' title='link to class: <%= t %>'>Class: <%= t %></a></h3>
         <% _(ref['class_'+t]).each(function(prop, name) { %>
         <%= item({prop: prop, name: name}) %>
         <% }); %>
