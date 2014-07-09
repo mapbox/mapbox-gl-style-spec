@@ -168,40 +168,30 @@ navigation:
 <div class='prose doc fill-dark dark round space-bottom2'>
   <div class='code pad1 quiet keyline-bottom'>{</div>
   <div class='pad2 keyline-bottom' id='version'>
-    <h2><a href='#version' title='link to version'>version</a></h2>
-    <div>
-      <a href='#enum' class='space-right small'>enum</a>
-      <span class='icon alert inline quiet'></span>
-    </div>
-    <p class='small'>Stylesheet version number. Must be 4.</p>
-    <div class='code quiet'>"version": 4,</div>
+    <div class='code'>"<var>version</var>": 4,</div>
+    <p class='small quiet'>Stylesheet version number. Must be 4.</p>
   </div>
   <div class='pad2 keyline-bottom' id='sprite'>
-    <h2><a href='#sprite' title='link to sprite'>sprite</a></h2>
-    <div>
-      <a href='#string' class='space-right small'>string</a>
-    </div>
-    <p class='small'>A base URL for retrieving the sprite image and metadata. The extensions `.png`, `.json` and scale factor `@2x.png` will be automatically appended.</p>
-    <div class='code quiet'>"sprite": "https://www.mapbox.com",</div>
+    <div class='code'>"<var>sprite</var>": "https://www.mapbox.com",</div>
+    <p class='small quiet'>A base URL for retrieving the sprite image and metadata. The extensions `.png`, `.json` and scale factor `@2x.png` will be automatically appended.</p>
   </div>
   <div class='pad2 keyline-bottom' id='constants'>
-    <h2><a href='#constants' title='link to constants'>constants</a></h2>
-    <p class='small'>A constant that will be replaced verbatim in the referencing place. This can be anything, including objects and arrays. All variable names must be prefixed with an `@` symbol.</p>
-<div class='code quiet'>"constants": {
+<div class='code'>"<var>constants</var>": {
   "@water": "#88aacc",
   "@land": "#ffffff"
 },</div>
+    <p class='small quiet'>A constant that will be replaced verbatim in the referencing place. This can be anything, including objects and arrays. All variable names must be prefixed with an `@` symbol.</p>
   </div>
   <div class='pad2 keyline-bottom' id='sources'>
-    <h2><a href='#sources' title='link to sources'>sources</a></h2>
-    <p class='small'>Data source specifications for layers to pull from.</p>
-<div class='code quiet space-bottom1'>"sources": {
+<div class='code'>"<var>sources</var>": {
   "streets": {
     "type": "vector",
     "url": "mapbox://mapbox.mapbox-streets-v5",
     "tileSize": 512
   }
 },</div>
+    <p class='small quiet'>Data source specifications for layers to pull from.</p>
+    <div class='pad1 fill-darken1 round'>
     
     <div class='col12 clearfix pad0y'>
   <div>
@@ -300,11 +290,10 @@ navigation:
   <p class='small pad2x'>Other keys to configure the data source.</p>
 </div>
     
+    </div>
   </div>
   <div id='layers' class='pad2 keyline-bottom'>
-    <h2><a href='#layers' title='link to layers'>layers</a></h2>
-    <p class='small'>A an array of layers. The order of layers coincides with the order they will be drawn.</p>
-<div class='code quiet space-bottom1'>"layers": [
+<div class='code'>"<var>layers</var>": [
   {
     "id": "water",
     "source": "mapbox-streets",
@@ -317,7 +306,8 @@ navigation:
     }
   }
 ],</div>
-    <div class='space-bottom4'>
+    <p class='small quiet'>A an array of layers. The order of layers coincides with the order they will be drawn.</p>
+    <div class='pad1 fill-darken1 round'>
       
       <div class='col12 clearfix pad0y'>
   <div>
@@ -450,11 +440,51 @@ navigation:
 </div>
       
     </div>
+  </div>
+  <div class='pad2 keyline-bottom' id='transition'>
+<div class='code'>"<var>transition</var>": {
+  "duration": 300,
+  "delay": 0
+},</div>
+    <p class='small quiet'>@TODO</p>
+    <div class='pad1 fill-darken1 round'>
+    
+    <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>duration</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    
+    
+    
+    
+  </div>
+  
+</div>
+    
+    <div class='col12 clearfix pad0y'>
+  <div>
+    <span class='code space-right'>delay</span>
+    <a href='#number' class='space-right small'>number</a>
+    
+    
+    
+    
+    
+  </div>
+  
+</div>
+    
+    </div>
+  </div>
+  <div class='code pad1 quiet'>}</div>
+</div>
 
     
 
-    <div id='render' class='space-bottom4 indented pad2x'>
-      <h2><a href='#render' title='link to render'>render</a></h2>
+    <div id='render' class='round keyline-all fill-white pad2 space-bottom2'>
+      <h2><a href='#render' title='link to render'>Render</a></h2>
+      <p>Each layer can include a <code>render</code> object defining how data for that layer should be passed to the GPU. The render type determines how the layer data can be styled and should be one of <em>background, fill, line, symbol, composite, raster</em>.</p>
       
       <div id='render_background' class='col12 clearfix space-bottom1'>
         <a class='micro quiet uppercase' href='#render_background' title='link to render: background'>Render: background</a>
@@ -1144,8 +1174,9 @@ navigation:
       
     </div>
 
-    <div id='class' class='space-bottom4 indented pad2x'>
-      <h2><a href='#class' title='link to class'>class</a></h2>
+    <div id='class' class='round keyline-all fill-white pad2 space-bottom2'>
+      <h2><a href='#class' title='link to class'>Style</a></h2>
+      <p>Each layer can include one or more <code>style</code> objects defining how to style data for that layer. The style type should be one of <em>background, fill, line, symbol, composite, raster</em>.</p>
       
       <div id='class_background' class='col12 clearfix space-bottom1'>
         <a class='micro quiet uppercase' href='#class_background' title='link to class: background'>Class: background</a>
@@ -1823,7 +1854,7 @@ navigation:
       
     </div>
 
-    <div id='rasterize' class='indented pad2x'>
+    <div id='rasterize' class='round keyline-all fill-white pad2 space-bottom2'>
       <h2><a href='#rasterize' title='link to rasterize'>rasterize</a></h2>
       <div class='space-bottom1'>
         
@@ -1886,43 +1917,7 @@ navigation:
       </div>
     </div>
 
-  </div>
-  <div class='pad2 keyline-bottom' id='transition'>
-    <h2><a href='#transition' title='link to transition'>transition</a></h2>
-<div class='code space-bottom1 quiet'>"transition": {
-  "duration": 300,
-  "delay": 0
-},</div>
-    
-    <div class='col12 clearfix pad0y'>
-  <div>
-    <span class='code space-right'>duration</span>
-    <a href='#number' class='space-right small'>number</a>
-    
-    
-    
-    
-    
-  </div>
-  
-</div>
-    
-    <div class='col12 clearfix pad0y'>
-  <div>
-    <span class='code space-right'>delay</span>
-    <a href='#number' class='space-right small'>number</a>
-    
-    
-    
-    
-    
-  </div>
-  
-</div>
-    
-  </div>
-  <div class='code pad1 quiet'>}</div>
-</div>
+
 
     <div class='round keyline-all fill-white pad2'>
       <h2 id='values'>Values</h2>

@@ -83,48 +83,37 @@ navigation:
 <div class='prose doc fill-dark dark round space-bottom2'>
   <div class='code pad1 quiet keyline-bottom'>{</div>
   <div class='pad2 keyline-bottom' id='version'>
-    <h2><a href='#version' title='link to version'>version</a></h2>
-    <div>
-      <a href='#enum' class='space-right small'>enum</a>
-      <span class='icon alert inline quiet'></span>
-    </div>
-    <p class='small'><%= ref.$root.version.doc %></p>
-    <div class='code quiet'>"version": <%= ref.$version %>,</div>
+    <div class='code'>"<var>version</var>": <%= ref.$version %>,</div>
+    <p class='small quiet'><%= ref.$root.version.doc %></p>
   </div>
   <div class='pad2 keyline-bottom' id='sprite'>
-    <h2><a href='#sprite' title='link to sprite'>sprite</a></h2>
-    <div>
-      <a href='#string' class='space-right small'>string</a>
-    </div>
-    <p class='small'><%= ref.sprite[0].doc %></p>
-    <div class='code quiet'>"sprite": "https://www.mapbox.com",</div>
+    <div class='code'>"<var>sprite</var>": "https://www.mapbox.com",</div>
+    <p class='small quiet'><%= ref.sprite[0].doc %></p>
   </div>
   <div class='pad2 keyline-bottom' id='constants'>
-    <h2><a href='#constants' title='link to constants'>constants</a></h2>
-    <p class='small'><%= ref.constants['*'].doc %></p>
-<div class='code quiet'>"constants": {
+<div class='code'>"<var>constants</var>": {
   "@water": "#88aacc",
   "@land": "#ffffff"
 },</div>
+    <p class='small quiet'><%= ref.constants['*'].doc %></p>
   </div>
   <div class='pad2 keyline-bottom' id='sources'>
-    <h2><a href='#sources' title='link to sources'>sources</a></h2>
-    <p class='small'><%= ref.$root.sources.doc %></p>
-<div class='code quiet space-bottom1'>"sources": {
+<div class='code'>"<var>sources</var>": {
   "streets": {
     "type": "vector",
     "url": "mapbox://mapbox.mapbox-streets-v5",
     "tileSize": 512
   }
 },</div>
+    <p class='small quiet'><%= ref.$root.sources.doc %></p>
+    <div class='pad1 fill-darken1 round'>
     <% _(ref.source).each(function(prop, name) { %>
     <%= item({prop: prop, name: name}) %>
     <% }); %>
+    </div>
   </div>
   <div id='layers' class='pad2 keyline-bottom'>
-    <h2><a href='#layers' title='link to layers'>layers</a></h2>
-    <p class='small'><%= ref.$root.layers.doc %></p>
-<div class='code quiet space-bottom1'>"layers": [
+<div class='code'>"<var>layers</var>": [
   {
     "id": "water",
     "source": "mapbox-streets",
@@ -137,16 +126,33 @@ navigation:
     }
   }
 ],</div>
-    <div class='space-bottom4'>
+    <p class='small quiet'><%= ref.$root.layers.doc %></p>
+    <div class='pad1 fill-darken1 round'>
       <% _(ref.layer).each(function(prop, name) { %>
       <%= item({prop: prop, name: name}) %>
       <% }); %>
     </div>
+  </div>
+  <div class='pad2 keyline-bottom' id='transition'>
+<div class='code'>"<var>transition</var>": {
+  "duration": 300,
+  "delay": 0
+},</div>
+    <p class='small quiet'><%= ref.transition.doc || '@TODO' %></p>
+    <div class='pad1 fill-darken1 round'>
+    <% _(ref.transition).each(function(prop, name) { %>
+    <%= item({prop: prop, name: name}) %>
+    <% }); %>
+    </div>
+  </div>
+  <div class='code pad1 quiet'>}</div>
+</div>
 
     <% var types = ['background', 'fill', 'line', 'symbol', 'composite', 'raster'] %>
 
-    <div id='render' class='space-bottom4 indented pad2x'>
-      <h2><a href='#render' title='link to render'>render</a></h2>
+    <div id='render' class='round keyline-all fill-white pad2 space-bottom2'>
+      <h2><a href='#render' title='link to render'>Render</a></h2>
+      <p>Each layer can include a <code>render</code> object defining how data for that layer should be passed to the GPU. The render type determines how the layer data can be styled and should be one of <em><%= types.join(', ') %></em>.</p>
       <% _(types).each(function(t) { %>
       <div id='render_<%= t %>' class='col12 clearfix space-bottom1'>
         <a class='micro quiet uppercase' href='#render_<%= t %>' title='link to render: <%= t %>'>Render: <%= t %></a>
@@ -157,8 +163,9 @@ navigation:
       <% }); %>
     </div>
 
-    <div id='class' class='space-bottom4 indented pad2x'>
-      <h2><a href='#class' title='link to class'>class</a></h2>
+    <div id='class' class='round keyline-all fill-white pad2 space-bottom2'>
+      <h2><a href='#class' title='link to class'>Style</a></h2>
+      <p>Each layer can include one or more <code>style</code> objects defining how to style data for that layer. The style type should be one of <em><%= types.join(', ') %></em>.</p>
       <% _(types).each(function(t) { %>
       <div id='class_<%= t %>' class='col12 clearfix space-bottom1'>
         <a class='micro quiet uppercase' href='#class_<%= t %>' title='link to class: <%= t %>'>Class: <%= t %></a>
@@ -169,7 +176,7 @@ navigation:
       <% }); %>
     </div>
 
-    <div id='rasterize' class='indented pad2x'>
+    <div id='rasterize' class='round keyline-all fill-white pad2 space-bottom2'>
       <h2><a href='#rasterize' title='link to rasterize'>rasterize</a></h2>
       <div class='space-bottom1'>
         <% _(ref.rasterize).each(function(prop, name) { %>
@@ -178,19 +185,7 @@ navigation:
       </div>
     </div>
 
-  </div>
-  <div class='pad2 keyline-bottom' id='transition'>
-    <h2><a href='#transition' title='link to transition'>transition</a></h2>
-<div class='code space-bottom1 quiet'>"transition": {
-  "duration": 300,
-  "delay": 0
-},</div>
-    <% _(ref.transition).each(function(prop, name) { %>
-    <%= item({prop: prop, name: name}) %>
-    <% }); %>
-  </div>
-  <div class='code pad1 quiet'>}</div>
-</div>
+
 
     <div class='round keyline-all fill-white pad2'>
       <h2 id='values'>Values</h2>
