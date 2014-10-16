@@ -1,8 +1,8 @@
 {
   "name": "mapbox-gl-style-spec",
-  "version": "0.0.8",
+  "version": "5.0.0",
   "description": "a specification for mapbox gl styles",
-  "main": "index.js",
+  "main": "index.json",
   "bin": {},
   "scripts": {
     "test": "tape ./test.js",
