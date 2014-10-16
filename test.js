@@ -1,23 +1,22 @@
 'use strict';
 
 var test = require('tape');
-var spec = require('./');
+var ref = require('./');
 
-Object.keys(spec).forEach(function(v) {
-  test(v, function(t) {
-    for (var k in spec[v]) {
-      // Exception for version.
-      if (k === '$version') {
-        t.equal(typeof spec[v].$version, 'number', '$version (number)');
-      } else {
-        validSchema(k, t, spec[v][k], spec[v]);
-      }
-    }
+for (var k in ref) {
+  if (k !== '$version') {
+    testProperty(k);
+  }
+}
+
+function testProperty(k) {
+  test(k, function(t) {
+    validSchema(k, t, ref[k]);
     t.end();
   });
-});
+}
 
-function validSchema(k, t, obj, ref) {
+function validSchema(k, t, obj) {
   var scalar = ['boolean','string','number'];
   var types = Object.keys(ref).concat(['boolean','string','number','array','enum','color','*']);
   var keys = [
