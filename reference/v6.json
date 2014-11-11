@@ -192,6 +192,7 @@
     "line-miter-limit": {
       "type": "number",
       "default": 2,
+      "units": "×",
       "doc": "Used to automatically convert miter joins to bevel joins for sharp angles.",
       "requires": [
         {
@@ -202,6 +203,7 @@
     "line-round-limit": {
       "type": "number",
       "default": 1,
+      "units": "×",
       "doc": "Used to automatically convert round joins to miter joins for shallow angles.",
       "requires": [
         {
@@ -278,6 +280,7 @@
       "type": "number",
       "default": 1,
       "minimum": 0,
+      "units": "×",
       "doc": "The maximum factor to scale the icon.",
       "requires": [
         "icon-image"
@@ -790,6 +793,7 @@
       "default": 1,
       "function": true,
       "transition": true,
+      "units": "×",
       "doc": "Scale factor for icon. 1 is original size, 3 triples the size.",
       "requires": [
         "icon-image"
