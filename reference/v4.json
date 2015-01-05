@@ -660,10 +660,6 @@
       "type": "array",
       "value": "number",
       "length": 2,
-      "default": [
-        1,
-        -1
-      ],
       "function": true,
       "transition": true
     },
