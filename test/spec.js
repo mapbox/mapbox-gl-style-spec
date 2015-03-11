@@ -1,9 +1,9 @@
 'use strict';
 
 var test = require('tape');
-var spec = require('./');
+var spec = require('../');
 
-Object.keys(spec).forEach(function(v) {
+['v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'latest'].forEach(function(v) {
   test(v, function(t) {
     for (var k in spec[v]) {
       // Exception for version.
@@ -32,10 +32,10 @@ function validSchema(k, t, obj, ref) {
     'units',
     'tokens',
     'values',
-    "maximum",
-    "minimum",
-    "period",
-    "requires"
+    'maximum',
+    'minimum',
+    'period',
+    'requires'
   ];
 
   // Schema object.
@@ -82,7 +82,7 @@ function validSchema(k, t, obj, ref) {
       if (obj.transition !== undefined)
         t.equal('boolean', typeof obj.transition, k + '.transition (boolean)');
       if (obj.requires !== undefined)
-        t.equal(true, Array.isArray(obj.requires), k + '.requires (array)')
+        t.equal(true, Array.isArray(obj.requires), k + '.requires (array)');
       // Array of schema objects or references.
   } else if (Array.isArray(obj)) {
     obj.forEach(function(child, j) {
