@@ -440,7 +440,8 @@
       "doc": "Value to use for a text label. Feature properties are specified using tokens like {field_name}."
     },
     "text-font": {
-      "type": "string",
+      "type": "array",
+      "value": "string",
       "function": "piecewise-constant",
       "default": "Open Sans Regular, Arial Unicode MS Regular",
       "doc": "Font stack to use for displaying text.",
