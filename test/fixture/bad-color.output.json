@@ -1,10 +1,22 @@
 [
   {
     "line": 16,
-    "message": "layers[0].paint.fill-color: color expected, array found"
+    "message": "layers[0].paint.fill-color: expected one of [darken, lighten, desaturate, saturate, spin, fadeout, fadein, mix], 1 found"
+  },
+  {
+    "line": 16,
+    "message": "layers[0].paint.fill-color: color expected, number found"
   },
   {
     "line": 17,
     "message": "layers[0].paint.fill-outline-color: color expected, \"not a color\" found"
+  },
+  {
+    "line": 26,
+    "message": "layers[1].paint.fill-color: mix must have two colors, only found one"
+  },
+  {
+    "line": 27,
+    "message": "layers[1].paint.fill-outline-color: expected one of [darken, lighten, desaturate, saturate, spin, fadeout, fadein, mix], darkn found"
   }
 ]
