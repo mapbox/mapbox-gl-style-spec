@@ -12,7 +12,7 @@
   "dependencies": {
     "csscolorparser": "~1.0.2",
     "glob": "~4.0.2",
-    "js-beautify": "^1.4.2",
+    "json-stringify-pretty-compact": "^1.0.1",
     "jsonlint-lines-primitives": "~1.6.0",
     "minimist": "0.0.8",
     "rw": "^0.1.4",
