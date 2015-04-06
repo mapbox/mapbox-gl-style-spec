@@ -706,13 +706,10 @@
   "color_operation": {
     "type": "enum",
     "values": [
-      "darken",
       "lighten",
-      "desaturate",
       "saturate",
       "spin",
-      "fadeout",
-      "fadein",
+      "fade",
       "mix"
     ]
   },
