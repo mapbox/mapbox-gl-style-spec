@@ -152,8 +152,7 @@
     "render_icon",
     "render_text",
     "render_composite",
-    "render_raster",
-    "render_circle"
+    "render_raster"
   ],
   "render_fill": {
     "type": {
@@ -882,37 +881,6 @@
     },
     "background-image": {
       "type": "string"
-    }
-  },
-  "class_circle": {
-    "circle-color": {
-      "type": "color",
-      "default": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "function": true,
-      "transition": true
-    },
-    "circle-opacity": {
-      "type": "number",
-      "function": true,
-      "default": 1,
-      "transition": true
-    },
-    "circle-radius": {
-      "type": "number",
-      "function": true,
-      "default": 5,
-      "transition": true
-    },
-    "circle-blur": {
-      "type": "number",
-      "function": true,
-      "default": 0,
-      "transition": true
     }
   },
   "transition": {
