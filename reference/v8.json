@@ -187,6 +187,7 @@
       "values": [
         "fill",
         "line",
+        "circle",
         "symbol",
         "raster",
         "background"
@@ -242,6 +243,7 @@
   "layout": [
     "layout_fill",
     "layout_line",
+    "layout_circle",
     "layout_symbol",
     "layout_raster",
     "layout_background"
@@ -326,6 +328,7 @@
       "doc": "The display of this layer. `none` hides this layer."
     }
   },
+  "layout_circle": {},
   "layout_symbol": {
     "symbol-placement": {
       "type": "symbol-placement-enum",
@@ -766,6 +769,7 @@
   "paint": [
     "paint_fill",
     "paint_line",
+    "paint_circle",
     "paint_symbol",
     "paint_raster",
     "paint_background"
@@ -939,6 +943,24 @@
       "function": "piecewise-constant",
       "transition": true,
       "doc": "Name of image in sprite to use for drawing image lines."
+    }
+  },
+  "paint_circle": {
+    "circle-radius": {
+      "type": "number",
+      "default": 1,
+      "minimum": 0,
+      "function": "interpolated",
+      "transition": true,
+      "units": "pixels",
+      "doc": "Circle radius."
+    },
+    "circle-color": {
+      "type": "color",
+      "default": "#000000",
+      "doc": "The color of the circle.",
+      "function": "interpolated",
+      "transition": true
     }
   },
   "paint_symbol": {
