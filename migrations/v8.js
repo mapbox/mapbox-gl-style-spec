@@ -103,9 +103,9 @@ module.exports = function(style) {
         for (var key in obj) {
             var val = obj[key];
             if (Array.isArray(val)) {
-                val.forEach(function(v) {
-                    findConstant(key, v, constants, true, callback);
-                });
+                for (var i in val) {
+                    findConstant(key, val[i], constants, true, callback);
+                }
             }
             findConstant(key, val, constants, false, callback);
         }
