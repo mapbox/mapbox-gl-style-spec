@@ -28,10 +28,6 @@
     "line": 109
   },
   {
-    "message": "layers[8].paint.fill-antialias.base: number expected, string found",
-    "line": 123
-  },
-  {
     "message": "layers[8].paint.fill-antialias.domain: domain elements must be in ascending order",
     "line": 124
   }
