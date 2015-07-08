@@ -1,21 +1,33 @@
 {
-  "$version": 7,
+  "$version": 8,
   "$root": {
     "version": {
       "required": true,
       "type": "enum",
       "values": [
-        7
+        8
       ],
-      "doc": "Stylesheet version number. Must be 7."
+      "doc": "Stylesheet version number. Must be 8."
     },
     "name": {
       "type": "string",
       "doc": "A human-readable name for the style."
     },
-    "constants": {
-      "type": "constants",
-      "doc": "An object of constants to be referenced in layers."
+    "center": {
+      "type": "array",
+      "value": "number",
+      "doc": "Default centerpoint in longitude and latitude."
+    },
+    "zoom": {
+      "type": "number",
+      "doc": "Default zoom level."
+    },
+    "bearing": {
+      "type": "number",
+      "default": 0,
+      "period": 360,
+      "units": "degrees",
+      "doc": "Default bearing, in degrees."
     },
     "sources": {
       "required": true,
@@ -33,6 +45,10 @@
     "transition": {
       "type": "transition",
       "doc": "A global transition definition to use as a default across properties."
+    },
+    "constants": {
+      "type": "constants",
+      "doc": "An object of constants to be referenced in layers."
     },
     "layers": {
       "required": true,
@@ -108,6 +124,21 @@
     },
     "data": {
       "type": "*"
+    },
+    "maxzoom": {
+      "type": "number",
+      "default": 14,
+      "doc": "Maximum zoom to preserve detail at."
+    },
+    "buffer": {
+      "type": "number",
+      "default": 64,
+      "doc": "Tile buffer on each side."
+    },
+    "tolerance": {
+      "type": "number",
+      "default": 3,
+      "doc": "Simplification tolerance (higher means simpler)."
     }
   },
   "source_video": {
@@ -118,7 +149,7 @@
         "video"
       ]
     },
-    "url": {
+    "urls": {
       "required": true,
       "type": "array",
       "value": "string",
@@ -126,6 +157,32 @@
     },
     "coordinates": {
       "required": true,
+      "doc": "Corners of video specified in longitude, latitude pairs.",
+      "type": "array",
+      "length": 4,
+      "value": {
+        "type": "array",
+        "length": 2,
+        "value": "number"
+      }
+    }
+  },
+  "source_image": {
+    "type": {
+      "required": true,
+      "type": "enum",
+      "values": [
+        "image"
+      ]
+    },
+    "url": {
+      "required": true,
+      "type": "string",
+      "doc": "URL that points to an image"
+    },
+    "coordinates": {
+      "required": true,
+      "doc": "Corners of image specified in longitude, latitude pairs.",
       "type": "array",
       "length": 4,
       "value": {
@@ -146,6 +203,7 @@
         "fill",
         "line",
         "symbol",
+        "circle",
         "raster",
         "background"
       ],
@@ -200,6 +258,7 @@
   "layout": [
     "layout_fill",
     "layout_line",
+    "layout_circle",
     "layout_symbol",
     "layout_raster",
     "layout_background"
@@ -228,9 +287,40 @@
       "doc": "The display of this layer. `none` hides this layer."
     }
   },
+  "layout_circle": {
+    "circle-color": {
+      "type": "color",
+      "default": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "function": "continuous",
+      "transition": true
+    },
+    "circle-opacity": {
+      "type": "opacity",
+      "function": "continuous",
+      "default": 1,
+      "transition": true
+    },
+    "circle-radius": {
+      "type": "number",
+      "function": "continuous",
+      "default": 5,
+      "transition": true
+    },
+    "circle-blur": {
+      "type": "number",
+      "function": "continuous",
+      "default": 0,
+      "transition": true
+    }
+  },
   "layout_line": {
     "line-cap": {
-      "type": "enum",
+      "type": "line-cap-enum",
       "function": "discrete",
       "values": [
         "butt",
@@ -241,7 +331,7 @@
       "doc": "The display of line endings."
     },
     "line-join": {
-      "type": "enum",
+      "type": "line-join-enum",
       "function": "discrete",
       "values": [
         "bevel",
@@ -264,7 +354,7 @@
     },
     "line-round-limit": {
       "type": "number",
-      "default": 1,
+      "default": 1.05,
       "function": "continuous",
       "doc": "Used to automatically convert round joins to miter joins for shallow angles.",
       "requires": [
@@ -274,7 +364,7 @@
       ]
     },
     "visibility": {
-      "type": "enum",
+      "type": "visibility-enum",
       "function": "discrete",
       "values": [
         "visible",
@@ -286,7 +376,7 @@
   },
   "layout_symbol": {
     "symbol-placement": {
-      "type": "enum",
+      "type": "symbol-placement-enum",
       "function": "discrete",
       "values": [
           "point",
@@ -295,7 +385,7 @@
       "default": "point",
       "doc": "Label placement relative to its geometry. `line` can only be used on LineStrings and Polygons."
     },
-    "symbol-min-distance": {
+    "symbol-spacing": {
       "type": "number",
       "default": 250,
       "minimum": 1,
@@ -343,7 +433,7 @@
       ]
     },
     "icon-rotation-alignment": {
-      "type": "enum",
+      "type": "rotation-alignment-enum",
       "function": "discrete",
       "values": [
         "map",
@@ -402,11 +492,14 @@
         "icon-image",
         {
           "icon-rotation-alignment": "map"
+        },
+        {
+          "symbol-placement": "line"
         }
       ]
     },
     "icon-offset": {
-      "type": "array",
+      "type": "offset-array",
       "value": "number",
       "length": 2,
       "default": [
@@ -420,7 +513,7 @@
       ]
     },
     "text-rotation-alignment": {
-      "type": "enum",
+      "type": "rotation-alignment-enum",
       "function": "discrete",
       "values": [
         "map",
@@ -433,16 +526,17 @@
       ]
     },
     "text-field": {
-      "type": "string",
+      "type": "field-template",
       "function": "discrete",
       "default": "",
       "tokens": true,
       "doc": "Value to use for a text label. Feature properties are specified using tokens like {field_name}."
     },
     "text-font": {
-      "type": "string",
+      "type": "font-array",
+      "value": "string",
       "function": "discrete",
-      "default": "Open Sans Regular, Arial Unicode MS Regular",
+      "default": ["Open Sans Regular", "Arial Unicode MS Regular"],
       "doc": "Font stack to use for displaying text.",
       "requires": [
         "text-field"
@@ -461,7 +555,7 @@
     },
     "text-max-width": {
       "type": "number",
-      "default": 15,
+      "default": 10,
       "minimum": 0,
       "units": "em",
       "function": "continuous",
@@ -491,7 +585,7 @@
       ]
     },
     "text-justify": {
-      "type": "enum",
+      "type": "text-justify-enum",
       "function": "discrete",
       "values": [
         "left",
@@ -505,7 +599,7 @@
       ]
     },
     "text-anchor": {
-      "type": "enum",
+      "type": "text-anchor-enum",
       "function": "discrete",
       "values": [
         "center",
@@ -568,11 +662,14 @@
         "text-field",
         {
           "text-rotation-alignment": "map"
+        },
+        {
+          "symbol-placement": "line"
         }
       ]
     },
     "text-transform": {
-      "type": "enum",
+      "type": "text-transform-enum",
       "function": "discrete",
       "values": [
         "none",
@@ -586,7 +683,7 @@
       ]
     },
     "text-offset": {
-      "type": "array",
+      "type": "offset-array",
       "doc": "Specifies the distance that text is offset from its anchor horizontally and vertically.",
       "value": "number",
       "units": "ems",
@@ -622,14 +719,14 @@
       "type": "boolean",
       "function": "discrete",
       "default": false,
-      "doc": "If true, the symbol will appear without its text, in spaces where the text would make it too large to fit.",
+      "doc": "If true, icons can be shown without their corresponding text.",
       "requires": [
         "text-field",
         "icon-image"
       ]
     },
     "visibility": {
-      "type": "enum",
+      "type": "visibility-enum",
       "function": "discrete",
       "values": [
         "visible",
@@ -641,7 +738,7 @@
   },
   "layout_raster": {
     "visibility": {
-      "type": "enum",
+      "type": "visibility-enum",
       "function": "discrete",
       "values": [
         "visible",
@@ -679,34 +776,58 @@
       "Polygon"
     ]
   },
+  "color_operation": {
+    "type": "enum",
+    "values": [
+      "lighten",
+      "saturate",
+      "spin",
+      "fade",
+      "mix"
+    ]
+  },
   "function": {
-    "stops": {
-      "type": "array",
-      "required": true,
-      "doc": "An array of stops.",
-      "value": "function_stop"
+    "type": {
+      "type": "enum",
+      "values": ["categorical", "interval", "exponential"]
     },
-    "base": {
-      "type": "number",
-      "default": 1,
-      "minimum": 0,
-      "doc": "The exponential base of the interpolation curve. It controls the rate at which the result increases. Higher values make the result increase more towards the high end of the range. With `1` the stops are interpolated linearly."
+    "property": {
+      "doc": "The name of the feature attribute or global attribute which is the input to the scale.",
+      "type": "string",
+      "default": "$zoom"
+    },
+    "domain": {
+      "doc": "Function stops for the input values",
+      "type": "array",
+      "value": "*",
+      "min-length": 1,
+      "required": true
+    },
+    "range": {
+      "doc": "Function stops for the output values",
+      "type": "array",
+      "value": "*",
+      "min-length": 1,
+      "required": true
     }
   },
-  "function_stop": {
-    "type": "array",
-    "minimum": 0,
-    "maximum": 22,
-    "value": [
-      "number",
-      "color"
-    ],
-    "length": 2,
-    "doc": "Zoom level and value pair."
+  "function-exponential": {
+    "base": {
+      "doc": "The exponential base of the interpolation curve. It controls the rate at which the result increases. Higher values make the result increase more towards the high end of the range. With `1` the stops are interpolated linearly.",
+      "type": "number"
+    },
+    "domain": {
+      "doc": "Function stops for the input values",
+      "type": "array",
+      "value": "number",
+      "min-length": 1,
+      "required": true
+    }
   },
   "paint": [
     "paint_fill",
     "paint_line",
+    "paint_circle",
     "paint_symbol",
     "paint_raster",
     "paint_background"
@@ -719,7 +840,7 @@
       "doc": "Whether or not the fill should be antialiased."
     },
     "fill-opacity": {
-      "type": "number",
+      "type": "opacity",
       "function": "continuous",
       "default": 1,
       "minimum": 0,
@@ -735,7 +856,7 @@
       "transition": true,
       "requires": [
         {
-          "!": "fill-image"
+          "!": "fill-pattern"
         }
       ]
     },
@@ -746,7 +867,7 @@
       "transition": true,
       "requires": [
         {
-          "!": "fill-image"
+          "!": "fill-pattern"
         },
         {
           "fill-antialias": true
@@ -754,7 +875,7 @@
       ]
     },
     "fill-translate": {
-      "type": "array",
+      "type": "translate-array",
       "value": "number",
       "length": 2,
       "default": [
@@ -779,7 +900,7 @@
         "fill-translate"
       ]
     },
-    "fill-image": {
+    "fill-pattern": {
       "type": "string",
       "function": "discrete",
       "transition": true,
@@ -788,7 +909,7 @@
   },
   "paint_line": {
     "line-opacity": {
-      "type": "number",
+      "type": "opacity",
       "doc": "The opacity at which the line will be drawn.",
       "function": "continuous",
       "default": 1,
@@ -804,12 +925,12 @@
       "transition": true,
       "requires": [
         {
-          "!": "line-image"
+          "!": "line-pattern"
         }
       ]
     },
     "line-translate": {
-      "type": "array",
+      "type": "translate-array",
       "value": "number",
       "length": 2,
       "default": [
@@ -862,30 +983,64 @@
       "doc": "Blur applied to the line, in pixels."
     },
     "line-dasharray": {
-      "type": "array",
-      "function": "discrete",
+      "type": "dash-array",
       "value": "number",
+      "function": "discrete",
       "doc": "Specifies the lengths of the alternating dashes and gaps that form the dash pattern. The lengths are later scaled by the line width. To convert a dash length to pixels, multiply the length by the current line width.",
       "minimum": 0,
       "transition": true,
       "units": "line widths",
       "requires": [
         {
-          "!": "line-image"
+          "!": "line-pattern"
         }
       ]
     },
-    "line-image": {
+    "line-pattern": {
       "type": "string",
       "function": "discrete",
       "transition": true,
       "doc": "Name of image in sprite to use for drawing image lines."
     }
   },
+  "paint_circle": {
+    "circle-radius": {
+      "type": "number",
+      "default": 1,
+      "minimum": 0,
+      "function": "continuous",
+      "transition": true,
+      "units": "pixels",
+      "doc": "Circle radius."
+    },
+    "circle-color": {
+      "type": "color",
+      "default": "#000000",
+      "doc": "The color of the circle.",
+      "function": "continuous",
+      "transition": true
+    },
+    "circle-blur": {
+      "type": "number",
+      "default": 0,
+      "doc": "Amount to blur the circle. 1 blurs the circle such that only the centerpoint is full opacity.",
+      "function": "continuous",
+      "transition": true
+    },
+    "circle-opacity": {
+      "type": "opacity",
+      "doc": "The opacity at which the circle will be drawn.",
+      "default": 1,
+      "minimum": 0,
+      "maximum": 1,
+      "function": "continuous",
+      "transition": true
+    }
+  },
   "paint_symbol": {
     "icon-opacity": {
       "doc": "The opacity at which the icon will be drawn.",
-      "type": "number",
+      "type": "opacity",
       "default": 1,
       "minimum": 0,
       "maximum": 1,
@@ -950,7 +1105,7 @@
       ]
     },
     "icon-translate": {
-      "type": "array",
+      "type": "translate-array",
       "value": "number",
       "length": 2,
       "default": [
@@ -980,7 +1135,7 @@
       ]
     },
     "text-opacity": {
-      "type": "number",
+      "type": "opacity",
       "doc": "The opacity at which the text will be drawn.",
       "default": 1,
       "minimum": 0,
@@ -1048,7 +1203,7 @@
       ]
     },
     "text-translate": {
-      "type": "array",
+      "type": "translate-array",
       "value": "number",
       "length": 2,
       "default": [
@@ -1080,7 +1235,7 @@
   },
   "paint_raster": {
     "raster-opacity": {
-      "type": "number",
+      "type": "opacity",
       "doc": "The opacity at which the image will be drawn.",
       "default": 1,
       "minimum": 0,
@@ -1152,18 +1307,18 @@
       "transition": true,
       "requires": [
         {
-          "!": "background-image"
+          "!": "background-pattern"
         }
       ]
     },
-    "background-image": {
+    "background-pattern": {
       "type": "string",
       "function": "discrete",
       "transition": true,
       "doc": "Optionally an image which is drawn as the background."
     },
     "background-opacity": {
-      "type": "number",
+      "type": "opacity",
       "default": 1,
       "minimum": 0,
       "maximum": 1,
