@@ -9,6 +9,7 @@ v8.0.0 styles are fully compatible with v8.1.0.
 * Added style diff utility to generate semantic deltas between two stylesheets
 * Added `visibility` property to `circle` layer type
 * Added `pitch` property to stylesheet
+* [BREAKING] The format for mapbox:// sprite URLs has changed; you should now use mapbox://sprite/{user | "mapbox"}/{id}
 
 ## 8.0.0
 
