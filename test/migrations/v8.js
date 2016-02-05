@@ -518,3 +518,168 @@ t('migrate versioned fontstack urls', function (t) {
     t.deepEqual(migrate(input), output);
     t.end();
 });
+
+t('migrate ramp zoom order', function (t) {
+    var input = {
+        "version": 8,
+        "layers": [
+            {
+                "type": "background",
+                "paint": {
+                    "background-color": {
+                        "base": 1,
+                        "stops": [
+                            [9, "#000000"],
+                            [6, "#FFFFFF"]
+                        ]
+                    }
+                }
+            }
+        ]
+    };
+
+    var output = {
+        "version": 8,
+        "layers": [
+            {
+                "type": "background",
+                "paint": {
+                    "background-color": {
+                        "base": 1,
+                        "stops": [
+                            [6, "#FFFFFF"],
+                            [9, "#000000"]
+                        ]
+                    }
+                }
+            }
+        ]
+    };
+
+    t.deepEqual(migrate(input), output);
+    t.end();
+});
+
+t('migrate ramp, zoom collision same value', function (t) {
+    var input = {
+        "version": 8,
+        "layers": [
+            {
+                "type": "background",
+                "paint": {
+                    "background-color": {
+                        "base": 1,
+                        "stops": [
+                            [9, "#000000"],
+                            [9, "#000000"]
+                        ]
+                    }
+                }
+            }
+        ]
+    };
+
+    var output = {
+        "version": 8,
+        "layers": [
+            {
+                "type": "background",
+                "paint": {
+                    "background-color": {
+                        "base": 1,
+                        "stops": [
+                            [9, "#000000"]
+                        ]
+                    }
+                }
+            }
+        ]
+    };
+
+    t.deepEqual(migrate(input), output);
+    t.end();
+});
+
+t('migrate ramp, zoom collisions different value', function (t) {
+    var input = {
+        "version": 8,
+        "layers": [
+            {
+                "type": "background",
+                "paint": {
+                    "background-color": {
+                        "base": 1,
+                        "stops": [
+                            [9, "#000000"],
+                            [9, "#FFFFFF"]
+                        ]
+                    }
+                }
+            }
+        ]
+    };
+
+    var output = {
+        "version": 8,
+        "layers": [
+            {
+                "type": "background",
+                "paint": {
+                    "background-color": {
+                        "base": 1,
+                        "stops": [
+                            [9, "#000000"],
+                            [9.001, "#FFFFFF"]
+                        ]
+                    }
+                }
+            }
+        ]
+    };
+
+    t.deepEqual(migrate(input), output);
+    t.end();
+});
+
+t('migrate ramp zoom collisions recurive', function (t) {
+    var input = {
+        "version": 8,
+        "layers": [
+            {
+                "type": "background",
+                "paint": {
+                    "background-color": {
+                        "base": 1,
+                        "stops": [
+                            [9, "#000000"],
+                            [9.000001, "#999999"],
+                            [9, "#FFFFFF"]
+                        ]
+                    }
+                }
+            }
+        ]
+    };
+
+    var output = {
+        "version": 8,
+        "layers": [
+            {
+                "type": "background",
+                "paint": {
+                    "background-color": {
+                        "base": 1,
+                        "stops": [
+                            [9, "#000000"],
+                            [9.000001, "#999999"],
+                            [9.001, "#FFFFFF"]
+                        ]
+                    }
+                }
+            }
+        ]
+    };
+
+    t.deepEqual(migrate(input), output);
+    t.end();
+});
