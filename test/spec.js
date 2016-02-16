@@ -3,7 +3,7 @@
 var test = require('tape');
 var spec = require('../');
 
-['v6', 'v7', 'v8', 'latest'].forEach(function(version) {
+['v6', 'v7', 'v8', 'v9', 'latest'].forEach(function(version) {
   ['', 'min'].forEach(function(kind) {
     var v = version + kind;
     test(v, function(t) {
@@ -98,7 +98,9 @@ function validSchema(k, t, obj, ref) {
         t.fail('minified file should not have ' + k + '.example');
       }
       if (obj.function !== undefined) {
-        if (ref.$version >= 7) {
+        if (ref.$version >= 9) {
+          t.equal(true, ['discrete', 'continuous'].indexOf(obj.function) >= 0, 'function: ' + obj.function);
+        } else if (ref.$version >= 7) {
           t.equal(true, ['interpolated', 'piecewise-constant'].indexOf(obj.function) >= 0, 'function: ' + obj.function);
         } else {
           t.equal('boolean', typeof obj.function, k + '.required (boolean)');

@@ -7,7 +7,7 @@ var t = require('tape'),
     spec = require('../'),
     path = require('path'),
     validate = require('../').validate,
-    v8 = require('../reference/v8'),
+    latest = require('../reference/latest'),
     migrate = require('../').migrate;
 
 var UPDATE = !!process.env.UPDATE;
@@ -22,7 +22,7 @@ glob.sync(__dirname + '/fixture/v7-migrate/*.input.json').forEach(function(file)
         var outputfile = file.replace('.input', '.output');
         var style = JSON.parse(fs.readFileSync(file));
         var result = migrate(style);
-        t.deepEqual(validate.parsed(result, v8), []);
+        t.deepEqual(validate.parsed(result, latest), []);
         if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
         var expect = JSON.parse(fs.readFileSync(outputfile));
         t.deepEqual(result, expect);
