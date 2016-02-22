@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "sources": {
     "source": {
       "type": "vector",
@@ -134,6 +134,56 @@
         "==",
         "mapbox",
         null
+      ]
+    },
+    {
+      "id": "has",
+      "type": "line",
+      "source": "source",
+      "source-layer": "source-layer",
+      "filter": [
+        "has",
+        "mapbox"
+      ]
+    },
+    {
+      "id": "!has",
+      "type": "line",
+      "source": "source",
+      "source-layer": "source-layer",
+      "filter": [
+        "!has",
+        "mapbox"
+      ]
+    },
+    {
+      "id": "has-extra-argument",
+      "type": "line",
+      "source": "source",
+      "source-layer": "source-layer",
+      "filter": [
+        "has",
+        "mapbox",
+        "boxmap"
+      ]
+    },
+    {
+      "id": "has-invalid-key",
+      "type": "line",
+      "source": "source",
+      "source-layer": "source-layer",
+      "filter": [
+        "has",
+        5
+      ]
+    },
+    {
+      "id": "has-missing-key",
+      "type": "line",
+      "source": "source",
+      "source-layer": "source-layer",
+      "filter": [
+        "has"
       ]
     }
   ]
