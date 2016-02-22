@@ -124,6 +124,17 @@
         "any",
         []
       ]
+    },
+    {
+      "id": "value-null",
+      "type": "line",
+      "source": "source",
+      "source-layer": "source-layer",
+      "filter": [
+        "==",
+        "mapbox",
+        null
+      ]
     }
   ]
 }

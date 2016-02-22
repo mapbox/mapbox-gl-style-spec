@@ -24,7 +24,7 @@
     "line": 59
   },
   {
-    "message": "layers[6].filter[2]: string, number, or boolean expected, array found",
+    "message": "layers[6].filter[2]: string, number, boolean, or null expected, array found",
     "line": 71
   },
   {
