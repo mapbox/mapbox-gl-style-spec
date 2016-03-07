@@ -541,6 +541,7 @@
         0
       ],
       "function": "interpolated",
+      "units": "pixels",
       "doc": "Offset distance of icon from its anchor. Positive values indicate right and down, while negative values indicate left and up.",
       "requires": [
         "icon-image"
