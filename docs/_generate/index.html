@@ -634,6 +634,15 @@ navigation:
             <h4>Combining Filters</h4>
 
             <div class='space-bottom1'>
+              <code>["has", <var>key</var>]</code></span> <span class='quiet pad1x strong small'><var>key</var> exists on feature</span>
+            </div>
+            <div class='space-bottom1'>
+              <code>["!has", <var>key</var>]</code></span> <span class='quiet pad1x strong small'><var>key</var> does not exist on feature</span>
+            </div>
+            <div class='space-bottom1'>
+              <code>["!in", <var>key</var>, <var>v0</var>, ..., <var>vn</var>]</code> <span class='quiet pad1x strong small'>set exclusion: <var>key</var> ∉ {<var>v0</var>, ..., <var>vn</var>}</span>
+            </div>
+            <div class='space-bottom1'>
               <code>["all", <var>f0</var>, ..., <var>fn</var>]</code> <span class='quiet pad1x strong small'>logical <code>AND</code>: <var>f0</var> ∧ ... ∧ <var>fn</var></span>
             </div>
             <div class='space-bottom1'>
@@ -647,8 +656,8 @@ navigation:
           <p>
             A filter's <var>key</var> must be a string that identifies a feature property, or
             the special key <code>"$type"</code>, which identifies the feature type. A <var>value</var>
-            (and <var>v0</var>, ..., <var>vn</var> for set operators) must be a <a href="#string">string</a>,
-            <a href="#number">number</a>, or <a href="#boolean">boolean</a> to compare the property value
+            (and <var>v0</var>, ..., <var>vn</var> for set operators) must be a <a href="#types-string">string</a>,
+            a <a href="#types-number">number</a>, a <a href="#types-boolean">boolean</a>, or <code>null</code> to compare the property value
             against. For the <code>"$type"</code> key it must be one of <code>"Point"</code>,
             <code>"LineString"</code>, or <code>"Polygon"</code>.
           </p>
