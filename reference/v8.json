@@ -1689,6 +1689,20 @@
         }
       ]
     },
+    "building-shadow-color": {
+      "type": "color",
+      "default": "#0000ff",
+      "doc": "The color used to shadow the extruded part of a building. If specified with an rgba, any non-1 alpha component will be ignored.",
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "transition": true,
+      "requires": [
+        {
+          "!": "building-pattern"
+        }
+      ]
+    },
     "building-outline-color": {
       "type": "color",
       "doc": "The outline color of the building. Matches the value of `building-color` if unspecified.",
