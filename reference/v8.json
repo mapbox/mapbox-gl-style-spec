@@ -340,7 +340,7 @@
     "layout_symbol",
     "layout_raster",
     "layout_background",
-    "layout_building"
+    "layout_extrusion"
   ],
   "layout_background": {
     "visibility": {
@@ -390,7 +390,7 @@
       }
     }
   },
-  "layout_building": {
+  "layout_extrusion": {
     "visibility": {
       "type": "enum",
       "function": "piecewise-constant",
@@ -1497,7 +1497,7 @@
   },
   "paint": [
     "paint_fill",
-    "paint_building",
+    "paint_extrusion",
     "paint_line",
     "paint_circle",
     "paint_symbol",
@@ -1655,16 +1655,16 @@
       }
     }
   },
-  "paint_building": {
-    "building-antialias": {
+  "paint_extrusion": {
+    "extrusion-antialias": {
       "type": "boolean",
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
       "default": true,
-      "doc": "Whether or not the building should be antialiased."
+      "doc": "Whether or not the extrusion should be antialiased."
     },
-    "building-opacity": {
+    "extrusion-opacity": {
       "type": "number",
       "function": "interpolated",
       "zoom-function": true,
@@ -1672,54 +1672,54 @@
       "default": 1,
       "minimum": 0,
       "maximum": 1,
-      "doc": "The opacity of the entire building layer. In contrast to the building-color, this value will also affect the 1px stroke around the building, if the stroke is used.",
+      "doc": "The opacity of the entire extrusion layer. In contrast to the extrusion-color, this value will also affect the 1px stroke around the extrusion, if the stroke is used.",
       "transition": true
     },
-    "building-color": {
+    "extrusion-color": {
       "type": "color",
       "default": "#000000",
-      "doc": "The color of the buildinged part of this layer. This color can be specified as rgba with an alpha component and the color's opacity will not affect the opacity of the 1px stroke, if it is used.",
+      "doc": "The color of the extruded part of this layer. This color can be specified as rgba with an alpha component and the color's opacity will not affect the opacity of the 1px stroke, if it is used.",
       "function": "interpolated",
       "zoom-function": true,
       "property-function": true,
       "transition": true,
       "requires": [
         {
-          "!": "building-pattern"
+          "!": "extrusion-pattern"
         }
       ]
     },
-    "building-shadow-color": {
+    "extrusion-shadow-color": {
       "type": "color",
       "default": "#0000ff",
-      "doc": "The color used to shadow the extruded part of a building. If specified with an rgba, any non-1 alpha component will be ignored.",
+      "doc": "The color used to shadow the extruded part of an extrusion. If specified with an rgba, any non-1 alpha component will be ignored.",
       "function": "interpolated",
       "zoom-function": true,
       "property-function": true,
       "transition": true,
       "requires": [
         {
-          "!": "building-pattern"
+          "!": "extrusion-pattern"
         }
       ]
     },
-    "building-outline-color": {
+    "extrusion-outline-color": {
       "type": "color",
-      "doc": "The outline color of the building. Matches the value of `building-color` if unspecified.",
+      "doc": "The outline color of the extrusion. Matches the value of `extrusion-color` if unspecified.",
       "function": "interpolated",
       "zoom-function": true,
       "property-function": true,
       "transition": true,
       "requires": [
         {
-          "!": "building-pattern"
+          "!": "extrusion-pattern"
         },
         {
-          "building-antialias": true
+          "extrusion-antialias": true
         }
       ]
     },
-    "building-translate": {
+    "extrusion-translate": {
       "type": "array",
       "value": "number",
       "length": 2,
@@ -1734,7 +1734,7 @@
       "units": "pixels",
       "doc": "The geometry's offset. Values are [x, y] where negatives indicate left and up, respectively."
     },
-    "building-translate-anchor": {
+    "extrusion-translate-anchor": {
       "type": "enum",
       "function": "piecewise-constant",
       "zoom-function": true,
@@ -1746,16 +1746,16 @@
       "doc": "Control whether the translation is relative to the map (north) or viewport (screen)",
       "default": "map",
       "requires": [
-        "building-translate"
+        "extrusion-translate"
       ]
     },
-    "building-pattern": {
+    "extrusion-pattern": {
       "type": "string",
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
       "transition": true,
-      "doc": "Name of image in sprite to use for drawing image buildings. For seamless patterns, image width and height must be a factor of two (2, 4, 8, ..., 512)."
+      "doc": "Name of image in sprite to use for drawing image extrusions. For seamless patterns, image width and height must be a factor of two (2, 4, 8, ..., 512)."
     }
   },
   "paint_line": {
