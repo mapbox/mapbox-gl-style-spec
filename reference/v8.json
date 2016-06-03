@@ -1756,6 +1756,18 @@
       "property-function": true,
       "transition": true,
       "doc": "Name of image in sprite to use for drawing image extrusions. For seamless patterns, image width and height must be a factor of two (2, 4, 8, ..., 512)."
+    },
+    "extrusion-lighting-anchor": {
+      "type": "enum",
+      "function": "piecewise-constant",
+      "zoom-function": true,
+      "property-function": true,
+      "values": [
+        "map",
+        "viewport"
+      ],
+      "doc": "Control whether this extrusion layer is lit relative to the map (north) or viewport (screen)",
+      "default": "map"
     }
   },
   "paint_line": {
