@@ -593,8 +593,7 @@
         "map",
         "viewport"
       ],
-      "default": "map",
-      "doc": "Aligns text to the plane of the `viewport` or the `map` when the map is pitched.",
+      "doc": "Aligns text to the plane of the `viewport` or the `map` when the map is pitched. Matches `text-rotation-alignment` if unspecified.",
       "requires": [
         "text-field"
       ]
