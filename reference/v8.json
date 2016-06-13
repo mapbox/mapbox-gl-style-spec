@@ -1675,6 +1675,26 @@
       "doc": "The opacity of the entire extrusion layer. In contrast to the extrusion-color, this value will also affect the 1px stroke around the extrusion, if the stroke is used.",
       "transition": true
     },
+    "extrusion-height": {
+      "type": "number",
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "default": 3,
+      "minimum": 0,
+      "doc": "The height (in ##UNITS##) with which to extrude this layer.",
+      "transition": true
+    },
+    "extrusion-min-height": {
+      "type": "number",
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "default": 0,
+      "minimum": 0,
+      "doc": "The height (in ##UNITS##) with which to extrude this layer.",
+      "transition": true
+    },
     "extrusion-color": {
       "type": "color",
       "default": "#000000",
