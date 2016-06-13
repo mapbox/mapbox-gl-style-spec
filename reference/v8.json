@@ -538,8 +538,10 @@
     "icon-text-fit-padding": {
       "type": "array",
       "value": "number",
-      "length": 2,
+      "length": 4,
       "default": [
+        0,
+        0,
         0,
         0
       ],
@@ -547,7 +549,7 @@
       "function": "interpolated",
       "zoom-function": true,
       "property-function": true,
-      "doc": "Size of the additional area around the text-fit icon size.",
+      "doc": "Size of padding area around the text-fit size in clockwise order: top, right, bottom, left.",
       "requires": [
         "icon-image",
         "icon-text-fit",
