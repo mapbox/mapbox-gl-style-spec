@@ -43,6 +43,16 @@
       "doc": "Default pitch, in degrees. Zero is perpendicular to the surface, for a look straight down at the map, while a greater value like 60 looks ahead towards the horizon. The style pitch will be used only if the map has not been positioned by other means (e.g. map options or user interaction).",
       "example": 50
     },
+    "lighting-anchor": {
+      "type": "enum",
+      "default": "viewport",
+      "values": [
+        "map",
+        "viewport"
+      ],
+      "doc": "Whether extrusions are lit relative to map or viewport.",
+      "example": "map"
+    },
     "sources": {
       "required": true,
       "type": "sources",
@@ -1675,6 +1685,17 @@
       "doc": "The opacity of the entire extrusion layer. In contrast to the extrusion-color, this value will also affect the 1px stroke around the extrusion, if the stroke is used.",
       "transition": true
     },
+    "extrusion-layer-opacity": {
+      "type": "number",
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": false,
+      "default": 1,
+      "minimum": 0,
+      "maximum": 1,
+      "doc": "The opacity of the entire extrusion layer. In contrast to the extrusion-color, this value will also affect the 1px stroke around the extrusion, if the stroke is used.",
+      "transition": true
+    },
     "extrusion-height": {
       "type": "number",
       "function": "interpolated",
@@ -1776,18 +1797,6 @@
       "property-function": true,
       "transition": true,
       "doc": "Name of image in sprite to use for drawing image extrusions. For seamless patterns, image width and height must be a factor of two (2, 4, 8, ..., 512)."
-    },
-    "extrusion-lighting-anchor": {
-      "type": "enum",
-      "function": "piecewise-constant",
-      "zoom-function": true,
-      "property-function": true,
-      "values": [
-        "map",
-        "viewport"
-      ],
-      "doc": "Control whether this extrusion layer is lit relative to the map (north) or viewport (screen)",
-      "default": "map"
     }
   },
   "paint_line": {
