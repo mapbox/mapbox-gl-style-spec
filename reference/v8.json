@@ -1670,9 +1670,9 @@
       "type": "boolean",
       "function": "piecewise-constant",
       "zoom-function": true,
-      "property-function": true,
+      "property-function": false,
       "default": true,
-      "doc": "Whether or not the extrusion should be antialiased."
+      "doc": "TODO Whether or not the extrusion should be antialiased."
     },
     "extrusion-opacity": {
       "type": "number",
@@ -1736,7 +1736,7 @@
       "doc": "The color used to shadow the extruded part of an extrusion. If specified with an rgba, any non-1 alpha component will be ignored.",
       "function": "interpolated",
       "zoom-function": true,
-      "property-function": true,
+      "property-function": false,
       "transition": true,
       "requires": [
         {
