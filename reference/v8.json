@@ -899,13 +899,13 @@
         }
       }
     },
-    "text-break-space": {
+    "text-break-all": {
       "type": "boolean",
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
       "default": true,
-      "doc": "If true, text will wrap according to text-max-width settings while recognizing spaces. If false, text will wrap according to text-max-width setting with or without spaces. Generally used for non-Latin text",
+      "doc": "If true, text will wrap according to text-max-width settings while recognizing spaces between words. If false, text will wrap according to text-max-width setting with or without spaces. Generally used for non-Latin text",
       "requires": [
         "text-max-width"
       ],
