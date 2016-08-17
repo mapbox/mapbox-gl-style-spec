@@ -43,15 +43,30 @@
       "doc": "Default pitch, in degrees. Zero is perpendicular to the surface, for a look straight down at the map, while a greater value like 60 looks ahead towards the horizon. The style pitch will be used only if the map has not been positioned by other means (e.g. map options or user interaction).",
       "example": 50
     },
-    "lighting-anchor": {
-      "type": "enum",
-      "default": "viewport",
-      "values": [
-        "map",
-        "viewport"
-      ],
-      "doc": "Whether extrusions are lit relative to map or viewport.",
-      "example": "map"
+    "light": {
+      "light-anchor": {
+        "type": "enum",
+        "default": "viewport",
+        "values": [
+          "map",
+          "viewport"
+        ],
+        "doc": "Whether extrusions are lit relative to map or viewport. The light-anchor property will only be used if it has not been set by map options upon initialization.",
+        "example": "map"
+      },
+      "light-direction": {
+        "type": "array",
+        "value": "number",
+        "default": [-0.5, -0.3, 1.0],
+        "doc": "Light direction for lighting extrusions ##TODO##. The light-direction property will only be used if it has not been set by map options upon initialization.",
+        "example": [0.5, -0.2, 1.0]
+      },
+      "light-color": {
+        "type": "color",
+        "default": "rgba(1,1,1,0.75)",
+        "doc": "Color tint for lighting extrusions. The light-color property will only be used if it has not been set by map options upon initialization.",
+        "example": "## TODO @nickidlugash what's a good light color?"
+      }
     },
     "sources": {
       "required": true,
