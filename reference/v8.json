@@ -1745,20 +1745,6 @@
         }
       ]
     },
-    "extrusion-shadow-color": {
-      "type": "color",
-      "default": "#0000ff",
-      "doc": "The color used to shadow the extruded part of an extrusion. If specified with an rgba, any non-1 alpha component will be ignored.",
-      "function": "interpolated",
-      "zoom-function": true,
-      "property-function": false,
-      "transition": true,
-      "requires": [
-        {
-          "!": "extrusion-pattern"
-        }
-      ]
-    },
     "extrusion-outline-color": {
       "type": "color",
       "doc": "The outline color of the extrusion. Matches the value of `extrusion-color` if unspecified.",
