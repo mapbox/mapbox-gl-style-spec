@@ -1689,17 +1689,6 @@
       "default": true,
       "doc": "TODO Whether or not the extrusion should be antialiased."
     },
-    "extrusion-opacity": {
-      "type": "number",
-      "function": "interpolated",
-      "zoom-function": true,
-      "property-function": true,
-      "default": 1,
-      "minimum": 0,
-      "maximum": 1,
-      "doc": "The opacity of the entire extrusion layer. In contrast to the extrusion-color, this value will also affect the 1px stroke around the extrusion, if the stroke is used.",
-      "transition": true
-    },
     "extrusion-layer-opacity": {
       "type": "number",
       "function": "interpolated",
