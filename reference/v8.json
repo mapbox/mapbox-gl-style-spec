@@ -163,12 +163,12 @@
     "buffer": {
       "type": "number",
       "default": 128,
-      "doc": "Tile buffer size on each side (relative to a 512px tile; higher means fewer rendering artifacts near tile edges but slower performance)."
+      "doc": "Tile buffer size on each side (measured in 1/512ths of a tile; higher means fewer rendering artifacts near tile edges but slower performance)."
     },
     "tolerance": {
       "type": "number",
       "default": 0.375,
-      "doc": "Simplification tolerance (higher means simpler geometries and faster performance)."
+      "doc": "Douglas-Peucker simplification tolerance (higher means simpler geometries and faster performance)."
     },
     "cluster": {
       "type": "boolean",
@@ -178,7 +178,7 @@
     "clusterRadius": {
       "type": "number",
       "default": 50,
-      "doc": "Radius of each cluster when clustering points, relative to 512px tile."
+      "doc": "Radius of each cluster when clustering points, measured in 1/512ths of a tile."
     },
     "clusterMaxZoom": {
       "type": "number",
