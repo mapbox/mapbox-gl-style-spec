@@ -63,9 +63,16 @@
       },
       "light-color": {
         "type": "color",
-        "default": "rgba(1,1,1,0.75)",
+        "default": "#ffffff",
         "doc": "Color tint for lighting extrusions. The light-color property will only be used if it has not been set by map options upon initialization.",
         "example": "## TODO @nickidlugash what's a good light color?"
+      },
+      "light-intensity": {
+        "type": "number",
+        "maximum": 1,
+        "minimum": 0,
+        "default": 0.75,
+        "doc": "Intensity of extrusion lighting (on a scale from 0 to 1). Higher numbers will present as more extreme contrast."
       }
     },
     "sources": {
@@ -1681,14 +1688,6 @@
     }
   },
   "paint_extrusion": {
-    "extrusion-antialias": {
-      "type": "boolean",
-      "function": "piecewise-constant",
-      "zoom-function": true,
-      "property-function": false,
-      "default": true,
-      "doc": "TODO Whether or not the extrusion should be antialiased."
-    },
     "extrusion-layer-opacity": {
       "type": "number",
       "function": "interpolated",
@@ -1722,7 +1721,7 @@
     },
     "extrusion-color": {
       "type": "color",
-      "default": "#000000",
+      "default": "rgba(130,130,130,1)",
       "doc": "The color of the extruded part of this layer. This color can be specified as rgba with an alpha component and the color's opacity will not affect the opacity of the 1px stroke, if it is used.",
       "function": "interpolated",
       "zoom-function": true,
@@ -1734,21 +1733,13 @@
         }
       ]
     },
-    "extrusion-outline-color": {
+    "extrusion-edge-color": {
       "type": "color",
-      "doc": "The outline color of the extrusion. Matches the value of `extrusion-color` if unspecified.",
+      "doc": "The edge color of the extrusion. No edge stroke is drawn if unspecified.",
       "function": "interpolated",
       "zoom-function": true,
-      "property-function": true,
-      "transition": true,
-      "requires": [
-        {
-          "!": "extrusion-pattern"
-        },
-        {
-          "extrusion-antialias": true
-        }
-      ]
+      "property-function": false,
+      "transition": true
     },
     "extrusion-translate": {
       "type": "array",
