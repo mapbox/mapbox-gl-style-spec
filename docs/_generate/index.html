@@ -212,7 +212,12 @@ navigation:
           </div>
           <div class='space-bottom1 clearfix'>
             <% _(ref.source_tile).each(function(prop, name) { %>
-            <%= name === '*' ? '' : item({prop: prop, id: "sources-vector-" + name, name: name}) %>
+              <%
+                // note that we omit 'tileSize' here, since VECTOR and raster
+                // both use source_tile, but tileSize is prohibited for vector sources
+              %>
+              <%  if (name === '*' || name === 'type' || name === 'tileSize') return %>
+              <%= item({prop: prop, id: "sources-vector-" + name, name: name}) %>
             <% }); %>
           </div>
           <table class="micro">
@@ -251,7 +256,8 @@ navigation:
           </div>
           <div class='space-bottom1 clearfix'>
             <% _(ref.source_tile).each(function(prop, name) { %>
-            <%= name === '*' ? '' : item({prop: prop, id: "sources-raster-" + name, name: name}) %>
+              <%  if (name === '*' || name === 'type') return %>
+              <%= item({prop: prop, id: "sources-raster-" + name, name: name}) %>
             <% }); %>
           </div>
           <table class="micro">
@@ -312,7 +318,8 @@ navigation:
           </div>
           <div class='space-bottom1 clearfix'>
             <% _(ref.source_geojson).each(function(prop, name) { %>
-            <%= name === '*' ? '' : item({prop: prop, id: "sources-geojson-" + name, name: name}) %>
+              <%  if (name === '*' || name === 'type') return %>
+              <%= item({prop: prop, id: "sources-geojson-" + name, name: name}) %>
             <% }); %>
           </div>
           <table class="micro">
@@ -364,7 +371,8 @@ navigation:
           </div>
           <div class='space-bottom1 clearfix'>
             <% _(ref.source_image).each(function(prop, name) { %>
-            <%= name === '*' ? '' : item({prop: prop, id: "sources-image-" + name, name: name}) %>
+              <%  if (name === '*' || name === 'type') return %>
+              <%= item({prop: prop, id: "sources-image-" + name, name: name}) %>
             <% }); %>
           </div>
           <table class="micro">
@@ -416,7 +424,8 @@ navigation:
           </div>
           <div class='space-bottom1 clearfix'>
             <% _(ref.source_video).each(function(prop, name) { %>
-            <%= name === '*' ? '' : item({prop: prop, id: "sources-video-" + name, name: name}) %>
+              <%  if (name === '*' || name === 'type') return %>
+              <%= item({prop: prop, id: "sources-video-" + name, name: name}) %>
             <% }); %>
           </div>
           <table class="micro">
