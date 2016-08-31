@@ -1703,7 +1703,7 @@
       "function": "interpolated",
       "zoom-function": true,
       "property-function": true,
-      "default": 0,
+      "default": 1,
       "minimum": 0,
       "doc": "The height (in ##UNITS##) with which to extrude this layer.",
       "transition": true
