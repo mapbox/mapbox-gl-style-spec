@@ -153,5 +153,54 @@ t('diff', function (t) {
       { command: 'setPitch', args: [1] }
     ], 'pitch change');
 
+    t.deepEqual(diffStyles({
+        light: {
+            anchor: 'map',
+            color: 'white',
+            direction: [0, 1, 0],
+            intensity: 1
+        }
+    }, {
+        light: {
+            anchor: 'map',
+            color: 'white',
+            direction: [0, 1, 0],
+            intensity: 1
+        }
+    }), [
+    ], 'light no change');
+
+    t.deepEqual(diffStyles({
+        light: { anchor: 'map' }
+    }, {
+        light: { anchor: 'viewport' }
+    }), [
+      { command: 'setLightProperty', args: ['anchor', 'viewport'] }
+    ], 'light anchor change');
+
+    t.deepEqual(diffStyles({
+        light: { color: 'white' }
+    }, {
+        light: { color: 'red' }
+    }), [
+      { command: 'setLightProperty', args: ['color', 'red'] }
+    ], 'light color change');
+
+    t.deepEqual(diffStyles({
+        light: { direction: [0, 1, 0] }
+    }, {
+        light: { direction: [1, 0, 0] }
+    }), [
+      { command: 'setLightProperty', args: ['direction', [1, 0, 0]] }
+    ], 'light direction change');
+
+    t.deepEqual(diffStyles({
+        light: { intensity: 1 }
+    }, {
+        light: { intensity: 10 }
+    }), [
+      { command: 'setLightProperty', args: ['intensity', 10] }
+    ], 'light intensity change');
+
     t.end();
 });
