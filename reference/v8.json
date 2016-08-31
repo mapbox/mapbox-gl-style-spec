@@ -44,35 +44,34 @@
       "example": 50
     },
     "light": {
-      "light-anchor": {
+      "anchor": {
         "type": "enum",
         "default": "viewport",
         "values": [
           "map",
           "viewport"
         ],
-        "doc": "Whether extrusions are lit relative to map or viewport. The light-anchor property will only be used if it has not been set by map options upon initialization.",
+        "doc": "Whether extrusions are lit relative to map or viewport. The light anchor property will only be used if it has not been set by map options upon initialization.",
         "example": "map"
       },
-      "light-direction": {
+      "direction": {
         "type": "array",
         "value": "number",
         "default": [-0.5, -0.3, 1.0],
-        "doc": "Light direction for lighting extrusions ##TODO##. The light-direction property will only be used if it has not been set by map options upon initialization.",
+        "doc": "Light direction for lighting extrusions ##TODO##. The light direction property will only be used if it has not been set by map options upon initialization.",
         "example": [0.5, -0.2, 1.0]
       },
-      "light-color": {
+      "color": {
         "type": "color",
         "default": "#ffffff",
-        "doc": "Color tint for lighting extrusions. The light-color property will only be used if it has not been set by map options upon initialization.",
-        "example": "## TODO @nickidlugash what's a good light color?"
+        "doc": "Color tint for lighting extrusions. The light color property will only be used if it has not been set by map options upon initialization."
       },
-      "light-intensity": {
+      "intensity": {
         "type": "number",
         "maximum": 1,
         "minimum": 0,
-        "default": 0.75,
-        "doc": "Intensity of extrusion lighting (on a scale from 0 to 1). Higher numbers will present as more extreme contrast."
+        "default": 0.5,
+        "doc": "Intensity of extrusion lighting (on a scale from 0 to 1). Higher numbers will present as more extreme contrast. The light intensity property will only be used if it has not been set by map options upon initialization."
       }
     },
     "sources": {
@@ -1704,7 +1703,7 @@
       "function": "interpolated",
       "zoom-function": true,
       "property-function": true,
-      "default": 3,
+      "default": 0,
       "minimum": 0,
       "doc": "The height (in ##UNITS##) with which to extrude this layer.",
       "transition": true
@@ -1721,7 +1720,7 @@
     },
     "extrusion-color": {
       "type": "color",
-      "default": "rgba(130,130,130,1)",
+      "default": "#000000",
       "doc": "The color of the extruded part of this layer. This color can be specified as rgba with an alpha component and the color's opacity will not affect the opacity of the 1px stroke, if it is used.",
       "function": "interpolated",
       "zoom-function": true,
