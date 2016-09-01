@@ -1708,14 +1708,14 @@
       "doc": "The height (in ##UNITS##) with which to extrude this layer.",
       "transition": true
     },
-    "extrusion-min-height": {
+    "extrusion-base-height": {
       "type": "number",
       "function": "interpolated",
       "zoom-function": true,
       "property-function": true,
       "default": 0,
       "minimum": 0,
-      "doc": "The height (in ##UNITS##) with which to extrude this layer.",
+      "doc": "The height (in ##UNITS##) with which to extrude the base of this layer.",
       "transition": true
     },
     "extrusion-color": {
