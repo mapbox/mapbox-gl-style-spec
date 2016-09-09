@@ -57,9 +57,9 @@
       "direction": {
         "type": "array",
         "value": "number",
-        "default": [-0.5, -0.3, 1.0],
-        "doc": "Light direction for lighting extruded geometries ##TODO##. The light direction property will only be used if it has not been set by map options upon initialization.",
-        "example": [0.5, -0.2, 1.0]
+        "default": [1.15, 210, 30],
+        "doc": "Light direction for lighting extruded geometries, in [r radial coordinate, a azimuthal angle, p polar angle] where r indicates the distance from the center of an object to its light, a indicates the position of the light relative to 0º (like a clock), and p indicates the height of the light (from 0º, directly above, to 180º, directly below). The light direction property will only be used if it has not been set by map options upon initialization.",
+        "example": [1.5, 90, 80]
       },
       "color": {
         "type": "color",
@@ -1677,7 +1677,7 @@
       "property-function": true,
       "default": 0,
       "minimum": 0,
-      "doc": "The height (in ##UNITS TODO##) with which to extrude this fill layer.",
+      "doc": "The height with which to extrude this fill layer.",
       "transition": true
     },
     "fill-extrude-base": {
@@ -1687,7 +1687,7 @@
       "property-function": true,
       "default": 0,
       "minimum": 0,
-      "doc": "The height (in ##UNITS TODO##) with which to extrude the base of this layer.",
+      "doc": "The height with which to extrude the base of this layer.",
       "transition": true,
       "requires": {
         "<=": "fill-extrude-height"
