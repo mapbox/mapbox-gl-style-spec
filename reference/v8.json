@@ -1689,9 +1689,11 @@
       "minimum": 0,
       "doc": "The height with which to extrude the base of this layer.",
       "transition": true,
-      "requires": {
-        "<=": "fill-extrude-height"
-      }
+      "requires": [
+        {
+          "<=": "fill-extrude-height"
+        }
+      ]
     }
   },
   "paint_line": {
