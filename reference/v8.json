@@ -674,8 +674,14 @@
       "doc": "Size of padding area around the text-fit size in clockwise order: top, right, bottom, left.",
       "requires": [
         "icon-image",
-        "icon-text-fit",
-        "text-field"
+        "text-field",
+        {
+          "icon-text-fit": [
+            "both",
+            "width",
+            "height"
+          ]
+        }
       ],
       "sdk-support": {
         "basic functionality": {
