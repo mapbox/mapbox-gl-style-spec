@@ -1202,11 +1202,17 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "none",
-        "uppercase",
-        "lowercase"
-      ],
+      "values": {
+        "none": {
+            "doc": "The text is not altered."
+        },
+        "uppercase": {
+            "doc": "The text is uppercased."
+        },
+        "lowercase": {
+            "doc": "The text is lowercased."
+        }
+      },
       "default": "none",
       "doc": "Specifies how to capitalize text, similar to the CSS `text-transform` property.",
       "requires": [
