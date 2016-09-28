@@ -355,7 +355,7 @@
         }
       },
       "default": "visible",
-      "doc": "The display of this layer.",
+      "doc": "Whether this layer is displayed.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.10.0",
@@ -379,7 +379,7 @@
         }
       },
       "default": "visible",
-      "doc": "The display of this layer.",
+      "doc": "Whether this layer is displayed.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.10.0",
@@ -403,7 +403,7 @@
         }
       },
       "default": "visible",
-      "doc": "The display of this layer.",
+      "doc": "Whether this layer is displayed.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.10.0",
@@ -519,7 +519,7 @@
         }
       },
       "default": "visible",
-      "doc": "The display of this layer.",
+      "doc": "Whether this layer is displayed.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.10.0",
@@ -875,7 +875,7 @@
             "doc": "The text is aligned to the plane of the viewport."
         },
         "auto": {
-            "doc": "Set to the same value as `text-rotation-alignment`."
+            "doc": "Automatically matches the value of `text-rotation-alignment`."
         }
       },
       "default": "auto",
@@ -1086,16 +1086,16 @@
             "doc": "The bottom of the text is placed closest to the anchor."
         },
         "top-left": {
-            "doc": "The top left side of the text is placed closest to the anchor."
+            "doc": "The top left corner of the text is placed closest to the anchor."
         },
         "top-right": {
-            "doc": "The top right side of the text is placed closest to the anchor."
+            "doc": "The top right corner of the text is placed closest to the anchor."
         },
         "bottom-left": {
-            "doc": "The bottom left side of the text is placed closest to the anchor."
+            "doc": "The bottom left corner of the text is placed closest to the anchor."
         },
         "bottom-right": {
-            "doc": "The bottom right side of the text is placed closest to the anchor."
+            "doc": "The bottom right corner of the text is placed closest to the anchor."
         }
       },
       "default": "center",
@@ -1207,10 +1207,10 @@
             "doc": "The text is not altered."
         },
         "uppercase": {
-            "doc": "The text is uppercased."
+            "doc": "Forces all letters to be displayed in uppercase."
         },
         "lowercase": {
-            "doc": "The text is lowercased."
+            "doc": "Forces all letters to be displayed in lowercase."
         }
       },
       "default": "none",
@@ -1318,7 +1318,7 @@
         }
       },
       "default": "visible",
-      "doc": "The display of this layer.",
+      "doc": "Whether this layer is displayed.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.10.0",
@@ -1342,7 +1342,7 @@
         }
       },
       "default": "visible",
-      "doc": "The display of this layer.",
+      "doc": "Whether this layer is displayed.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.10.0",
@@ -1587,10 +1587,10 @@
       "property-function": true,
       "values": {
         "map": {
-            "doc": "The fill is translated relative to the map (north)."
+            "doc": "The fill is translated relative to the map."
         },
         "viewport": {
-            "doc": "The fill is translated relative to the viewport (screen)."
+            "doc": "The fill is translated relative to the viewport."
         }
       },
       "doc": "Controls the translation reference point.",
@@ -1694,10 +1694,10 @@
       "property-function": true,
       "values": {
         "map": {
-            "doc": "The line is translated relative to the map (north)."
+            "doc": "The line is translated relative to the map."
         },
         "viewport": {
-            "doc": "The line is translated relative to the viewport (screen)."
+            "doc": "The line is translated relative to the viewport."
         }
       },
       "doc": "Controls the translation reference point.",
@@ -1930,10 +1930,10 @@
       "property-function": true,
       "values": {
         "map": {
-            "doc": "The circle is translated relative to the map (north)."
+            "doc": "The circle is translated relative to the map."
         },
         "viewport": {
-            "doc": "The circle is translated relative to the viewport (screen)."
+            "doc": "The circle is translated relative to the viewport."
         }
       },
       "doc": "Controls the translation reference point.",
@@ -2105,10 +2105,10 @@
       "property-function": true,
       "values": {
         "map": {
-            "doc": "Icons are translated relative to the map (north)."
+            "doc": "Icons are translated relative to the map."
         },
         "viewport": {
-            "doc": "Icons are translated relative to the viewport (screen)."
+            "doc": "Icons are translated relative to the viewport."
         }
       },
       "doc": "Controls the translation reference point.",
@@ -2258,10 +2258,10 @@
       "property-function": true,
       "values": {
         "map": {
-            "doc": "The text is translated relative to the map (north)."
+            "doc": "The text is translated relative to the map."
         },
         "viewport": {
-            "doc": "The text is translated relative to the viewport (screen)."
+            "doc": "The text is translated relative to the viewport."
         }
       },
       "doc": "Controls the translation reference point.",
