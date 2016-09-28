@@ -106,10 +106,14 @@
     "type": {
       "required": true,
       "type": "enum",
-      "values": [
-        "vector",
-        "raster"
-      ],
+      "values": {
+        "vector": {
+            "doc": "A vector tile source."
+        },
+        "raster": {
+            "doc": "A raster tile source."
+        }
+      },
       "doc": "The data type of the tile source."
     },
     "url": {
@@ -146,9 +150,11 @@
     "type": {
       "required": true,
       "type": "enum",
-      "values": [
-        "geojson"
-      ],
+      "values": {
+        "geojson": {
+            "doc": "A GeoJSON data source."
+        }
+      },
       "doc": "The data type of the GeoJSON source."
     },
     "data": {
@@ -192,9 +198,11 @@
     "type": {
       "required": true,
       "type": "enum",
-      "values": [
-        "video"
-      ],
+      "values": {
+        "video": {
+            "doc": "A video data source."
+        }
+      },
       "doc": "The data type of the video source."
     },
     "urls": {
@@ -220,9 +228,11 @@
     "type": {
       "required": true,
       "type": "enum",
-      "values": [
-        "image"
-      ],
+      "values": {
+        "image": {
+            "doc": "An image data source."
+        }
+      },
       "doc": "The data type of the image source."
     },
     "url": {
