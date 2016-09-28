@@ -1495,7 +1495,7 @@
       "default": 1,
       "minimum": 0,
       "maximum": 1,
-      "doc": "The opacity of the entire fill layer. In contrast to the fill-color, this value will also affect the 1px stroke around the fill, if the stroke is used.",
+      "doc": "The opacity of the entire fill layer. In contrast to the `fill-color`, this value will also affect the 1px stroke around the fill, if the stroke is used.",
       "transition": true,
       "sdk-support": {
         "basic functionality": {
@@ -1511,7 +1511,7 @@
     "fill-color": {
       "type": "color",
       "default": "#000000",
-      "doc": "The color of the filled part of this layer. This color can be specified as rgba with an alpha component and the color's opacity will not affect the opacity of the 1px stroke, if it is used.",
+      "doc": "The color of the filled part of this layer. This color can be specified as `rgba` with an alpha component and the color's opacity will not affect the opacity of the 1px stroke, if it is used.",
       "function": "interpolated",
       "zoom-function": true,
       "property-function": true,
@@ -2019,7 +2019,7 @@
       "zoom-function": true,
       "property-function": true,
       "transition": true,
-      "doc": "The color of the icon's halo. Icon halos can only be used with sdf icons.",
+      "doc": "The color of the icon's halo. Icon halos can only be used with SDF icons.",
       "requires": [
         "icon-image"
       ],
