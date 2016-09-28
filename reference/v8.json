@@ -346,12 +346,16 @@
       "type": "enum",
       "function": "piecewise-constant",
       "zoom-function": true,
-      "values": [
-        "visible",
-        "none"
-      ],
+      "values": {
+        "visible": {
+            "doc": "The layer is shown."
+        },
+        "none": {
+            "doc": "The layer is not shown."
+        }
+      },
       "default": "visible",
-      "doc": "The display of this layer. `none` hides this layer.",
+      "doc": "The display of this layer.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.10.0",
@@ -366,12 +370,16 @@
       "type": "enum",
       "function": "piecewise-constant",
       "zoom-function": true,
-      "values": [
-        "visible",
-        "none"
-      ],
+      "values": {
+        "visible": {
+            "doc": "The layer is shown."
+        },
+        "none": {
+            "doc": "The layer is not shown."
+        }
+      },
       "default": "visible",
-      "doc": "The display of this layer. `none` hides this layer.",
+      "doc": "The display of this layer.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.10.0",
@@ -386,12 +394,16 @@
       "type": "enum",
       "function": "piecewise-constant",
       "zoom-function": true,
-      "values": [
-        "visible",
-        "none"
-      ],
+      "values": {
+        "visible": {
+            "doc": "The layer is shown."
+        },
+        "none": {
+            "doc": "The layer is not shown."
+        }
+      },
       "default": "visible",
-      "doc": "The display of this layer. `none` hides this layer.",
+      "doc": "The display of this layer.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.10.0",
@@ -486,12 +498,16 @@
       "type": "enum",
       "function": "piecewise-constant",
       "zoom-function": true,
-      "values": [
-        "visible",
-        "none"
-      ],
+      "values": {
+        "visible": {
+            "doc": "The layer is shown."
+        },
+        "none": {
+            "doc": "The layer is not shown."
+        }
+      },
       "default": "visible",
-      "doc": "The display of this layer. `none` hides this layer.",
+      "doc": "The display of this layer.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.10.0",
@@ -1221,12 +1237,16 @@
       "type": "enum",
       "function": "piecewise-constant",
       "zoom-function": true,
-      "values": [
-        "visible",
-        "none"
-      ],
+      "values": {
+        "visible": {
+            "doc": "The layer is shown."
+        },
+        "none": {
+            "doc": "The layer is not shown."
+        }
+      },
       "default": "visible",
-      "doc": "The display of this layer. `none` hides this layer.",
+      "doc": "The display of this layer.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.10.0",
@@ -1241,12 +1261,16 @@
       "type": "enum",
       "function": "piecewise-constant",
       "zoom-function": true,
-      "values": [
-        "visible",
-        "none"
-      ],
+      "values": {
+        "visible": {
+            "doc": "The layer is shown."
+        },
+        "none": {
+            "doc": "The layer is not shown."
+        }
+      },
       "default": "visible",
-      "doc": "The display of this layer. `none` hides this layer.",
+      "doc": "The display of this layer.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.10.0",
