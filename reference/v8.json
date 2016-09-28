@@ -701,7 +701,7 @@
       "property-function": false,
       "values": {
         "none": {
-            "doc": "No scaling is performed."
+            "doc": "The icon is displayed at its intrinsic aspect ratio."
         },
         "both": {
             "doc": "Scaling is done in both x- and y-dimensions."
