@@ -535,10 +535,14 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-          "point",
-          "line"
-      ],
+      "values": {
+          "point": {
+              "doc": "The label is placed at the point where the geometry is located."
+          },
+          "line": {
+              "doc": "The label is placed along the line of the geometry."
+          }
+      },
       "default": "point",
       "doc": "Label placement relative to its geometry. `line` can only be used on LineStrings and Polygons.",
       "sdk-support": {
