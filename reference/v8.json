@@ -1359,30 +1359,62 @@
   },
   "filter_operator": {
     "type": "enum",
-    "values": [
-      "==",
-      "!=",
-      ">",
-      ">=",
-      "<",
-      "<=",
-      "in",
-      "!in",
-      "all",
-      "any",
-      "none",
-      "has",
-      "!has"
-    ],
+    "values": {
+      "==": {
+          "doc": "The equal-to operator."
+      },
+      "!=": {
+          "doc": "The not-equal-to operator."
+      },
+      ">": {
+          "doc": "The greater-than operator."
+      },
+      ">=": {
+          "doc": "The greater-than-or-equal-to operator."
+      },
+      "<": {
+          "doc": "The less-than operator."
+      },
+      "<=": {
+          "doc": "The less-than-or-equal-to operator."
+      },
+      "in": {
+          "doc": "The operator to determine if the left-hand side is in the right-hand side."
+      },
+      "!in": {
+          "doc": "The operator to determine if the left-hand side is not in the right-hand side."
+      },
+      "all": {
+          "doc": "The compound filter operator to require satisfaction of all component filters."
+      },
+      "any": {
+          "doc": "The compound filter operator to require satisfation of any of the component filters."
+      },
+      "none": {
+          "doc": "The compound filter operator to require satisfaction of none of the component filters."
+      },
+      "has": {
+          "doc": "The operator to require presence of a value."
+      },
+      "!has": {
+          "doc": "The operator to require absence of a value."
+      }
+    },
     "doc": "The filter operator."
   },
   "geometry_type": {
     "type": "enum",
-    "values": [
-      "Point",
-      "LineString",
-      "Polygon"
-    ],
+    "values": {
+      "Point": {
+          "doc": "Filter to point geometries."
+      },
+      "LineString": {
+          "doc": "Filter to line geometries."
+      },
+      "Polygon": {
+          "doc": "Filter to polygon geometries."
+      }
+    },
     "doc": "The geometry type for the filter to select."
   },
   "color_operation": {
