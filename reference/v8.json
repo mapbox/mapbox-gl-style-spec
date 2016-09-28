@@ -1448,11 +1448,17 @@
     },
     "type": {
       "type": "enum",
-      "values": [
-          "exponential",
-          "interval",
-          "categorical"
-      ],
+      "values": {
+          "exponential": {
+              "doc": "Use exponential interpolation."
+          },
+          "interval": {
+              "doc": "Use interval interpolation."
+          },
+          "categorical": {
+              "doc": "Use categorical interpolation."
+          }
+      },
       "doc": "The interpolation strategy to use in function evaluation.",
       "default": "exponential"
     }
