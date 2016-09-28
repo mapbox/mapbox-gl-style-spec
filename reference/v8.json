@@ -261,14 +261,26 @@
     },
     "type": {
       "type": "enum",
-      "values": [
-        "fill",
-        "line",
-        "symbol",
-        "circle",
-        "raster",
-        "background"
-      ],
+      "values": {
+        "fill": {
+            "doc": "A filled polygon with an optional stroked border."
+        },
+        "line": {
+            "doc": "A stroked line."
+        },
+        "symbol": {
+            "doc": "An icon or a text label."
+        },
+        "circle": {
+            "doc": "A filled circle."
+        },
+        "raster": {
+            "doc": "Raster map textures such as satellite imagery."
+        },
+        "background": {
+            "doc": "The background color or pattern of the map."
+        }
+      },
       "doc": "Rendering type of this layer."
     },
     "metadata": {
