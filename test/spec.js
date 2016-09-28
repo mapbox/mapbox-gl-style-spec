@@ -72,12 +72,25 @@ function validSchema(k, t, obj, ref) {
     t.ok(types.indexOf(obj.type) !== -1, k + '.type (' + obj.type + ')');
 
     // schema type is an enum, it must have 'values' and they must be
-    // objects (>=v8) or scalars (<=v7).
+    // objects (>=v8) or scalars (<=v7). If objects, check that doc key
+    // (if present) is a string.
     if (obj.type === 'enum') {
       var values = (ref.$version >= 8 ? Object.keys(obj.values) : obj.values);
       t.ok(Array.isArray(values) && values.every(function(v) {
         return scalar.indexOf(typeof v) !== -1;
       }), k + '.values [' + values +']');
+      if (ref.$version >= 8) {
+        for (var v in obj.values) {
+          if (Array.isArray(obj.values) === false) { // skips $root.version
+            if (obj.values[v].doc !== undefined) {
+              t.equal('string', typeof obj.values[v].doc, k + '.doc (string)');
+              if (minified) t.fail('minified file should not have ' + k + '.doc');
+            } else {
+              if (t.name === 'latest') t.fail('doc missing for ' + k);
+            }
+          }
+        }
+      }
     }
 
     // schema type is array, it must have 'value' and it must be a type.
