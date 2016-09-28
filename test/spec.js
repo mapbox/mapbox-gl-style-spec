@@ -71,11 +71,13 @@ function validSchema(k, t, obj, ref) {
     // schema type must be js native, 'color', or present in ref root object.
     t.ok(types.indexOf(obj.type) !== -1, k + '.type (' + obj.type + ')');
 
-    // schema type is an enum, it must have 'values' and they must be scalars.
+    // schema type is an enum, it must have 'values' and they must be
+    // objects (>=v8) or scalars (<=v7).
     if (obj.type === 'enum') {
-      t.ok(Array.isArray(obj.values) && obj.values.every(function(v) {
+      var values = (ref.$version >= 8 ? Object.keys(obj.values) : obj.values);
+      t.ok(Array.isArray(values) && values.every(function(v) {
         return scalar.indexOf(typeof v) !== -1;
-      }), k + '.values [' + obj.values +']');
+      }), k + '.values [' + values +']');
     }
 
     // schema type is array, it must have 'value' and it must be a type.
