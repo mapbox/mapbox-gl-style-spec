@@ -1417,17 +1417,6 @@
     },
     "doc": "The geometry type for the filter to select."
   },
-  "color_operation": {
-    "type": "enum",
-    "values": [
-      "lighten",
-      "saturate",
-      "spin",
-      "fade",
-      "mix"
-    ],
-    "doc": "A color operation to apply."
-  },
   "function": {
     "stops": {
       "type": "array",
