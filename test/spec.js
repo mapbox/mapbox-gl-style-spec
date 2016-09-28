@@ -93,16 +93,20 @@ function validSchema(k, t, obj, ref) {
       }
     }
 
-    // schema key type checks
+    // schema key doc checks
     if (obj.doc !== undefined) {
       t.equal('string', typeof obj.doc, k + '.doc (string)');
       if (minified) t.fail('minified file should not have ' + k + '.doc');
     } else {
       if (t.name === 'latest') t.fail('doc missing for ' + k);
     }
+
+    // schema key example checks
     if (minified && obj.example !== undefined) {
       t.fail('minified file should not have ' + k + '.example');
     }
+
+    // schema key function checks
     if (obj.function !== undefined) {
       if (ref.$version >= 7) {
         t.equal(true, ['interpolated', 'piecewise-constant'].indexOf(obj.function) >= 0, 'function: ' + obj.function);
@@ -110,13 +114,21 @@ function validSchema(k, t, obj, ref) {
         t.equal('boolean', typeof obj.function, k + '.required (boolean)');
       }
     }
-    if (obj.required !== undefined)
+
+    // schema key required checks
+    if (obj.required !== undefined) {
       t.equal('boolean', typeof obj.required, k + '.required (boolean)');
-    if (obj.transition !== undefined)
+    }
+
+    // schema key transition checks
+    if (obj.transition !== undefined) {
       t.equal('boolean', typeof obj.transition, k + '.transition (boolean)');
-    if (obj.requires !== undefined)
-      t.equal(true, Array.isArray(obj.requires), k + '.requires (array)')
-    // Array of schema objects or references.
+    }
+
+    // schema key requires checks
+    if (obj.requires !== undefined) {
+      t.equal(true, Array.isArray(obj.requires), k + '.requires (array)');
+    }
   } else if (Array.isArray(obj)) {
     obj.forEach(function(child, j) {
       if (typeof child === 'string' && scalar.indexOf(child) !== -1) return;
