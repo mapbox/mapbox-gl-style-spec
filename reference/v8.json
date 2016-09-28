@@ -650,13 +650,19 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "map",
-        "viewport",
-        "auto"
-      ],
+      "values": {
+        "map": {
+            "doc": "When `symbol-placement` is set to `point`, produces icons whose x-axes are aligned east-west."
+        },
+        "viewport": {
+            "doc": "Produces icons whose x-axes are aligned with the x-axis of the viewport, regardless of the value of `symbol-placement`."
+        },
+        "auto": {
+            "doc": "When `symbol-placement` is set to `point`, this is equivalent to `viewport`. When `symbol-placement` is set to `line`, this is equivalent to `map`."
+        }
+      },
       "default": "auto",
-      "doc": "In combination with `symbol-placement`, determines the rotation behavior of icons. The value `viewport` produces icons whose x-axes are aligned with the x-axis of the viewport, regardless of the value of `symbol-placement`. When `symbol-placement` is set to `point`, the value `map` produces icons whose x-axes are aligned east-west, and the value `auto` is equivalent to `viewport`. When `symbol-placement` is set to `line`, the value `map` produces icons whose x-axes are aligned with the line, and the value `auto` is equivalent to `map`.",
+      "doc": "In combination with `symbol-placement`, determines the rotation behavior of icons.",
       "requires": [
         "icon-image"
       ],
@@ -693,14 +699,22 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": false,
-      "values": [
-        "none",
-        "both",
-        "width",
-        "height"
-      ],
+      "values": {
+        "none": {
+            "doc": "No scaling is performed."
+        },
+        "both": {
+            "doc": "Scaling is done in both x- and y-dimensions."
+        },
+        "width": {
+            "doc": "Scaling is done in the x-dimension to fit the text's dimensions."
+        },
+        "height": {
+            "doc": "Scaling is done in the y-dimension to fit the text's dimensions."
+        }
+      },
       "default": "none",
-      "doc": "Scales the icon to fit around the associated text. The value `none` performs no scaling. The values `width` and `height` scale the x- or y-dimension, respectively, to fit the text's dimensions. The value `both` scales in both dimensions.",
+      "doc": "Scales the icon to fit around the associated text.",
       "requires": [
         "icon-image",
         "text-field"
@@ -853,13 +867,19 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "map",
-        "viewport",
-        "auto"
-      ],
+      "values": {
+        "map": {
+            "doc": "The text is aligned to the plane of the map."
+        },
+        "viewport": {
+            "doc": "The text is aligned to the plane of the viewport."
+        },
+        "auto": {
+            "doc": "Set to the same value as `text-rotation-alignment`."
+        }
+      },
       "default": "auto",
-      "doc": "Orientation of text when map is pitched. Aligns text to the plane of the viewport when set to `viewport` or the plane of the map when set to `map`. Matches `text-rotation-alignment` if `auto`.",
+      "doc": "Orientation of text when map is pitched.",
       "requires": [
         "text-field"
       ],
@@ -877,13 +897,19 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "map",
-        "viewport",
-        "auto"
-      ],
+      "values": {
+        "map": {
+            "doc": "When `symbol-placement` is set to `point`, produces glyphs whose x-axes are aligned east-west."
+        },
+        "viewport": {
+            "doc": "Produces glyphs whose x-axes are aligned with the x-axis of the viewport, regardless of the value of `symbol-placement`."
+        },
+        "auto": {
+            "doc": "When `symbol-placement` is set to `point`, this is equivalent to `viewport`. When `symbol-placement` is set to `line`, this is equivalent to `map`."
+        }
+      },
       "default": "auto",
-      "doc": "In combination with `symbol-placement`, determines the rotation behavior of the individual glyphs forming the text. The value `viewport` produces glyphs whose x-axes are aligned with the x-axis of the viewport, regardless of the value of `symbol-placement`. When `symbol-placement` is set to `point`, the value `map` produces glyphs whose x-axes are aligned east-west, and the value `auto` is equivalent to `viewport`. When `symbol-placement` is set to `line`, the value `map` produces glyphs whose x-axes are aligned with the line at the point where each glyph is placed, and the value `auto` is equivalent to `map`.",
+      "doc": "In combination with `symbol-placement`, determines the rotation behavior of the individual glyphs forming the text.",
       "requires": [
         "text-field"
       ],
@@ -1014,11 +1040,17 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "left",
-        "center",
-        "right"
-      ],
+      "values": {
+        "left": {
+            "doc": "The text is aligned to the left."
+        },
+        "center": {
+            "doc": "The text is centered."
+        },
+        "right": {
+            "doc": "The text is aligned to the right."
+        }
+      },
       "default": "center",
       "doc": "Text justification options.",
       "requires": [
@@ -1037,17 +1069,35 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "center",
-        "left",
-        "right",
-        "top",
-        "bottom",
-        "top-left",
-        "top-right",
-        "bottom-left",
-        "bottom-right"
-      ],
+      "values": {
+        "center": {
+            "doc": "The center of the text is placed closest to the anchor."
+        },
+        "left": {
+            "doc": "The left side of the text is placed closest to the anchor."
+        },
+        "right": {
+            "doc": "The right side of the text is placed closest to the anchor."
+        },
+        "top": {
+            "doc": "The top of the text is placed closest to the anchor."
+        },
+        "bottom": {
+            "doc": "The bottom of the text is placed closest to the anchor."
+        },
+        "top-left": {
+            "doc": "The top left side of the text is placed closest to the anchor."
+        },
+        "top-right": {
+            "doc": "The top right side of the text is placed closest to the anchor."
+        },
+        "bottom-left": {
+            "doc": "The bottom left side of the text is placed closest to the anchor."
+        },
+        "bottom-right": {
+            "doc": "The bottom right side of the text is placed closest to the anchor."
+        }
+      },
       "default": "center",
       "doc": "Part of the text placed closest to the anchor.",
       "requires": [
@@ -1502,11 +1552,15 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "map",
-        "viewport"
-      ],
-      "doc": "Control whether the translation is relative to the map (north) or viewport (screen)",
+      "values": {
+        "map": {
+            "doc": "The fill is translated relative to the map (north)."
+        },
+        "viewport": {
+            "doc": "The fill is translated relative to the viewport (screen)."
+        }
+      },
+      "doc": "Controls the translation reference point.",
       "default": "map",
       "requires": [
         "fill-translate"
@@ -1605,11 +1659,15 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "map",
-        "viewport"
-      ],
-      "doc": "Control whether the translation is relative to the map (north) or viewport (screen)",
+      "values": {
+        "map": {
+            "doc": "The line is translated relative to the map (north)."
+        },
+        "viewport": {
+            "doc": "The line is translated relative to the viewport (screen)."
+        }
+      },
+      "doc": "Controls the translation reference point.",
       "default": "map",
       "requires": [
         "line-translate"
@@ -1837,11 +1895,15 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "map",
-        "viewport"
-      ],
-      "doc": "Control whether the translation is relative to the map (north) or viewport (screen)",
+      "values": {
+        "map": {
+            "doc": "The circle is translated relative to the map (north)."
+        },
+        "viewport": {
+            "doc": "The circle is translated relative to the viewport (screen)."
+        }
+      },
+      "doc": "Controls the translation reference point.",
       "default": "map",
       "requires": [
         "circle-translate"
@@ -1859,12 +1921,16 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "map",
-        "viewport"
-      ],
+      "values": {
+        "map": {
+            "doc": "Circles are scaled according to their apparent distance to the camera."
+        },
+        "viewport": {
+            "doc": "Circles are not scaled."
+        }
+      },
       "default": "map",
-      "doc": "Controls the scaling behavior of the circle when the map is pitched. The value `map` scales circles according to their apparent distance to the camera. The value `viewport` results in no pitch-related scaling.",
+      "doc": "Controls the scaling behavior of the circle when the map is pitched.",
       "sdk-support": {
         "basic functionality": {
           "js": "0.21.0"
@@ -2004,11 +2070,15 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "map",
-        "viewport"
-      ],
-      "doc": "Control whether the translation is relative to the map (north) or viewport (screen).",
+      "values": {
+        "map": {
+            "doc": "Icons are translated relative to the map (north)."
+        },
+        "viewport": {
+            "doc": "Icons are translated relative to the viewport (screen)."
+        }
+      },
+      "doc": "Controls the translation reference point.",
       "default": "map",
       "requires": [
         "icon-image",
@@ -2153,11 +2223,15 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "map",
-        "viewport"
-      ],
-      "doc": "Control whether the translation is relative to the map (north) or viewport (screen).",
+      "values": {
+        "map": {
+            "doc": "The text is translated relative to the map (north)."
+        },
+        "viewport": {
+            "doc": "The text is translated relative to the viewport (screen)."
+        }
+      },
+      "doc": "Controls the translation reference point.",
       "default": "map",
       "requires": [
         "text-field",
