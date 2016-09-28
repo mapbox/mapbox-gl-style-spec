@@ -703,14 +703,14 @@
         "none": {
             "doc": "The icon is displayed at its intrinsic aspect ratio."
         },
-        "both": {
-            "doc": "Scaling is done in both x- and y-dimensions."
-        },
         "width": {
             "doc": "Scaling is done in the x-dimension to fit the text's dimensions."
         },
         "height": {
             "doc": "Scaling is done in the y-dimension to fit the text's dimensions."
+        },
+        "both": {
+            "doc": "Scaling is done in both x- and y-dimensions."
         }
       },
       "default": "none",
