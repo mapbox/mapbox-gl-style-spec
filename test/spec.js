@@ -81,7 +81,7 @@ function validSchema(k, t, obj, ref) {
     }
 
     // schema type is array, it must have 'value' and it must be a type.
-    if (obj.value !== undefined)
+    if (obj.value !== undefined) {
       if (Array.isArray(obj.value)) {
         obj.value.forEach(function(i) {
           t.ok(types.indexOf(i) !== -1, k + '.value (' + i + ')');
@@ -91,31 +91,32 @@ function validSchema(k, t, obj, ref) {
       } else {
         t.ok(types.indexOf(obj.value) !== -1, k + '.value (' + obj.value + ')');
       }
+    }
 
-      // schema key type checks
-      if (obj.doc !== undefined) {
-        t.equal('string', typeof obj.doc, k + '.doc (string)');
-        if (minified) t.fail('minified file should not have ' + k + '.doc');
+    // schema key type checks
+    if (obj.doc !== undefined) {
+      t.equal('string', typeof obj.doc, k + '.doc (string)');
+      if (minified) t.fail('minified file should not have ' + k + '.doc');
+    } else {
+      if (t.name === 'latest') t.fail('doc missing for ' + k);
+    }
+    if (minified && obj.example !== undefined) {
+      t.fail('minified file should not have ' + k + '.example');
+    }
+    if (obj.function !== undefined) {
+      if (ref.$version >= 7) {
+        t.equal(true, ['interpolated', 'piecewise-constant'].indexOf(obj.function) >= 0, 'function: ' + obj.function);
       } else {
-        if (t.name === 'latest') t.fail('doc missing for ' + k);
+        t.equal('boolean', typeof obj.function, k + '.required (boolean)');
       }
-      if (minified && obj.example !== undefined) {
-        t.fail('minified file should not have ' + k + '.example');
-      }
-      if (obj.function !== undefined) {
-        if (ref.$version >= 7) {
-          t.equal(true, ['interpolated', 'piecewise-constant'].indexOf(obj.function) >= 0, 'function: ' + obj.function);
-        } else {
-          t.equal('boolean', typeof obj.function, k + '.required (boolean)');
-        }
-      }
-      if (obj.required !== undefined)
-        t.equal('boolean', typeof obj.required, k + '.required (boolean)');
-      if (obj.transition !== undefined)
-        t.equal('boolean', typeof obj.transition, k + '.transition (boolean)');
-      if (obj.requires !== undefined)
-        t.equal(true, Array.isArray(obj.requires), k + '.requires (array)')
-      // Array of schema objects or references.
+    }
+    if (obj.required !== undefined)
+      t.equal('boolean', typeof obj.required, k + '.required (boolean)');
+    if (obj.transition !== undefined)
+      t.equal('boolean', typeof obj.transition, k + '.transition (boolean)');
+    if (obj.requires !== undefined)
+      t.equal(true, Array.isArray(obj.requires), k + '.requires (array)')
+    // Array of schema objects or references.
   } else if (Array.isArray(obj)) {
     obj.forEach(function(child, j) {
       if (typeof child === 'string' && scalar.indexOf(child) !== -1) return;
