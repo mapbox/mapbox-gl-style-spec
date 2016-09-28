@@ -1361,43 +1361,43 @@
     "type": "enum",
     "values": {
       "==": {
-          "doc": "The equal-to operator."
+          "doc": "The equality operator."
       },
       "!=": {
-          "doc": "The not-equal-to operator."
+          "doc": "The inequality operator."
       },
       ">": {
-          "doc": "The greater-than operator."
+          "doc": "The greater than operator."
       },
       ">=": {
-          "doc": "The greater-than-or-equal-to operator."
+          "doc": "The greater than or equal operator."
       },
       "<": {
-          "doc": "The less-than operator."
+          "doc": "The less than operator."
       },
       "<=": {
-          "doc": "The less-than-or-equal-to operator."
+          "doc": "The less than or equal operator."
       },
       "in": {
-          "doc": "The operator to determine if the left-hand side is in the right-hand side."
+          "doc": "The set inclusion operator."
       },
       "!in": {
-          "doc": "The operator to determine if the left-hand side is not in the right-hand side."
+          "doc": "The set exclusion operator."
       },
       "all": {
-          "doc": "The compound filter operator to require satisfaction of all component filters."
+          "doc": "The logical `AND` operator."
       },
       "any": {
-          "doc": "The compound filter operator to require satisfation of any of the component filters."
+          "doc": "The logical `OR` operator."
       },
       "none": {
-          "doc": "The compound filter operator to require satisfaction of none of the component filters."
+          "doc": "The logical `NOR` operator."
       },
       "has": {
-          "doc": "The operator to require presence of a value."
+          "doc": "The existence operator."
       },
       "!has": {
-          "doc": "The operator to require absence of a value."
+          "doc": "The inexistence operator."
       }
     },
     "doc": "The filter operator."
