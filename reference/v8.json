@@ -419,11 +419,17 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "butt",
-        "round",
-        "square"
-      ],
+      "values": {
+        "butt": {
+            "doc": "A cap with a squared-off end which is drawn to the exact endpoint of the line."
+        },
+        "round": {
+            "doc": "A cap with a rounded end which is drawn beyond the endpoint of the line at a radius of one-half of the line's width and centered on the endpoint of the line."
+        },
+        "square": {
+            "doc": "A cap with a squared-off end which is drawn beyond the endpoint of the line at a distance of one-half of the line's width."
+        }
+      },
       "default": "butt",
       "doc": "The display of line endings.",
       "sdk-support": {
@@ -439,11 +445,17 @@
       "function": "piecewise-constant",
       "zoom-function": true,
       "property-function": true,
-      "values": [
-        "bevel",
-        "round",
-        "miter"
-      ],
+      "values": {
+        "bevel": {
+            "doc": "A join with a squared-off end which is drawn beyond the endpoint of the line at a distance of one-half of the line's width."
+        },
+        "round": {
+            "doc": "A join with a rounded end which is drawn beyond the endpoint of the line at a radius of one-half of the line's width and centered on the endpoint of the line."
+        },
+        "miter": {
+            "doc": "A join with a sharp, angled corner which is drawn with the outer sides beyond the endpoint of the path until they meet."
+        }
+      },
       "default": "miter",
       "doc": "The display of lines when joining.",
       "sdk-support": {
