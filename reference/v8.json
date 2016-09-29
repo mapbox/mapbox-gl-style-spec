@@ -739,7 +739,7 @@
       "function": "interpolated",
       "zoom-function": true,
       "property-function": true,
-      "doc": "Size of the additional area added to dimensions determined by `icon-text-fix`, in clockwise order: top, right, bottom, left.",
+      "doc": "Size of the additional area added to dimensions determined by `icon-text-fit`, in clockwise order: top, right, bottom, left.",
       "requires": [
         "icon-image",
         "text-field",
