@@ -1361,43 +1361,43 @@
     "type": "enum",
     "values": {
       "==": {
-          "doc": "The equality operator."
+          "doc": "`[\"==\", key, value]` equality: `feature[key] = value`"
       },
       "!=": {
-          "doc": "The inequality operator."
+          "doc": "`[\"!=\", key, value]` inequality: `feature[key] ≠ value`"
       },
       ">": {
-          "doc": "The greater than operator."
+          "doc": "`[\">\", key, value]` greater than: `feature[key] > value`"
       },
       ">=": {
-          "doc": "The greater than or equal operator."
+          "doc": "`[\">=\", key, value]` greater than or equal: `feature[key] ≥ value`"
       },
       "<": {
-          "doc": "The less than operator."
+          "doc": "`[\"<\", key, value]` less than: `feature[key] < value`"
       },
       "<=": {
-          "doc": "The less than or equal operator."
+          "doc": "`[\"<=\", key, value]` less than or equal: `feature[key] ≤ value`"
       },
       "in": {
-          "doc": "The set inclusion operator."
+          "doc": "`[\"in\", key, v0, ..., vn]` set inclusion: `feature[key] ∈ {v0, ..., vn}`"
       },
       "!in": {
-          "doc": "The set exclusion operator."
+          "doc": "`[\"!in\", key, v0, ..., vn]` set exclusion: `feature[key] ∉ {v0, ..., vn}`"
       },
       "all": {
-          "doc": "The logical `AND` operator."
+          "doc": "`[\"all\", f0, ..., fn]` logical `AND`: `f0 ∧ ... ∧ fn`"
       },
       "any": {
-          "doc": "The logical `OR` operator."
+          "doc": "`[\"any\", f0, ..., fn]` logical `OR`: `f0 ∨ ... ∨ fn`"
       },
       "none": {
-          "doc": "The logical `NOR` operator."
+          "doc": "`[\"none\", f0, ..., fn]` logical `NOR`: `¬f0 ∧ ... ∧ ¬fn`"
       },
       "has": {
-          "doc": "The existence operator."
+          "doc": "`[\"has\", key]` `feature[key]` exists"
       },
       "!has": {
-          "doc": "The inexistence operator."
+          "doc": "`[\"!has\", key]` `feature[key]` does not exist"
       }
     },
     "doc": "The filter operator."
