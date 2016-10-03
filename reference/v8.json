@@ -51,12 +51,14 @@
           "map",
           "viewport"
         ],
+        "transition": false,
         "doc": "Whether extruded geometries are lit relative to the map or viewport. The `light.anchor` property will only be used if it has not been set by map options upon initialization.",
         "example": "map"
       },
       "direction": {
         "type": "array",
         "value": "number",
+        "transition": true,
         "length": 3,
         "default": [1.15, 210, 30],
         "doc": "Position of the light source relative to lit (extruded) geometries, in [r radial coordinate, a azimuthal angle, p polar angle] where r indicates the distance from the center of an object to its light, a indicates the position of the light relative to 0° (like a clock), and p indicates the height of the light (from 0°, directly above, to 180°, directly below). The light direction property will only be used if it has not been set by map options upon initialization.",
@@ -64,6 +66,7 @@
       },
       "color": {
         "type": "color",
+        "transition": true,
         "default": "#ffffff",
         "doc": "Color tint for lighting extruded geometries. The light color property will only be used if it has not been set by map options upon initialization."
       },
@@ -71,6 +74,7 @@
         "type": "number",
         "maximum": 1,
         "minimum": 0,
+        "transition": true,
         "default": 0.5,
         "doc": "Intensity of lighting (on a scale from 0 to 1). Higher numbers will present as more extreme contrast. The light intensity property will only be used if it has not been set by map options upon initialization."
       }
