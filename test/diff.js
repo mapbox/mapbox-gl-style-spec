@@ -153,5 +153,21 @@ t('diff', function (t) {
       { command: 'setPitch', args: [1] }
     ], 'pitch change');
 
+    t.deepEqual(diffStyles({
+        layers: [{ id: 'a', }, {id: 'b'}, {id: 'c', ref: 'b'}]
+    }, {
+        layers: [{ id: 'a'}]
+    }), [
+      { command: 'removeLayer', args: ['b'] }
+    ], 'remove referenced layers');
+
+    t.deepEqual(diffStyles({
+        layers: [{ id: 'a', }, {id: 'b'}, {id: 'c', ref: 'b'}]
+    }, {
+        layers: [{id: 'a'}, {id: 'b'}]
+    }), [
+      { command: 'removeLayer', args: ['c'] }
+    ], 'remove layers that reference other layers');
+
     t.end();
 });
