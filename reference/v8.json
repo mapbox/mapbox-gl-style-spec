@@ -49,17 +49,17 @@
         "default": "viewport",
         "values": {
           "map": {
-            "doc": "The direction of the light source is aligned to the rotation of the map."
+            "doc": "The position of the light source is aligned to the rotation of the map."
           },
           "viewport": {
-            "doc": "The direction of the light source is aligned to the rotation of the viewport."
+            "doc": "The position of the light source is aligned to the rotation of the viewport."
           }
         },
         "transition": false,
         "doc": "Whether extruded geometries are lit relative to the map or viewport.",
         "example": "map"
       },
-      "direction": {
+      "position": {
         "type": "array",
         "default": [1.15, 210, 30],
         "length": 3,
@@ -68,7 +68,7 @@
         "function": "interpolated",
         "zoom-function": true,
         "property-function": false,
-        "doc": "Position of the light source relative to lit (extruded) geometries, in [r radial coordinate, a azimuthal angle, p polar angle] where r indicates the distance from the center of an object to its light, a indicates the position of the light relative to 0° (like a clock), and p indicates the height of the light (from 0°, directly above, to 180°, directly below).",
+        "doc": "Position of the light source relative to lit (extruded) geometries, in [r radial coordinate, a azimuthal angle, p polar angle] where r indicates the distance from the center of an object to its light, a indicates the position of the light relative to 0° (0° corresponds to 12:00 on a clock, and degrees proceed clockwise; 0° with `light.anchor: viewport` corresponds to the top of the viewport, or with `light.anchor: map` to due north), and p indicates the height of the light (from 0°, directly above, to 180°, directly below).",
         "example": [1.5, 90, 80]
       },
       "color": {
@@ -1695,7 +1695,6 @@
       "property-function": true,
       "default": 0,
       "minimum": 0,
-      "units": "meters",
       "doc": "The height with which to extrude this fill layer.",
       "transition": true
     },
@@ -1706,7 +1705,6 @@
       "property-function": true,
       "default": 0,
       "minimum": 0,
-      "units": "meters",
       "doc": "The height with which to extrude the base of this layer.",
       "transition": true,
       "requires": [

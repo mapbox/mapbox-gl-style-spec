@@ -157,14 +157,14 @@ t('diff', function (t) {
         light: {
             anchor: 'map',
             color: 'white',
-            direction: [0, 1, 0],
+            position: [0, 1, 0],
             intensity: 1
         }
     }, {
         light: {
             anchor: 'map',
             color: 'white',
-            direction: [0, 1, 0],
+            position: [0, 1, 0],
             intensity: 1
         }
     }), [
@@ -187,12 +187,12 @@ t('diff', function (t) {
     ], 'light color change');
 
     t.deepEqual(diffStyles({
-        light: { direction: [0, 1, 0] }
+        light: { position: [0, 1, 0] }
     }, {
-        light: { direction: [1, 0, 0] }
+        light: { position: [1, 0, 0] }
     }), [
-      { command: 'setLight', args: [{'direction': [1, 0, 0]}] }
-    ], 'light direction change');
+      { command: 'setLight', args: [{'position': [1, 0, 0]}] }
+    ], 'light position change');
 
     t.deepEqual(diffStyles({
         light: { intensity: 1 }
@@ -206,21 +206,21 @@ t('diff', function (t) {
         light: {
             anchor: 'map',
             color: 'orange',
-            direction: [2, 80, 30],
+            position: [2, 80, 30],
             intensity: 1.0
         }
     }, {
         light: {
             anchor: 'map',
             color: 'red',
-            direction: [1, 40, 30],
+            position: [1, 40, 30],
             intensity: 1.0
         }
     }), [
       { command: 'setLight', args: [{
             anchor: 'map',
             color: 'red',
-            direction: [1, 40, 30],
+            position: [1, 40, 30],
             intensity: 1.0
       }] }
     ], 'multiple light properties change');

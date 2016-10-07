@@ -8,7 +8,7 @@
   },
   "light": {
     "anchor": true,
-    "direction": [1, 2],
+    "position": [1, 2],
     "color": [255, 255, 255, 1],
     "intensity": 1.5
   },

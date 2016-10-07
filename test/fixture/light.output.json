@@ -4,7 +4,7 @@
     "line": 10
   },
   {
-    "message": "light.direction: array length 3 expected, length 2 found",
+    "message": "light.position: array length 3 expected, length 2 found",
     "line": 11
   },
   {
