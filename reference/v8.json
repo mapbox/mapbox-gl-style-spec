@@ -47,10 +47,14 @@
       "anchor": {
         "type": "enum",
         "default": "viewport",
-        "values": [
-          "map",
-          "viewport"
-        ],
+        "values": {
+          "map": {
+            "doc": "The direction of the light source is aligned to the rotation of the map."
+          },
+          "viewport": {
+            "doc": "The direction of the light source is aligned to the rotation of the viewport."
+          }
+        },
         "transition": false,
         "doc": "Whether extruded geometries are lit relative to the map or viewport.",
         "example": "map"
