@@ -175,7 +175,7 @@ t('diff', function (t) {
     }, {
         light: { anchor: 'viewport' }
     }), [
-      { command: 'setLighting', args: [{'anchor': 'viewport'}] }
+      { command: 'setLight', args: [{'anchor': 'viewport'}] }
     ], 'light anchor change');
 
     t.deepEqual(diffStyles({
@@ -183,7 +183,7 @@ t('diff', function (t) {
     }, {
         light: { color: 'red' }
     }), [
-      { command: 'setLighting', args: [{'color': 'red'}] }
+      { command: 'setLight', args: [{'color': 'red'}] }
     ], 'light color change');
 
     t.deepEqual(diffStyles({
@@ -191,7 +191,7 @@ t('diff', function (t) {
     }, {
         light: { direction: [1, 0, 0] }
     }), [
-      { command: 'setLighting', args: [{'direction': [1, 0, 0]}] }
+      { command: 'setLight', args: [{'direction': [1, 0, 0]}] }
     ], 'light direction change');
 
     t.deepEqual(diffStyles({
@@ -199,7 +199,7 @@ t('diff', function (t) {
     }, {
         light: { intensity: 10 }
     }), [
-      { command: 'setLighting', args: [{'intensity': 10}] }
+      { command: 'setLight', args: [{'intensity': 10}] }
     ], 'light intensity change');
 
     t.deepEqual(diffStyles({
@@ -217,9 +217,11 @@ t('diff', function (t) {
             intensity: 1.0
         }
     }), [
-      { command: 'setLighting', args: [{
-        color: 'red',
-        direction: [1, 40, 30]
+      { command: 'setLight', args: [{
+            anchor: 'map',
+            color: 'red',
+            direction: [1, 40, 30],
+            intensity: 1.0
       }] }
     ], 'multiple light properties change');
 
