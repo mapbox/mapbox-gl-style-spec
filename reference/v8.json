@@ -1487,16 +1487,16 @@
       "type": "enum",
       "values": {
           "identity": {
-            "doc": "Return the input value as the output value."
+              "doc": "Return the input value as the output value."
           },
           "exponential": {
-            "doc": "Generate an output by interpolating between stops just less than and just greater than the function input."
+              "doc": "Generate an output by interpolating between stops just less than and just greater than the function input."
           },
           "interval": {
-            "doc": "Return the output value of the stop just less than the function input."
+              "doc": "Return the output value of the stop just less than the function input."
           },
           "categorical": {
-            "doc": "Return the output value of the stop equal to the function input."
+              "doc": "Return the output value of the stop equal to the function input."
           }
       },
       "doc": "The interpolation strategy to use in function evaluation.",
@@ -1516,12 +1516,7 @@
           }
       },
       "doc": "The color space in which colors interpolated. Interpolating colors in perceptual color spaces like LAB and HCL tend to produce color ramps that look more consistent and produce colors that can be differentiated more easily than those interpolated in RGB space.",
-      "default": "rgb",
-      "sdk-support": {
-        "basic functionality": {
-          "js": "0.26.0"
-        }
-      }
+      "default": "rgb"
     }
   },
   "function_stop": {
