@@ -64,7 +64,7 @@
     "line": 91
   },
   {
-    "message": "layers[14]: unknown property \"interactive\"",
+    "message": "layers[14]: unknown property \"interactive\"; the \"interactive\" key is deprecated",
     "line": 101
   }
 ]
