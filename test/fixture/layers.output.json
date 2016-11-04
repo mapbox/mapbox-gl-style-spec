@@ -62,5 +62,9 @@
   {
     "message": "layers[13]: layer \"missing-source-layer\" must specify a \"source-layer\"",
     "line": 91
+  },
+  {
+    "message": "layers[14]: unknown property \"interactive\"",
+    "line": 101
   }
 ]
