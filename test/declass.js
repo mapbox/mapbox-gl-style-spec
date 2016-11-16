@@ -18,7 +18,14 @@ t('declass a style, one class', function (t) {
         }]
     };
 
-    t.deepEqual(declass(style, ['one']), {
+    var declassed = declass(style, ['one']);
+
+    t.notEqual(declassed, style, 'returns a new style object');
+    t.notEqual(declassed.layers, style.layers, 'makes new style.layers array');
+    t.notEqual(declassed.layers[0], style.layers[0], 'makes new layer object');
+    t.notEqual(declassed.layers[0].paint, style.layers[0].paint, 'makes new paint object');
+
+    t.deepEqual(declassed, {
         layers: [{
             id: 'a',
             paint: {
