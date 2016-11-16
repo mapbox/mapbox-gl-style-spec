@@ -32,8 +32,7 @@ t('declass a style, one class', function (t) {
                 'fill-color': { base: 1 },
                 'fill-outline-color': 'green',
                 'fill-opacity': 0.5
-            },
-            'paint.one': style.layers[0]['paint.one']
+            }
         }]
     });
 
@@ -91,11 +90,35 @@ t('declass a style, multiple classes', function (t) {
                 'fill-outline-color': 'green',
                 'fill-opacity': 0.75,
                 'fill-something-else': true
-            },
-            'paint.one': style.layers[0]['paint.one'],
-            'paint.two': style.layers[0]['paint.two']
+            }
         }]
     });
 
     t.end();
 });
+
+t('declassing a style removes paint.CLASS definitions, whether or not they are applied', function (t) {
+    var style = {
+        layers: [{
+            id: 'a',
+            paint: {
+                'fill-color': 'red',
+                'fill-outline-color': 'green'
+            },
+            'paint.one': {}
+        }]
+    };
+
+    t.deepEqual(declass(style, ['one']), {
+        layers: [{
+            id: 'a',
+            paint: {
+                'fill-color': 'red',
+                'fill-outline-color': 'green'
+            }
+        }]
+    });
+
+    t.end();
+});
+
