@@ -24,7 +24,7 @@ var nightStyle = declass(baseStyle, ['night'])
 ```
 
 
-### `deref(layers)`
+### `derefLayers(layers)`
 
 Given an array of layers, some of which may contain `ref` properties
 whose value is the `id` of another property, return a new array where
