@@ -107,7 +107,7 @@ fs.writeFileSync('./dest.min.json', format(style, 0));
 **Returns** `string`, stringified formatted JSON
 
 
-### `exports(layers)`
+### `groupByLayout(layers)`
 
 Given an array of layers, return an array of arrays of layers where all
 layers in each group have identical layout-affecting properties. These

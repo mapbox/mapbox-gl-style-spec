@@ -5,7 +5,6 @@ var deref = require('../lib/deref');
 function eachLayer(style, callback) {
     for (var k in style.layers) {
         callback(style.layers[k]);
-        eachLayer(style.layers[k], callback);
     }
 }
 
