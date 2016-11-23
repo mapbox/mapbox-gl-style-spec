@@ -297,6 +297,11 @@
       "type": "boolean",
       "default": "true",
       "doc": "Whether the canvas source is animated. If the canvas is static, `animate` should be set to `false` to improve performance."
+    },
+    "canvas": {
+      "type": "string",
+      "required": true,
+      "doc": "HTML ID of the canvas from which to read pixels."
     }
   },
   "layer": {
