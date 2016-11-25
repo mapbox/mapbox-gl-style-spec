@@ -1,0 +1,6 @@
+[
+  {
+    "message": "layers[0]: unknown property \"interactive\"; the \"interactive\" key is deprecated",
+    "line": 19
+  }
+]
