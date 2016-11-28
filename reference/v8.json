@@ -2223,7 +2223,7 @@
       "property-function": true,
       "transition": true,
       "units": "pixels",
-      "doc": "The stroke width of the circle. Strokes are placed outside of the existing circle radius.",
+      "doc": "The width of the circle's stroke. Strokes are placed outside of the \"circle-radius\".",
       "sdk-support": {
         "basic functionality": {
           "js": "master"
@@ -2252,7 +2252,7 @@
     },
     "circle-stroke-opacity": {
       "type": "number",
-      "doc": "The stroke opacity of the circle.",
+      "doc": "The opacity of the circle's stroke.",
       "default": 1,
       "minimum": 0,
       "maximum": 1,
