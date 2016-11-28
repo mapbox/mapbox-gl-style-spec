@@ -319,6 +319,9 @@
             }
           }
         },
+        "source": {
+            "doc": "Metadata about a source."
+        },
         "raster": {
           "doc": "Raster map textures such as satellite imagery.",
           "sdk-support": {
@@ -394,6 +397,7 @@
     "layout_fill-extrusion",
     "layout_symbol",
     "layout_raster",
+    "layout_source",
     "layout_background"
   ],
   "layout_background": {
@@ -1421,6 +1425,30 @@
       }
     }
   },
+  "layout_source": {
+    "visibility": {
+      "type": "enum",
+      "function": "piecewise-constant",
+      "zoom-function": true,
+      "values": {
+        "visible": {
+            "doc": "The layer is shown."
+        },
+        "none": {
+            "doc": "The layer is not shown."
+        }
+      },
+      "default": "visible",
+      "doc": "Whether this layer is displayed.",
+      "sdk-support": {
+        "basic functionality": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    }
+  },
   "filter": {
     "type": "array",
     "value": "*",
@@ -1624,6 +1652,7 @@
     "paint_line",
     "paint_circle",
     "paint_fill-extrusion",
+    "paint_source",
     "paint_symbol",
     "paint_raster",
     "paint_background"
@@ -2750,66 +2779,6 @@
           "android": "2.0.1"
         }
       }
-    },
-    "raster-loading-pattern": {
-      "type": "string",
-      "function": "piecewise-constant",
-      "zoom-function": true,
-      "property-function": true,
-      "transition": true,
-      "doc": "Name of image in sprite to use for drawing image fills. For seamless patterns, image width and height must be a factor of two (2, 4, 8, ..., 512).",
-      "sdk-support": {
-        "basic functionality": {
-          "js": "0.10.0",
-          "ios": "2.0.0",
-          "android": "2.0.1"
-        }
-      }
-    },
-    "raster-loading-opacity": {
-      "type": "number",
-      "function": "interpolated",
-      "zoom-function": true,
-      "property-function": true,
-      "default": 1,
-      "minimum": 0,
-      "maximum": 1,
-      "doc": "The opacity of the entire fill layer. In contrast to the `fill-color`, this value will also affect the 1px stroke around the fill, if the stroke is used.",
-      "transition": true,
-      "sdk-support": {
-        "basic functionality": {
-          "js": "0.10.0",
-          "ios": "2.0.0",
-          "android": "2.0.1"
-        },
-        "data-driven styling": {
-          "js": "0.21.0"
-        }
-      }
-    },
-    "raster-loading-color": {
-      "type": "color",
-      "default": "#000000",
-      "doc": "The color of the filled part of this layer. This color can be specified as `rgba` with an alpha component and the color's opacity will not affect the opacity of the 1px stroke, if it is used.",
-      "function": "interpolated",
-      "zoom-function": true,
-      "property-function": true,
-      "transition": true,
-      "requires": [
-        {
-          "!": "fill-pattern"
-        }
-      ],
-      "sdk-support": {
-        "basic functionality": {
-          "js": "0.10.0",
-          "ios": "2.0.0",
-          "android": "2.0.1"
-        },
-        "data-driven styling": {
-          "js": "0.19.0"
-        }
-      }
     }
   },
   "paint_background": {
@@ -2863,6 +2832,56 @@
           "android": "2.0.1"
         }
       }
+    }
+  },
+  "paint_source": {
+    "source-loading-pattern": {
+      "type": "string",
+      "function": "piecewise-constant",
+      "zoom-function": true,
+      "property-function": true,
+      "transition": true,
+      "doc": "Name of image in sprite to draw for loading tiles. For seamless patterns, image width and height must be a factor of two (2, 4, 8, ..., 512).",
+      "sdk-support": {
+        "basic functionality": {}
+      }
+    },
+    "source-loading-opacity": {
+      "type": "number",
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "default": 1,
+      "minimum": 0,
+      "maximum": 1,
+      "doc": "The opacity of the layer.",
+      "transition": true,
+      "sdk-support": {
+        "basic functionality": {}
+      }
+    },
+    "source-loading-color": {
+      "type": "color",
+      "default": "#000000",
+      "doc": "The color to draw for loading tiles. This color can be specified as `rgba` with an alpha component.",
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "transition": true,
+      "sdk-support": {
+        "basic functionality": {}
+      }
+    },
+    "source-fade-duration": {
+      "type": "number",
+      "default": 300,
+      "minimum": 0,
+      "function": "interpolated",
+      "zoom-function": true,
+      "transition": true,
+      "units": "milliseconds",
+      "doc": "Fade duration when a new tile is added.",
+      "sdk-support": {}
     }
   },
   "transition": {
