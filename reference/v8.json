@@ -319,7 +319,7 @@
             }
           }
         },
-        "source": {
+        "placeholder": {
             "doc": "Metadata about a source."
         },
         "raster": {
@@ -397,7 +397,7 @@
     "layout_fill-extrusion",
     "layout_symbol",
     "layout_raster",
-    "layout_source",
+    "layout_placeholder",
     "layout_background"
   ],
   "layout_background": {
@@ -1425,7 +1425,7 @@
       }
     }
   },
-  "layout_source": {
+  "layout_placeholder": {
     "visibility": {
       "type": "enum",
       "function": "piecewise-constant",
@@ -1652,7 +1652,7 @@
     "paint_line",
     "paint_circle",
     "paint_fill-extrusion",
-    "paint_source",
+    "paint_placeholder",
     "paint_symbol",
     "paint_raster",
     "paint_background"
@@ -2834,8 +2834,8 @@
       }
     }
   },
-  "paint_source": {
-    "source-loading-pattern": {
+  "paint_placeholder": {
+    "placeholder-loading-pattern": {
       "type": "string",
       "function": "piecewise-constant",
       "zoom-function": true,
@@ -2846,7 +2846,7 @@
         "basic functionality": {}
       }
     },
-    "source-loading-opacity": {
+    "placeholder-loading-opacity": {
       "type": "number",
       "function": "interpolated",
       "zoom-function": true,
@@ -2860,7 +2860,7 @@
         "basic functionality": {}
       }
     },
-    "source-loading-color": {
+    "placeholder-loading-color": {
       "type": "color",
       "default": "#000000",
       "doc": "The color to draw for loading tiles. This color can be specified as `rgba` with an alpha component.",
@@ -2872,7 +2872,7 @@
         "basic functionality": {}
       }
     },
-    "source-fade-duration": {
+    "placeholder-fade-duration": {
       "type": "number",
       "default": 300,
       "minimum": 0,
