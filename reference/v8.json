@@ -291,7 +291,7 @@
       "doc": "TODO",
       "length": 4,
       "value": "number",
-      "required": true
+      "required": false
     },
     "animate": {
       "type": "boolean",
