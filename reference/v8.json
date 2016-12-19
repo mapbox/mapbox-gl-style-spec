@@ -914,6 +914,9 @@
           "js": "0.10.0",
           "ios": "2.0.0",
           "android": "2.0.1"
+        },
+        "data-driven styling": {
+          "js": "master"
         }
       }
     },
