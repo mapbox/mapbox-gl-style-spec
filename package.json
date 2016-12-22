@@ -1,5 +1,5 @@
 {
-  "name": "mapbox-gl-style-spec",
+  "name": "@mapbox/mapbox-gl-style-spec",
   "description": "a specification for mapbox gl styles",
   "version": "8.10.0",
   "author": "Mapbox",
