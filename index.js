@@ -12,6 +12,7 @@ exports.format = require('./lib/format');
 exports.migrate = require('./lib/migrate');
 exports.composite = require('./lib/composite');
 exports.diff = require('./lib/diff');
+exports.diffDarwin = require('./lib/diff_darwin');
 exports.ValidationError = require('./lib/error/validation_error');
 exports.ParsingError = require('./lib/error/parsing_error');
 exports.function = require('./lib/function');
