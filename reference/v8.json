@@ -801,7 +801,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "0.21.0",
-          "android": "4.2.0"
+          "android": "4.2.0",
+          "macos": "0.2.1"
         }
       }
     },
@@ -833,7 +834,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "0.21.0",
-          "android": "4.2.0"
+          "android": "4.2.0",
+          "macos": "0.2.1"
         }
       }
     },
@@ -970,7 +972,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "0.21.0",
-          "android": "4.2.0"
+          "android": "4.2.0",
+          "macos": "0.2.1"
         },
         "`auto` value": {
           "js": "0.25.0",
@@ -2300,7 +2303,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "0.21.0",
-          "android": "4.2.0"
+          "android": "4.2.0",
+          "macos": "0.2.1"
         }
       }
     },
