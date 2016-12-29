@@ -17,7 +17,7 @@ var after = JSON.parse(rw.readFileSync(argv._[1], 'utf8'));
 
 var diff = diffDarwin(before, after, argv.language, argv.os || 'ios');
 //process.stdout.write(JSON.stringify(diff, null, 2));
-process.stdout.write(diff.join('\n'));
+process.stdout.write(diff);
 
 process.exit(0);
 
