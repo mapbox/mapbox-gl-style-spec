@@ -26,6 +26,6 @@ function help() {
     console.log('  gl-style-diff-darwin before.json after.json');
     console.log('');
     console.log('options:');
-    console.log('--language=lang output language [objc, swift]');
-    console.log('--os=os operating system [ios, macos]');
+    console.log('--language=lang output language [objc, swift]; omit to output JSON');
+    console.log('--os=os operating system [ios, macos]; ios by default');
 }
