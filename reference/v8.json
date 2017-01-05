@@ -286,13 +286,6 @@
         "doc": "A single longitude, latitude pair."
       }
     },
-    "dimensions": {
-      "type": "array",
-      "doc": "TODO",
-      "length": 4,
-      "value": "number",
-      "required": false
-    },
     "animate": {
       "type": "boolean",
       "default": "true",
