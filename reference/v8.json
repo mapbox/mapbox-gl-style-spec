@@ -1060,6 +1060,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text",
+        "macos": "text"
       }
     },
     "text-font": {
@@ -1079,6 +1083,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text-font",
+        "macos": "text-font"
       }
     },
     "text-size": {
@@ -1099,6 +1107,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text-font-size",
+        "macos": "text-font-size"
       }
     },
     "text-max-width": {
@@ -1827,6 +1839,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "fill-translation",
+        "macos": "fill-translation"
       }
     },
     "fill-translate-anchor": {
@@ -1853,6 +1869,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "fill-translation-anchor",
+        "macos": "fill-translation-anchor"
       }
     },
     "fill-pattern": {
@@ -2074,6 +2094,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "line-translation",
+        "macos": "line-translation"
       }
     },
     "line-translate-anchor": {
@@ -2100,6 +2124,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "line-translation-anchor",
+        "macos": "line-translation-anchor"
       }
     },
     "line-width": {
@@ -2330,6 +2358,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "circle-translation",
+        "macos": "circle-translation"
       }
     },
     "circle-translate-anchor": {
@@ -2356,6 +2388,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "circle-translation-anchor",
+        "macos": "circle-translation-anchor"
       }
     },
     "circle-pitch-scale": {
@@ -2378,6 +2414,10 @@
           "android": "4.2.0",
           "macos": "0.2.1"
         }
+      },
+      "sdk-name": {
+        "ios": "circle-scale-alignment",
+        "macos": "circle-scale-alignment"
       }
     },
     "circle-stroke-width": {
@@ -2561,6 +2601,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "icon-translation",
+        "macos": "icon-translation"
       }
     },
     "icon-translate-anchor": {
@@ -2588,6 +2632,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "icon-translation-anchor",
+        "macos": "icon-translation-anchor"
       }
     },
     "text-opacity": {
@@ -2714,6 +2762,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text-translation",
+        "macos": "text-translation"
       }
     },
     "text-translate-anchor": {
@@ -2741,6 +2793,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text-translation-anchor",
+        "macos": "text-translation-anchor"
       }
     }
   },
