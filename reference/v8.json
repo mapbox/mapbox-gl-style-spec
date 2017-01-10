@@ -665,6 +665,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "symbol-avoids-edges",
+        "macos": "symbol-avoids-edges"
       }
     },
     "icon-allow-overlap": {
@@ -683,6 +687,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "icon-allows-overlap",
+        "macos": "icon-allows-overlap"
       }
     },
     "icon-ignore-placement": {
@@ -701,6 +709,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "icon-ignores-placement",
+        "macos": "icon-ignores-placement"
       }
     },
     "icon-optional": {
@@ -720,6 +732,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "is-icon-optional",
+        "macos": "is-icon-optional"
       }
     },
     "icon-rotation-alignment": {
@@ -772,6 +788,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "icon-scale",
+        "macos": "icon-scale"
       }
     },
     "icon-text-fit": {
@@ -852,6 +872,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "icon-image-name",
+        "macos": "icon-image-name"
       }
     },
     "icon-rotate": {
@@ -876,6 +900,10 @@
         "data-driven styling": {
           "js": "0.21.0"
         }
+      },
+      "sdk-name": {
+        "ios": "icon-rotation",
+        "macos": "icon-rotation"
       }
     },
     "icon-padding": {
@@ -920,6 +948,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "keeps-icon-upright",
+        "macos": "keeps-icon-upright"
       }
     },
     "icon-offset": {
@@ -1028,6 +1060,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text",
+        "macos": "text"
       }
     },
     "text-font": {
@@ -1047,6 +1083,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text-font",
+        "macos": "text-font"
       }
     },
     "text-size": {
@@ -1067,6 +1107,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text-font-size",
+        "macos": "text-font-size"
       }
     },
     "text-max-width": {
@@ -1087,6 +1131,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "maximum-text-width",
+        "macos": "maximum-text-width"
       }
     },
     "text-line-height": {
@@ -1154,6 +1202,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text-justification",
+        "macos": "text-justification"
       }
     },
     "text-anchor": {
@@ -1223,6 +1275,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "maximum-text-angle",
+        "macos": "maximum-text-angle"
       }
     },
     "text-rotate": {
@@ -1243,6 +1299,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text-rotation",
+        "macos": "text-rotation"
       }
     },
     "text-padding": {
@@ -1287,6 +1347,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "keeps-text-upright",
+        "macos": "keeps-text-upright"
       }
     },
     "text-transform": {
@@ -1358,6 +1422,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text-allows-overlap",
+        "macos": "text-allows-overlap"
       }
     },
     "text-ignore-placement": {
@@ -1376,6 +1444,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text-ignores-placement",
+        "macos": "text-ignores-placement"
       }
     },
     "text-optional": {
@@ -1395,6 +1467,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "is-text-optional",
+        "macos": "is-text-optional"
       }
     },
     "visibility": {
@@ -1663,6 +1739,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "is-fill-antialiased",
+        "macos": "is-fill-antialiased"
       }
     },
     "fill-opacity": {
@@ -1759,6 +1839,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "fill-translation",
+        "macos": "fill-translation"
       }
     },
     "fill-translate-anchor": {
@@ -1785,6 +1869,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "fill-translation-anchor",
+        "macos": "fill-translation-anchor"
       }
     },
     "fill-pattern": {
@@ -2006,6 +2094,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "line-translation",
+        "macos": "line-translation"
       }
     },
     "line-translate-anchor": {
@@ -2032,6 +2124,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "line-translation-anchor",
+        "macos": "line-translation-anchor"
       }
     },
     "line-width": {
@@ -2138,6 +2234,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "line-dash-pattern",
+        "macos": "line-dash-pattern"
       }
     },
     "line-pattern": {
@@ -2258,6 +2358,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "circle-translation",
+        "macos": "circle-translation"
       }
     },
     "circle-translate-anchor": {
@@ -2284,6 +2388,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "circle-translation-anchor",
+        "macos": "circle-translation-anchor"
       }
     },
     "circle-pitch-scale": {
@@ -2306,6 +2414,10 @@
           "android": "4.2.0",
           "macos": "0.2.1"
         }
+      },
+      "sdk-name": {
+        "ios": "circle-scale-alignment",
+        "macos": "circle-scale-alignment"
       }
     },
     "circle-stroke-width": {
@@ -2489,6 +2601,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "icon-translation",
+        "macos": "icon-translation"
       }
     },
     "icon-translate-anchor": {
@@ -2516,6 +2632,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "icon-translation-anchor",
+        "macos": "icon-translation-anchor"
       }
     },
     "text-opacity": {
@@ -2642,6 +2762,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text-translation",
+        "macos": "text-translation"
       }
     },
     "text-translate-anchor": {
@@ -2669,6 +2793,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "text-translation-anchor",
+        "macos": "text-translation-anchor"
       }
     }
   },
@@ -2707,6 +2835,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "raster-hue-rotation",
+        "macos": "raster-hue-rotation"
       }
     },
     "raster-brightness-min": {
@@ -2725,6 +2857,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "minimum-raster-brightness",
+        "macos": "minimum-raster-brightness"
       }
     },
     "raster-brightness-max": {
@@ -2743,6 +2879,10 @@
           "ios": "2.0.0",
           "macos": "0.1.0"
         }
+      },
+      "sdk-name": {
+        "ios": "maximum-raster-brightness",
+        "macos": "maximum-raster-brightness"
       }
     },
     "raster-saturation": {

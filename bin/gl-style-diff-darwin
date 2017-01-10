@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var argv = require('minimist')(process.argv.slice(2), {
+        string: ['language', 'os'],
+    }),
+    diffDarwin = require('../').diffDarwin,
+    rw = require('rw');
+
+if (argv.help || argv.h || (argv._.length < 2 && process.stdin.isTTY)) {
+    return help();
+}
+
+var before = JSON.parse(rw.readFileSync(argv._[0], 'utf8'));
+var after = JSON.parse(rw.readFileSync(argv._[1], 'utf8'));
+
+var diff = diffDarwin(before, after, argv.language, argv.os || 'ios');
+//process.stdout.write(JSON.stringify(diff, null, 2));
+process.stdout.write(diff);
+
+process.exit(0);
+
+function help() {
+    console.log('usage:');
+    console.log('  gl-style-diff-darwin before.json after.json');
+    console.log('');
+    console.log('options:');
+    console.log('--language=lang output language [objc, swift, applescript]; omit to output JSON');
+    console.log('--os=os operating system [ios, macos]; ios by default');
+}
