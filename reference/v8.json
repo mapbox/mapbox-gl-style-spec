@@ -1089,6 +1089,24 @@
         }
       }
     },
+    "text-break-all": {
+      "type": "boolean",
+      "function": "piecewise-constant",
+      "zoom-function": true,
+      "property-function": true,
+      "default": true,
+      "doc": "If true, text will wrap according to text-max-width settings while recognizing spaces between words. If false, text will wrap according to text-max-width setting with or without spaces. Generally used for non-Latin text",
+      "requires": [
+        "text-max-width"
+      ],
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
     "text-line-height": {
       "type": "number",
       "default": 1.2,
