@@ -2,6 +2,7 @@
 
 var Reference = require('../reference/v8');
 var URL = require('url');
+var isEqual = require('lodash.isequal');
 
 function getPropertyReference(propertyName) {
     for (var i = 0; i < Reference.layout.length; i++) {
@@ -145,6 +146,45 @@ module.exports = function(style) {
         property.set(value);
     });
     delete style.constants;
+
+    function fixRamps(ramp) {
+        var changedStopZoom = false;
+
+        ramp.stops.sort(function(stopA, stopB) {
+            return stopA[0] - stopB[0];
+        });
+
+        var lastStop;
+        ramp.stops = ramp.stops.reduce(function (stops, stop) {
+            if (lastStop && lastStop[0] === stop[0]) {
+                // zoom collision
+                if (!isEqual(lastStop[1], stop[1])) {
+                    // different value, bump stop zoom
+                    stop[0] += 0.001;
+                    changedStopZoom = true;
+                    stops.push(stop);
+                }
+                // drop duplicate stop
+            } else {
+                stops.push(stop);
+            }
+            lastStop = stop;
+
+            return stops;
+        }, []);
+
+        if (changedStopZoom) {
+            // guard against out of order ramps or new collisions
+            fixRamps(ramp);
+        }
+    }
+
+    // Fix broken ramps
+    eachProperty(style, function(property) {
+        if (isFunction(property.value)) {
+            property.value = fixRamps(property.value);
+        }
+    });
 
     eachLayer(style, function(layer) {
         // get rid of text-max-size, icon-max-size
