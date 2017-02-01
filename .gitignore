@@ -1,6 +1,0 @@
-_site
-node_modules
-*.log
-/docs/index.html
-coverage
-.nyc_output
